@@ -46,16 +46,15 @@ class RuangStudioController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id' => 'required',
-            'harga' => 'nullable|confirmed',
-            'foto' => 'nullable|image|mimes:jpg,png, jpeg|max:2000',
-            'deskripsi' => 'nullable|confirmed',
+            'harga' => 'required',
+            'foto' => 'nullable|image|mimes:jpg, png, jpeg|max:2000',
+            'deskripsi' => 'required',
         ]);
         if ($request->hasFile('foto')){
             $requestData['foto'] = $request->file('foto')->store('public/images');
         }
+
         $model = new Model();
-        $model->id = $request->id;
         $model->harga = $request->harga;
         $model->foto = $request->foto;
         $model->deskripsi = $request->deskripsi;
@@ -102,13 +101,11 @@ class RuangStudioController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'id' => 'required',
             'harga' => 'nullable|confirmed',
-            'foto' => 'nullable|image|mimes:jpg,png, jpeg|max:2000',
-            'deskripsi' => 'nullable|confirmed',
+            'foto' => 'nullable|image|mimes:jpg, png, jpeg|max:2000',
+            'deskripsi' => 'required',
         ]);
         $model = Model::findOrFail($id);
-        $model->id = $request->id;
         $model->harga = $request->harga;
         $model->foto = $request->foto;
         $model->deskripsi = $request->deskripsi;
@@ -126,10 +123,10 @@ class RuangStudioController extends Controller
      */
     public function destroy($id)
     {
-        if($id == 1){
-            flash("Akun Pemilik Tidak Dapat Dihapus!!")->error();
-            return back();
-        }
+        //if($id == 1){
+            //flash("Akun Pemilik Tidak Dapat Dihapus!!")->error();
+            //return back();
+       // }
         $model = Model::findOrFail($id);
         $model->delete();
         flash("Data Berhasil Dihapus");
