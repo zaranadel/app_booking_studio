@@ -22,7 +22,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('ruangstudio', 'RuangStudioController');
 });
 
-
+//tesubah
 
 Route::get('/', function () {
     return view('welcome');
