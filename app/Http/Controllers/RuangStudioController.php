@@ -48,7 +48,7 @@ class RuangStudioController extends Controller
         $request->validate([
             'id' => 'required',
             'harga' => 'nullable|confirmed',
-            'foto' => 'nullable|image|mimes:jpg,png, jpeg|max:2000',
+            'foto' => 'nullable|image|mimes:jpg, png, jpeg|max:2000',
             'deskripsi' => 'nullable|confirmed',
         ]);
         if ($request->hasFile('foto')){
