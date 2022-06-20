@@ -122,7 +122,7 @@
         </div>
 
         <section id='tentang_studio'>
-            <h2>Tentang Studio</h2>
+            <h2>Tentang Studi</h2>
         </section>
         <section id="potret_studio">
             <h2>Potret Studio</h2>
