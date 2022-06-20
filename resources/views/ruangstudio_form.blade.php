@@ -9,16 +9,17 @@
                 <div class="card-header">Tambah Ruang Studio</div>
 
                 <div class="card-body">
-                    {!! Form::model($model, ['route' => $route, 'method' => $method,'files'=>true]) !!}
+                    {!! Form::model($model, ['route' => $route, 'method' => $method,'files' => true]) !!}
+
 
                      <div class="form-group">
-                        <label for="foto">GAMBAR</label>
-                        {!! Form::file('foto', null, ['class' => 'form-control']) !!}
-                        <span class="text-danger">{{ $errors->first('foto') }}</span>
+                        <label for="gambar">GAMBAR</label>
+                        {!! Form::file('gambar', null, ['class' => 'form-control']) !!}
+                        <span class="text-danger">{{ $errors->first('gambar') }}</span>
                      </div>
 
                      <div class="form-group">
-                        <label for="harga">HARGA/JAM</label>
+                        <label for="harga">HARGA / JAM</label>
                         {!! Form::text('harga', null, ['class' => 'form-control']) !!}
                         <span class="text-danger">{{ $errors->first('harga') }}</span>
                      </div>
@@ -31,7 +32,7 @@
 
 
                      {!! Form::submit($namaTombol, ['class' => 'btn btn-primary']) !!}
-
+                     <a href="/ruangstudio" class="btn btn-primary">Kembali</a>
                     {!! Form::close() !!}
                     
                 </div>

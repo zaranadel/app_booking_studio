@@ -16,7 +16,6 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -32,6 +31,19 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="telp" class="col-md-4 col-form-label text-md-right">{{ __('Nomor Telepon') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="telp" type="text" class="form-control @error('telp') is-invalid @enderror" name="telp" value="{{ old('telp') }}" required autocomplete="telp" autofocus>
+                                @error('telp')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -62,13 +74,7 @@
                         </div>
 
 
-                        <div class="form-group row">
-                            <label for="akses" class="col-md-4 col-form-label text-md-right">{{ __('Daftar Sebagai') }}</label>
-                            <div class="col-md-6">
-                                <input class="form-control" name="pelanggan" value="pelanggan" disabled>
-                            </div>         
-                                              
-                        </div>
+                        
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

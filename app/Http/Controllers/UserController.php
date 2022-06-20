@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $models = Model::latest()->paginate(10);
+        $models = Model::latest()->paginate(20);
         $data['models'] = $models;
         $data['routePrefix'] = $this->routePrefix;
         return view($this->viewPrefix . '_index', $data);
@@ -48,15 +48,19 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
+            'akses' => 'nullable',
+            'telp' => 'required|digits:13',
             'password' => 'required|confirmed',
-            'akses' => 'nullable|confirmed',
+            
 
         ]);
         $model = new Model();
         $model->name = $request->name;
         $model->email = $request->email;
-        $model->password = bcrypt($request->password);
         $model->akses = $request->akses;
+        $model->telp = $request->telp;
+        $model->password = bcrypt($request->password);
+        
         $model->save();
         flash("Data berhasil disimpan");
         return back();
@@ -102,15 +106,18 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' .  $id,
+            'telp' => 'required|numeric|min:13',
             'password' => 'nullable|confirmed',
-            'akses' => 'nullable|confirmed',
+            
         ]);
         $model = Model::findOrFail($id);
         $model->name = $request->name;
         $model->email = $request->email;
+        $model->telp = $request->telp;
         if ($request->password) {
             $model->password = bcrypt($request->password);
         }
+        
         $model->save();
         flash("Data berhasil diupdate");
         return back();

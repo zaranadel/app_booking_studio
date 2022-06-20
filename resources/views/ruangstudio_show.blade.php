@@ -25,6 +25,8 @@
                                     
                                 </thead>
                             </table>
+
+                            <a href="/ruangstudio" class="btn btn-primary">Kembali</a>
                             
                             <div>
                                 <button class="btn btn-primary">Booking</button>    

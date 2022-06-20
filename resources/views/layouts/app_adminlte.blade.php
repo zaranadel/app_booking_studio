@@ -193,6 +193,7 @@
             </a>            
           </li> 
           
+          @if (auth()->user()->akses == 'admin')
           <li class="nav-item">
             <a href="{{ route('user.index') }}" class="nav-link {{ request()->is('user*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-users"></i>
@@ -201,12 +202,14 @@
               </p>
             </a>            
           </li>
+          @endif
+          
 
           <li class="nav-item">
             <a href="{{ route('ruangstudio.index') }}" class="nav-link {{ request()->is('ruangstudio*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-guitar"></i>
               <p>
-                Ruang Studio
+                Booking
               </p>
             </a>            
           </li>

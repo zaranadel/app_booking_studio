@@ -23,6 +23,10 @@
                                         <td>: {{ $model->email }}</td>
                                     </tr>
                                     <tr>
+                                        <td>NOMOR TELEPON</td>
+                                        <td>: {{ $model->telp }}</td>
+                                    </tr>
+                                    <tr>
                                         <td>TANGGAL BUAT</td>
                                         <td>: {{ $model->created_at->format('d/m/y H:i') }}</td>
                                     </tr>
@@ -30,8 +34,9 @@
                                         <td>KETERANGAN</td>
                                         <td>: {{ $model->akses }}</td>
                                     </tr>
-                                </thead>
+                                </thead>  
                             </table>
+                            <a href="/user" class="btn btn-primary">Kembali</a>
                         </div>                    
                     </div> 
             </section>

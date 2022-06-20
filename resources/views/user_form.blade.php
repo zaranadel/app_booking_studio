@@ -24,6 +24,12 @@
                      </div>
 
                      <div class="form-group">
+                        <label for="telp">NOMOR TELEPON</label>
+                        {!! Form::number('telp', null, ['class' => 'form-control', 'autofocus' => true]) !!}
+                        <span class="text-danger">{{ $errors->first('telp') }}</span>
+                     </div>
+
+                     <div class="form-group">
                         <label for="password">Password</label>
                         {!! Form::password('password', ['class' => 'form-control']) !!}
                         <span class="text-danger">{{ $errors->first('password') }}</span>
@@ -39,6 +45,7 @@
                       <label for="akses">Daftar Sebagai</label>
                       {!! Form::select('akses', [
                         'admin' => 'admin',
+                        'pelanggan' => 'pelanggan',
                       ], null, ['class' => 'form-control']) !!}
                       <span class="text-danger">{{ $errors->first('akses') }}</span>
                    </div>
@@ -46,6 +53,7 @@
                    
 
                      {!! Form::submit($namaTombol, ['class' => 'btn btn-primary']) !!}
+                     <a href="/user" class="btn btn-primary">Kembali</a>
 
                     {!! Form::close() !!}
                     
