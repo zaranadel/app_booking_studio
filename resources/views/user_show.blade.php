@@ -1,5 +1,5 @@
 @extends('layouts.app_adminlte')
-
+<title>Data User</title>
 @section('content')
 
 

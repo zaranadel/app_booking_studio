@@ -1,5 +1,5 @@
 @extends('layouts.app_adminlte')
-
+<title>Tambah Admin</title>
 @section('content')
 
 

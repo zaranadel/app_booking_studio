@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Traxx Studio</title>
+        
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -18,6 +19,7 @@
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+                height: 3000px;
             }
 
             .full-height {
@@ -61,6 +63,32 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            #tentang_studio {
+                width: 100%;
+                height: 100vh;
+                background: green;
+            }
+            #tentang_studio h2 {
+                text-align: center;
+            }
+
+            #potret_studio {
+                width: 100%;
+                height: 100vh;
+                background: yellow;
+            }
+            #potret_studio h2 {
+                text-align: center;
+            }
+
+            #pengumuman {
+                width: 100%;
+                height: 100vh;
+                background: grey;
+            }
+            #pengumuman h2 {
+                text-align: center;
+            }
         </style>
     </head>
     <body>
@@ -81,20 +109,30 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Traxx Studio
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="#tentang_studio" >Tentang Studio</a>
+                    <a href="#potret_studio">Potret Studio</a>
+                    <a href="#pengumuman">Pengumuman</a>
+                    
                 </div>
             </div>
         </div>
+
+        <section id='tentang_studio'>
+            <h2>Tentang Studio</h2>
+        </section>
+        <section id="potret_studio">
+            <h2>Potret Studio</h2>
+        </section>
+        <section id='pengumuman'>
+            <h2>Pengumuman</h2>
+        </section>
+        <footer>
+            <h2>Social Media</h2>
+        </footer>
+        
     </body>
 </html>

@@ -1,5 +1,5 @@
 @extends('layouts.app_adminlte')
-
+<title>Ruang Studio</title>
 @section('content')
 
 
