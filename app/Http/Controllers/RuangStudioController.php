@@ -46,17 +46,17 @@ class RuangStudioController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'harga' => 'required',
-            'foto' => 'nullable|image|mimes:jpg, png, jpeg|max:2000',
-            'deskripsi' => 'required',
+            'harga' => 'required|numeric',
+            'gambar' => 'nullable|image|mimes:jpg,png,jpeg|max:2000',
+            'deskripsi' => 'nullable',
         ]);
-        if ($request->hasFile('foto')){
-            $requestData['foto'] = $request->file('foto')->store('public/images');
+        if ($request->hasFile('gambar')){
+            $path = $request->file('gambar')->store('public/images');
         }
 
         $model = new Model();
         $model->harga = $request->harga;
-        $model->foto = $request->foto;
+        $model->gambar = $request->gambar;
         $model->deskripsi = $request->deskripsi;
         $model->save();
         flash("Data berhasil disimpan");
@@ -101,13 +101,15 @@ class RuangStudioController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'harga' => 'nullable|confirmed',
-            'foto' => 'nullable|image|mimes:jpg, png, jpeg|max:2000',
+            'id_ruangstudio' => 'required|numeric|unique:id_ruangstudio,' .  $id,
+            'harga' => 'required|numeric',
+            'gambar' => 'nullable|image|mimes:jpg, png, jpeg|max:2000',
             'deskripsi' => 'required',
         ]);
         $model = Model::findOrFail($id);
+        $model->id_ruangstudio = $request->id_ruangstudio;
         $model->harga = $request->harga;
-        $model->foto = $request->foto;
+        $model->gambar = $request->gambar;
         $model->deskripsi = $request->deskripsi;
         
         $model->save();
