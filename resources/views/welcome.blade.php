@@ -171,13 +171,13 @@ https://www.tooplate.com/view/2117-infinite-loop
                             </figure>
 
                             <figure class="tm-testimonial-item">
-                                <img src="img/testimonial-img-02.jpg" alt="Image" class="img-fluid mx-auto">
+                                <img src="img/2.jpeg" alt="Image" class="img-fluid mx-auto">
                                 <blockquote></blockquote>
                                 <figcaption>Teddy Biantoro Hidayat <br>(Front End Dev)</figcaption>
                             </figure>
 
                             <figure class="tm-testimonial-item">
-                                <img src="img/testimonial-img-03.jpg" alt="Image" class="img-fluid mx-auto">
+                                <img src="img/1.jpg" alt="Image" class="img-fluid mx-auto">
                                 <blockquote></blockquote>
                                 <figcaption>Rivaldi Sastra Fadila <br>(Feeder/AFK)</figcaption>
                             </figure>
@@ -300,16 +300,16 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <div class="col-sm-12 col-md-6">
 
                     <div class="contact-item">
-                        <a rel="nofollow" href="https://www.tooplate.com/contact" class="item-link">
-                            <i class="far fa-2x fa-comment mr-4"></i>
-                            <span class="mb-0">Chat Online</span>
+                        <a rel="nofollow" href="https://www.instagram.com/teddybiantoro/" class="item-link">
+                            <i class="fab fa-2x fa-instagram mr-4"></i>
+                            <span class="mb-0">Traxx Studio</span>
                         </a>
                     </div>
 
                     <div class="contact-item">
-                        <a rel="nofollow" href="mailto:mail@company.com" class="item-link">
+                        <a rel="nofollow" href="mailto:teds250101@gmail.com" class="item-link">
                             <i class="far fa-2x fa-envelope mr-4"></i>
-                            <span class="mb-0">mail@company.com</span>
+                            <span class="mb-0">traxxstudio@gmail.com</span>
                         </a>
                     </div>
 
@@ -322,7 +322,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                     </div>
 
                     <div class="contact-item">
-                        <a rel="nofollow" href="tel:0100200340" class="item-link">
+                        <a rel="nofollow" href="tel:082244405518" class="item-link">
                             <i class="fas fa-2x fa-phone-square mr-4"></i>
                             <span class="mb-0">0822-4440-5518</span>
                         </a>
