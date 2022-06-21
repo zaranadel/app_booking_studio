@@ -8,10 +8,10 @@
                     <div class="card">
                         <div class="card-header">PROFIL DETAIL : {{ strtoupper ($model->name) }}</div>
                         <div class="card-body">
-                            <table class="table table-striped">
+                            <table class="table table-striped mb-4">
                                 <thead>
                                     <tr>
-                                        <td>ID</td>
+                                        <td width="20%">ID</td>
                                         <td>: {{ $model->id }}</td>
                                     </tr>
                                     <tr>
@@ -25,18 +25,23 @@
                                     <tr>
                                         <td>NOMOR TELEPON</td>
                                         <td>: {{ $model->telp }}</td>
+                                    </tr>                                    
+                                    <tr>
+                                        <td>KETERANGAN</td>
+                                        <td>: {{ $model->akses }}</td>
                                     </tr>
                                     <tr>
                                         <td>TANGGAL BUAT</td>
                                         <td>: {{ $model->created_at->format('d/m/y H:i') }}</td>
                                     </tr>
                                     <tr>
-                                        <td>KETERANGAN</td>
-                                        <td>: {{ $model->akses }}</td>
+                                        <td>TANGGAL UPDATE</td>
+                                        <td>: {{ $model->updated_at->format('d/m/y H:i') }}</td>
                                     </tr>
+                                    
                                 </thead>  
                             </table>
-                            <a href="/user" class="btn btn-primary">Kembali</a>
+                            <a href="/user" class="btn btn-primary" >Kembali</a>
                         </div>                    
                     </div> 
             </section>
