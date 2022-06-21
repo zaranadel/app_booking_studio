@@ -21,6 +21,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('userprofil', 'UserProfilController');
     //Route::get('user', 'UserController');
     Route::resource('ruangstudio', 'RuangStudioController');
+    Route::resource('sewa', 'SewaController');
 });
 
 //tesubah

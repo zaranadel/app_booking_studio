@@ -201,16 +201,6 @@
             </a>            
           </li>
           @endif
-          
-
-          <li class="nav-item">
-            <a href="{{ route('ruangstudio.index') }}" class="nav-link {{ request()->is('ruangstudio*') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-guitar"></i>
-              <p>
-                Booking
-              </p>
-            </a>            
-          </li>
 
           <li class="nav-item">
             <a href="{{ route('home') }}" class="nav-link {{ request()->is('gallery*') ? 'active' : '' }}">
@@ -220,6 +210,27 @@
               </p>
             </a>            
           </li>
+          
+
+          <li class="nav-item">
+            <a href="{{ route('ruangstudio.index') }}" class="nav-link {{ request()->is('ruangstudio*') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-guitar"></i>
+              <p>
+                Ruang Studio
+              </p>
+            </a>            
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ route('sewa.index') }}" class="nav-link {{ request()->is('sewa*') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-guitar"></i>
+              <p>
+                Data Booking
+              </p>
+            </a>            
+          </li>
+
+          
 
           <li class="nav-item">
             <a href="{{ route('home') }}" class="nav-link {{ request()->is('gallery*') ? 'active' : '' }}">

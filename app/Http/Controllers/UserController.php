@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use \App\User as Model;
 
@@ -16,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $models = Model::latest()->paginate(20);
+        $models = Model::latest()->paginate(15);
         $data['models'] = $models;
         $data['routePrefix'] = $this->routePrefix;
         return view($this->viewPrefix . '_index', $data);

@@ -1,32 +1,32 @@
 @extends('layouts.app_adminlte')
-<title>Ruang Studio</title>
+<title>Data Booking</title>
 @section('content')
 
 
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header">Ruang Studio</div>
+                <div class="card-header">Data Booking</div>
 
                 <div class="card-body">
-                    @if (auth()->user()->akses == 'admin')
-                    <a href="{{ route($routePrefix .'.create') }}" class="btn btn-primary">Tambah Ruang Studio</a>
-                    @endif
+                   
                     <table class="table table-light table-striped">
                         <thead>
                             <tr>
-                                <th>NO</th>
-                                <th>GAMBAR</th>
-                                <th>HARGA SEWA/JAM</th>
+                               
+                                <th>KODE STUDIO</th>
+                                <th>DI SEWA OLEH</th>
+                                <th>TOTAL BAYAR</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($models as $item)
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->foto }}</td>
-                                    <td>{{ number_format($item->harga, 0, ",", ".") }}</td>
+                                    {{-- , 0, ",", "." --}}
+                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $item->user->name }}</td>
+                                    {{-- <td>{{ $item->ruangstudio->harga }}</td> --}}
                                     <td>
                                         {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
 
@@ -38,8 +38,6 @@
                                         
 
                                         <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> Detail</a>
-
-                                        
                                        
                                         
                                         {!! Form::close() !!}
