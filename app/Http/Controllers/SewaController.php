@@ -49,67 +49,27 @@ class SewaController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'ruangstudio_id' => 'required',
+            'namaruangstudio' => 'required',
             'telp' => 'required|numeric', 
+            'total_bayar' => 'nullable|numeric',
             'jam_sewa' => 'required|after:now',
-            'tgl_sewa' => 'required|after:yesterday',           
+            'tgl_sewa' => 'required|after:yesterday', 
+            'status' => 'nullable',          
         ]);
-
-        $ruangstudio = \App\RuangStudio::findOrFail($request->ruangstudio_id);
-        // dd($request->all());
-        $user = \App\User::query();
-        if($request->filled('namaruangstudio')){
-            $user = $user->where('namaruangstudio', $request->namaruangstudio);
-        }
-
-        $user = $user->get();
-        foreach ($user as $item){
-            $sewa = new Sewa();
-            // $sewa->ruangstudio_id = $request->ruangstudio_id;
-            $sewa->user_id = $item->id;
-            $sewa->telp = $request->telp;
-            $sewa->namaruangstudio = $ruangstudio->namaruangstudio;
-            $sewa->harga = $ruangstudio->$harga;
-            $sewa->tgl_sewa = $request->tgl_sewa;
-            $sewa->jam_sewa = $request->jam_sewa;
-            $sewa->save();
-            
-
-        }
+        dd($sewa);
+        $model = new Model();
+        $model->nama = $request->nama;
+        $model->telp = $request->telp;
+        $model->total_bayar = $request->total_bayar;
+        $model->jam_sewa = $request->jam_sewa;
+        $model->tgl_sewa = $request->tgl_sewa;
+        $model->namaruangstudio = $request->namaruangstudio;
+        $model->status = 'proses';
+        $model->save();
+        flash("Data Booking Berhasil Dibuat");
+        return redirect()->route('sewa.index');
         
-
-        // $cek = Sewa::where('ruangstudio_id',$request->ruangstudio_id)
-        //         // ->where('tgl_sewa',$request->tgl_sewa)
-        //         ->where('jam_sewa',$request->jam_sewa)
-        //         ->count();
-
-        //         if ($cek > 0) {
-        //             return back()->with(['keterangan' => 'Lapang sudah ada yang booking','tipe' => 'danger']);
-        //         }else{
-        //             Sewa::create([
-        //                 'nama' => $request->nama,
-        //                 'id' => Session::get('id'),
-        //                 'telp' => $request->telp,
-        //                 'ruangstudio_id' => $request->ruangstudio_id,
-        //                 // 'tgl_sewa' => $request->tgl_sewa,
-        //                 'jam_sewa' => $request->jam_sewa
-        //             ]);
-        //             return back()->with(['keterangan' => 'Booking berhasil','tipe' => 'success']);
-        //         }
-
-        // $requestData['user_id'] = Auth::user()->id;
-
     }
-
-    //     $model = new Model();
-    //     $model->nama = $request->nama;
-    //     $model->ruangstudio_id = $request->ruangstudio;
-    //     $model->telp = $request->telp;
-        
-    //     $model->save();
-    //     flash("Data berhasil disimpan");
-    //     return back();
-    // }
 
     /**
      * Display the specified resource.

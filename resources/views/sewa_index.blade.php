@@ -9,9 +9,7 @@
                 <div class="card-header">Booking</div>
 
                 <div class="card-body">
-                    @if (auth()->user()->akses == 'admin')
-                    <a href="{{ route($routePrefix .'.create') }}" class="btn btn-primary">Tambah Ruang Studio</a>
-                    @endif
+                   
                     <table class="table table-light table-striped">
                         <thead>
                             <tr>
@@ -19,8 +17,8 @@
                                 <th>RUANG STUDIO</th>
                                 <th>NOMOR TELEPON</th>
                                 <th>TGL BOOKING</th>
-                                <th>WAKTU BOOKING</th>
-                                <th>NOMOR TELEPON</th>
+                                <th>WAKTU BOOKING</th> 
+                                <th>HARGA/JAM</th>                                
                                 <th>AKSI</th>
                             </tr>
                         </thead>
@@ -29,10 +27,9 @@
                                 <tr>                                    
                                     <td>{{ $item->nama }}</td>
                                     <td>{{ $item->namaruangstudio }}</td>
-                                    <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->nama }}</td>
+                                    <td>{{ $item->telp }}</td>
+                                    <td>{{ $item->tgl_sewa }}</td>
+                                    <td>{{ $item->jam_sewa }}</td>
                                     <td>{{ number_format($item->harga, 0, ",", ".") }}</td>
                                     <td>
                                         {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}

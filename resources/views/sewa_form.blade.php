@@ -68,6 +68,12 @@
                         <span class="text-danger">{{ $errors->first('jam_sewa') }}</span>
                      </div>
 
+                     <div class="form-group">
+                        <label for="total_bayar">TOTAL BAYAR</label>
+                        {!! Form::number('total_bayar', null, ['class' => 'form-control']) !!}
+                        <span class="text-danger">{{ $errors->first('total_bayar') }}</span>
+                     </div>
+
 
                      {!! Form::submit($namaTombol, ['class' => 'btn btn-primary']) !!}
                      <a href="/ruangstudio" class="btn btn-primary">Kembali</a>
