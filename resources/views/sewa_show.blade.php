@@ -23,13 +23,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($models as $item)
+                           
                                 <tr>                                    
-                                    <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->namaruangstudio }}</td>
-                                    <td>{{ $item->telp }}</td>
-                                    <td>{{ $item->tgl_sewa }}</td>
-                                    <td>{{ $item->jam_sewa }}</td>
+                                    <td>{{ $model->nama }}</td>
+                                    <td>{{ $model->$ruangstudio->namaruangstudio }}</td>
+                                    <td>{{ $model->telp->format('numeric') }}</td>
+                                    <td>{{ $model->tgl_sewa->format('d/m/y H:i') }}</td>
+                                    <td>{{ $model->jam_sewa }}</td>
+                                    <td>{{ $model->harga }}</td>
                                     <td>{{ number_format($item->harga, 0, ",", ".") }}</td>
                                     <td>
                                         {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
@@ -49,7 +50,7 @@
                                         {!! Form::close() !!}
                                     </td>
                                 </tr>
-                            @endforeach
+                           
                         </tbody>
                     </table>
                     {{-- <a href="{{ route('sewa.create') }}" class="btn btn-primary">Booking Studio</a> --}}

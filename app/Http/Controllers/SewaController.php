@@ -36,7 +36,7 @@ class SewaController extends Controller
         $data['route'] = $this->routePrefix . '.store';
         $data['namaTombol'] = 'Booking';
         $data['ruangstudioList'] = \App\RuangStudio::pluck('namaruangstudio', 'id');
-        return view($this->viewPrefix . '_form', $data);
+        return view($this->viewPrefix . '_show', $data);
     }
 
     /**
