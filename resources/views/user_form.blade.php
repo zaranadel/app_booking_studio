@@ -1,4 +1,4 @@
-@extends('layouts.app_adminlte')
+{{-- @extends('layouts.app_adminlte')
 <title>Tambah Admin</title>
 @section('content')
 
@@ -6,7 +6,7 @@
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header">Tambah Admin</div>
+                <div class="card-header">Tambah Adminnn</div>
 
                 <div class="card-body">
                     {!! Form::model($model, ['route' => $route, 'method' => $method]) !!}
@@ -62,4 +62,4 @@
         </section>
         <!-- /.content -->
       
-@endsection
+@endsection --}}

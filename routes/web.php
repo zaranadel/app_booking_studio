@@ -19,6 +19,7 @@ Route::get('logout', function () {
 Route::middleware(['auth'])->group(function () {
     Route::resource('user', 'UserController')->middleware('admin');
     Route::resource('userprofil', 'UserProfilController');
+    Route::resource('useradmin', 'UserAdminController');
     //Route::get('user', 'UserController');
     Route::resource('ruangstudio', 'RuangStudioController');
     Route::resource('sewa', 'SewaController');

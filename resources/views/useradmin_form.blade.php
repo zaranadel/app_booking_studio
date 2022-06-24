@@ -6,40 +6,34 @@
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header">Form Booking</div>
+                <div class="card-header">Tambah Admin</div>
 
                 <div class="card-body">
                     {!! Form::model($model, ['route' => $route, 'method' => $method]) !!}
                     
                      <div class="form-group">
-                        <label for="nama">NAMA</label>
-                        {!! Form::text('nama', null, ['class' => 'form-control', 'autofocus' => true]) !!}
-                        <span class="text-danger">{{ $errors->first('nama') }}</span>
+                        <label for="name">NAMA</label>
+                        {!! Form::text('name', null, ['class' => 'form-control', 'autofocus' => true]) !!}
+                        <span class="text-danger">{{ $errors->first('name') }}</span>
                      </div>
 
                      <div class="form-group">
-                        <label for="nohp">NO. TELP</label>
-                        {!! Form::number('nohp', null, ['class' => 'form-control']) !!}
-                        <span class="text-danger">{{ $errors->first('nohp') }}</span>
+                        <label for="email">EMAIL</label>
+                        {!! Form::email('email', null, ['class' => 'form-control']) !!}
+                        <span class="text-danger">{{ $errors->first('email') }}</span>
                      </div>
 
+                     {{-- <div class="form-group">
+                        <label for="telp">NOMOR TELEPON</label>
+                        {!! Form::number('telp', null, ['class' => 'form-control', 'autofocus' => true]) !!}
+                        <span class="text-danger">{{ $errors->first('telp') }}</span>
+                     </div> --}}
+
                      <div class="form-group">
-                        <label for="">Nama Lapang</label>
-                    <select name="ruangstudio_id" class="form-control col-md-6" required="">
-                        <option disabled selected>Pilih Lapang</option>
-                        @foreach ($ruangstudio as $l)
-                    <option value="{{$l->ruangstudio_id}}">{{$l->nama_ruangstudio." - ". Fungsi::getRupiah($l->harga)}}</option>
-                        @endforeach
-                    </select>
-                    </div>
-
-                    <div class="clear-fix">&nbsp;</div>
-
-<div class="form-control-wrapper">
-    <input type="text" id="datepicker" class="form-control col-md-6" name="tgl_sewa" placeholder="Tanggal Booking" autocomplete="off" />
-</div>
-
-<div class="clear-fix">&nbsp;</div>
+                        <label for="password">Password</label>
+                        {!! Form::password('password', ['class' => 'form-control']) !!}
+                        <span class="text-danger">{{ $errors->first('password') }}</span>
+                     </div>
 
                      <div class="form-group">
                         <label for="password_confirmation">Konfirmasi Password</label>
@@ -50,8 +44,7 @@
                      <div class="form-group">
                       <label for="akses">Daftar Sebagai</label>
                       {!! Form::select('akses', [
-                        'admin' => 'admin',
-                        'pelanggan' => 'pelanggan',
+                        'admin' => 'Admin',
                       ], null, ['class' => 'form-control']) !!}
                       <span class="text-danger">{{ $errors->first('akses') }}</span>
                    </div>

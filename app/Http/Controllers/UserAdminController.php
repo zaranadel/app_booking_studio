@@ -6,10 +6,10 @@ use Auth;
 use Illuminate\Http\Request;
 use \App\User as Model;
 
-class UserController extends Controller
+class UserAdminController extends Controller
 {
-    private $viewPrefix = "user";
-    private $routePrefix = "user";
+    private $viewPrefix = "useradmin";
+    private $routePrefix = "useradmin";
     /**
      * Display a listing of the resource.
      *
@@ -17,10 +17,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $models = Model::latest()->paginate(15);
-        $data['models'] = $models;
-        $data['routePrefix'] = $this->routePrefix;
-        return view($this->viewPrefix . '_index', $data);
+        // $models = Model::latest()->paginate(15);
+        // $data['models'] = $models;
+        // $data['routePrefix'] = $this->routePrefix;
+        // return view($this->viewPrefix . '_index', $data);
     }
 
     /**
@@ -75,8 +75,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $data['model'] = Model::findOrFail ($id);
-        return view($this->viewPrefix . '_show', $data);
+        // $data['model'] = Model::findOrFail ($id);
+        // return view($this->viewPrefix . '_show', $data);
     }
     
     /**
@@ -87,12 +87,12 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $model = Model::findOrFail($id);
-        $data['model'] = $model;
-        $data['method'] = 'PUT';
-        $data['route'] = [$this->routePrefix . '.update', $id];
-        $data['namaTombol'] = 'Update';
-        return view($this->viewPrefix . '_form', $data);
+        // $model = Model::findOrFail($id);
+        // $data['model'] = $model;
+        // $data['method'] = 'PUT';
+        // $data['route'] = [$this->routePrefix . '.update', $id];
+        // $data['namaTombol'] = 'Update';
+        // return view($this->viewPrefix . '_form', $data);
     }
 
     /**
@@ -104,24 +104,24 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email,' .  $id,
+        // $request->validate([
+        //     'name' => 'required',
+        //     'email' => 'required|email|unique:users,email,' .  $id,
+        //     'telp' => 'required|numeric|min:13',
+        //     'password' => 'nullable|confirmed',
             
-            'password' => 'nullable|confirmed',
-            
-        ]);
-        $model = Model::findOrFail($id);
-        $model->name = $request->name;
-        $model->email = $request->email;
+        // ]);
+        // $model = Model::findOrFail($id);
+        // $model->name = $request->name;
+        // $model->email = $request->email;
+        // $model->telp = $request->telp;
+        // if ($request->password) {
+        //     $model->password = bcrypt($request->password);
+        // }
         
-        if ($request->password) {
-            $model->password = bcrypt($request->password);
-        }
-        
-        $model->save();
-        flash("Data berhasil diupdate");
-        return back();
+        // $model->save();
+        // flash("Data berhasil diupdate");
+        // return back();
     }
 
     /**
@@ -132,13 +132,13 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        if($id == 1){
-            flash("Akun Pemilik Tidak Dapat Dihapus!!")->error();
-            return back();
-        }
-        $model = Model::findOrFail($id);
-        $model->delete();
-        flash("Data Berhasil Dihapus");
-        return back();
+        // if($id == 1){
+        //     flash("Akun Pemilik Tidak Dapat Dihapus!!")->error();
+        //     return back();
+        // }
+        // $model = Model::findOrFail($id);
+        // $model->delete();
+        // flash("Data Berhasil Dihapus");
+        // return back();
     }
 }

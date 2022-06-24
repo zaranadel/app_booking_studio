@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Sewa as Model;
+use Session;
 
 class SewaController extends Controller
 {
@@ -46,18 +47,37 @@ class SewaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'harga' => 'required|numeric',
-            'gambar' => 'nullable|image|mimes:jpg,png,jpeg|max:2000',
-            'deskripsi' => 'nullable',
+            'nama' => 'required',
+            'ruangstudio_id' => 'required',
+            'nohp' => 'required|min:6|max:15',
+            'tgl_sewa' => 'required|after:yesterday',
+            'jam_sewa' => 'required|after:now',
         ]);
-        if ($request->hasFile('gambar')){
-            $path = $request->file('gambar')->store('public/images');
-        }
+        $cek = Sewa::where('ruangstudio_id',$request->ruangstudio_id)
+                ->where('tgl_sewa',$request->tgl_sewa)
+                ->where('jam_sewa',$request->jam_sewa)
+                ->count();
+
+                if ($cek > 0) {
+                    return back()->with(['keterangan' => 'Lapang sudah ada yang booking','tipe' => 'danger']);
+                }else{
+                    Sewa::create([
+                        'nama' => $request->nama,
+                        'id' => Session::get('id'),
+                        'nohp' => $request->nohp,
+                        'ruangstudio_id' => $request->ruangstudio_id,
+                        'tgl_sewa' => $request->tgl_sewa,
+                        'status' => '2',
+                        'jam_sewa' => $request->jam_sewa
+                    ]);
+                    return back()->with(['keterangan' => 'Booking berhasil','tipe' => 'success']);
+                }
 
         $model = new Model();
-        $model->harga = $request->harga;
-        $model->gambar = $request->gambar;
-        $model->deskripsi = $request->deskripsi;
+        $model->nama = $request->nama;
+        $model->nohp = $request->nohp;
+        $model->tgl_sewa = $request->tgl_sewa;
+        $model->jam_sewa = $request->jam_sewa;
         $model->save();
         flash("Data berhasil disimpan");
         return back();

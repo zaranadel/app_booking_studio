@@ -22,14 +22,8 @@
                                         <td>EMAIL</td>
                                         <td>: {{ $model->email }}</td>
                                     </tr>
-                                    <tr>
-                                        <td>NOMOR TELEPON</td>
-                                        <td>: {{ $model->telp }}</td>
-                                    </tr>                                    
-                                    <tr>
-                                        <td>KETERANGAN</td>
-                                        <td>: {{ $model->akses }}</td>
-                                    </tr>
+                                                                  
+                                    
                                     <tr>
                                         <td>TANGGAL BUAT</td>
                                         <td>: {{ $model->created_at->format('d/m/y H:i') }}</td>

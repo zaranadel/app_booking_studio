@@ -15,8 +15,13 @@ class Sewa extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user(): BelongsTo
+    public function ruangstudio(): BelongsTo
     {
-        return $this->belongsTo(User::class)->withDefault();
+        return $this->belongsTo(RuangStudio::class, 'ruangstudio_id');
     }
 }
+
+// public function ruangstudio(): BelongsTo
+//     {
+//         return $this->belongsTo(RuangStudio::class)->withDefault();
+//     }

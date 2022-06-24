@@ -9,7 +9,7 @@
                 <div class="card-header">Data User</div>
 
                 <div class="card-body">
-                    <a href="{{ route($routePrefix .'.create') }}" class="btn btn-primary">Tambah Admin</a>
+                    <a href="useradmin/create" class="btn btn-primary">Tambah Admin</a>
                     <table class="table table-light table-striped">
                         <thead>
                             <tr>
