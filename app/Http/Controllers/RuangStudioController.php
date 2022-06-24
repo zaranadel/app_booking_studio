@@ -46,6 +46,7 @@ class RuangStudioController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'namaruangstudio' => 'required',
             'harga' => 'required|numeric',
             'gambar' => 'nullable|image|mimes:jpg,png,jpeg|max:2000',
             'deskripsi' => 'nullable',
@@ -55,6 +56,7 @@ class RuangStudioController extends Controller
         }
 
         $model = new Model();
+        $model->namaruangstudio = $request->namaruangstudio;
         $model->harga = $request->harga;
         $model->gambar = $request->gambar;
         $model->deskripsi = $request->deskripsi;
@@ -102,12 +104,14 @@ class RuangStudioController extends Controller
     {
         $request->validate([
             'id_ruangstudio' => 'required|numeric|unique:id_ruangstudio,' .  $id,
+            'no_ruangstudio' => 'required',
             'harga' => 'required|numeric',
             'gambar' => 'nullable|image|mimes:jpg, png, jpeg|max:2000',
             'deskripsi' => 'required',
         ]);
         $model = Model::findOrFail($id);
         $model->id_ruangstudio = $request->id_ruangstudio;
+        $model->no_ruangstudio = $request->no_ruangstudio;
         $model->harga = $request->harga;
         $model->gambar = $request->gambar;
         $model->deskripsi = $request->deskripsi;

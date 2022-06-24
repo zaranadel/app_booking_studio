@@ -15,7 +15,7 @@
                     <table class="table table-light table-striped">
                         <thead>
                             <tr>
-                                <th>NO</th>
+                                <th>NAMA RUANGAN</th>
                                 <th>GAMBAR</th>
                                 <th>HARGA SEWA/JAM</th>
                                 <th>AKSI</th>
@@ -24,7 +24,7 @@
                         <tbody>
                             @foreach ($models as $item)
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->namaruangstudio }}</td>
                                     <td>{{ $item->foto }}</td>
                                     <td>{{ number_format($item->harga, 0, ",", ".") }}</td>
                                     <td>
@@ -48,6 +48,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <a href="{{ route('sewa.create') }}" class="btn btn-primary">Booking Studio</a>
                 </div>
             </div>
         </section>

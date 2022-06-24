@@ -221,6 +221,15 @@
             </a>            
           </li>
 
+          {{-- <li class="nav-item">
+            <a href="{{ route('sewa.create') }}" class="nav-link {{ request()->is('sewa*') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-guitar"></i>
+              <p>
+                Booking Studio
+              </p>
+            </a>            
+          </li> --}}
+
           <li class="nav-item">
             <a href="{{ route('sewa.index') }}" class="nav-link {{ request()->is('sewa*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-guitar"></i>

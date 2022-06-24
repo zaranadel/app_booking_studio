@@ -23,6 +23,7 @@ Route::middleware(['auth'])->group(function () {
     //Route::get('user', 'UserController');
     Route::resource('ruangstudio', 'RuangStudioController');
     Route::resource('sewa', 'SewaController');
+    
 });
 
 //tesubah

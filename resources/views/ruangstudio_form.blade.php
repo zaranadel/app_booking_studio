@@ -12,6 +12,12 @@
                     {!! Form::model($model, ['route' => $route, 'method' => $method,'files' => true]) !!}
 
 
+                    <div class="form-group">
+                        <label for="namaruangstudio">NAMA RUANG STUDIO</label>
+                        {!! Form::text('namaruangstudio', null, ['class' => 'form-control']) !!}
+                        <span class="text-danger">{{ $errors->first('namaruangstudio') }}</span>
+                     </div>
+
                      <div class="form-group">
                         <label for="gambar">GAMBAR</label>
                         {!! Form::file('gambar', null, ['class' => 'form-control']) !!}

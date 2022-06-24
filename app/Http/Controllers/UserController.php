@@ -107,13 +107,14 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' .  $id,
-            
+            'akses' => 'nullable',
             'password' => 'nullable|confirmed',
             
         ]);
         $model = Model::findOrFail($id);
         $model->name = $request->name;
         $model->email = $request->email;
+        $model->akses = $request->akses;
         
         if ($request->password) {
             $model->password = bcrypt($request->password);

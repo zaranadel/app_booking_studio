@@ -1,32 +1,39 @@
 @extends('layouts.app_adminlte')
-<title>Data Booking</title>
+<title>Booking</title>
 @section('content')
 
 
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header">Data Booking</div>
+                <div class="card-header">Booking</div>
 
                 <div class="card-body">
-                   
+                    @if (auth()->user()->akses == 'admin')
+                    <a href="{{ route($routePrefix .'.create') }}" class="btn btn-primary">Tambah Ruang Studio</a>
+                    @endif
                     <table class="table table-light table-striped">
                         <thead>
                             <tr>
-                               
-                                <th>KODE STUDIO</th>
-                                <th>DI SEWA OLEH</th>
-                                <th>TOTAL BAYAR</th>
+                                <th>NAMA PEMESAN</th>
+                                <th>RUANG STUDIO</th>
+                                <th>NOMOR TELEPON</th>
+                                <th>TGL BOOKING</th>
+                                <th>WAKTU BOOKING</th>
+                                <th>NOMOR TELEPON</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($models as $item)
-                                <tr>
-                                    {{-- , 0, ",", "." --}}
-                                    <td>{{ $item->id }}</td>
-                                    <td>{{ $item->user->name }}</td>
-                                    {{-- <td>{{ $item->ruangstudio->harga }}</td> --}}
+                                <tr>                                    
+                                    <td>{{ $item->nama }}</td>
+                                    <td>{{ $item->namaruangstudio }}</td>
+                                    <td>{{ $item->nama }}</td>
+                                    <td>{{ $item->nama }}</td>
+                                    <td>{{ $item->nama }}</td>
+                                    <td>{{ $item->nama }}</td>
+                                    <td>{{ number_format($item->harga, 0, ",", ".") }}</td>
                                     <td>
                                         {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
 
@@ -38,6 +45,8 @@
                                         
 
                                         <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> Detail</a>
+
+                                        
                                        
                                         
                                         {!! Form::close() !!}
@@ -46,6 +55,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <a href="{{ route('sewa.create') }}" class="btn btn-primary">Booking Studio</a>
                 </div>
             </div>
         </section>

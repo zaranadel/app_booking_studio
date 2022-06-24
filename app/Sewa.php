@@ -17,7 +17,11 @@ class Sewa extends Model
      */
     public function ruangstudio(): BelongsTo
     {
-        return $this->belongsTo(RuangStudio::class, 'ruangstudio_id');
+        return $this->belongsTo(RuangStudio::class)->withDefault();
+    }
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class)->withDefault();
     }
 }
 

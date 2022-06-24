@@ -1,12 +1,12 @@
-{{-- @extends('layouts.app_adminlte')
-<title>Tambah Admin</title>
+@extends('layouts.app_adminlte')
+<title>FORM USER</title>
 @section('content')
 
 
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header">Tambah Adminnn</div>
+                <div class="card-header">Edit User</div>
 
                 <div class="card-body">
                     {!! Form::model($model, ['route' => $route, 'method' => $method]) !!}
@@ -23,11 +23,7 @@
                         <span class="text-danger">{{ $errors->first('email') }}</span>
                      </div>
 
-                     <div class="form-group">
-                        <label for="telp">NOMOR TELEPON</label>
-                        {!! Form::number('telp', null, ['class' => 'form-control', 'autofocus' => true]) !!}
-                        <span class="text-danger">{{ $errors->first('telp') }}</span>
-                     </div>
+                     
 
                      <div class="form-group">
                         <label for="password">Password</label>
@@ -42,10 +38,9 @@
                      </div>
 
                      <div class="form-group">
-                      <label for="akses">Daftar Sebagai</label>
+                      <label for="akses">Akses</label>
                       {!! Form::select('akses', [
-                        'admin' => 'admin',
-                        'pelanggan' => 'pelanggan',
+                        'pelanggan' => 'Pelanggan',
                       ], null, ['class' => 'form-control']) !!}
                       <span class="text-danger">{{ $errors->first('akses') }}</span>
                    </div>
@@ -62,4 +57,4 @@
         </section>
         <!-- /.content -->
       
-@endsection --}}
+@endsection
