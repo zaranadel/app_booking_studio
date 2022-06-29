@@ -36,7 +36,7 @@ class SewaController extends Controller
         $data['route'] = $this->routePrefix . '.store';
         $data['namaTombol'] = 'Booking';
         $data['ruangstudioList'] = \App\RuangStudio::pluck('namaruangstudio', 'id');
-        return view($this->viewPrefix . '_show', $data);
+        return view($this->viewPrefix . '_form', $data);
     }
 
     /**
@@ -47,25 +47,29 @@ class SewaController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $requestData = $request->validate([
             'nama' => 'required',
-            'namaruangstudio' => 'required',
             'telp' => 'required|numeric', 
+            'ruangstudio_id'=>'required',
             'total_bayar' => 'nullable|numeric',
             'jam_sewa' => 'required|after:now',
             'tgl_sewa' => 'required|after:yesterday', 
-            'status' => 'nullable',          
+            'status' => 'nullable',       
+            // 'dibuat_oleh'=>'required'  ,
         ]);
-        dd($sewa);
-        $model = new Model();
-        $model->nama = $request->nama;
-        $model->telp = $request->telp;
-        $model->total_bayar = $request->total_bayar;
-        $model->jam_sewa = $request->jam_sewa;
-        $model->tgl_sewa = $request->tgl_sewa;
-        $model->namaruangstudio = $request->namaruangstudio;
-        $model->status = 'proses';
-        $model->save();
+        // dd($requestData);
+        // $model = new Model();
+        // $model->nama = $request->nama;
+        // $model->telp = $request->telp;
+        // $model->ruangstudio_id =$request->ruangstudio->id;
+        // $model->total_bayar = $request->total_bayar;
+        // $model->jam_sewa = $request->jam_sewa;
+        // $model->tgl_sewa = $request->tgl_sewa;
+        // $model->namaruangstudio = $request->namaruangstudio;
+        // $model->status = 'proses';
+        // $model->save();
+        // $requestData['dibuat_oleh'] = Auth::user()->id;
+        Model::create($requestData);
         flash("Data Booking Berhasil Dibuat");
         return redirect()->route('sewa.index');
         
@@ -79,7 +83,8 @@ class SewaController extends Controller
      */
     public function show($id)
     {
-        
+        $data['model'] = Model::findOrFail ($id);
+        return view($this->viewPrefix . '_show', $data);
     }
     
     /**

@@ -18,7 +18,7 @@
                                 <th>NOMOR TELEPON</th>
                                 <th>TGL BOOKING</th>
                                 <th>WAKTU BOOKING</th> 
-                                <th>HARGA/JAM</th>                                
+                                <th>TOTAL BAYAR</th>                                
                                 <th>AKSI</th>
                             </tr>
                         </thead>
@@ -30,7 +30,7 @@
                                     <td>{{ $model->telp->format('numeric') }}</td>
                                     <td>{{ $model->tgl_sewa->format('d/m/y H:i') }}</td>
                                     <td>{{ $model->jam_sewa }}</td>
-                                    <td>{{ $model->harga }}</td>
+                                    <td>{{ $model->total_bayar }}</td>
                                     <td>{{ number_format($item->harga, 0, ",", ".") }}</td>
                                     <td>
                                         {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}

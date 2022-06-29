@@ -18,7 +18,7 @@
                                 <th>NOMOR TELEPON</th>
                                 <th>TGL BOOKING</th>
                                 <th>WAKTU BOOKING</th> 
-                                <th>HARGA/JAM</th>                                
+                                <th>TOTAL BAYAR</th>                                
                                 <th>AKSI</th>
                             </tr>
                         </thead>
@@ -26,11 +26,12 @@
                             @foreach ($models as $item)
                                 <tr>                                    
                                     <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->namaruangstudio }}</td>
+                                    <td>{{ $item->ruangstudio->namaruangstudio }}</td>
                                     <td>{{ $item->telp }}</td>
                                     <td>{{ $item->tgl_sewa }}</td>
                                     <td>{{ $item->jam_sewa }}</td>
-                                    <td>{{ number_format($item->harga, 0, ",", ".") }}</td>
+                                    <td>{{ $item->total_bayar }}</td>
+                                    {{-- <td>{{ number_format($item->harga, 0, ",", ".") }}</td> --}}
                                     <td>
                                         {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
 
