@@ -48,7 +48,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <a href="{{ route('sewa.create') }}" class="btn btn-primary">Booking Studio</a>
+                    <a href="{{ route('sewa.create') }}" class="btn btn-primary mt-3">Booking Studio</a>
                 </div>
             </div>
         </section>
