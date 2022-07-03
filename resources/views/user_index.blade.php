@@ -30,9 +30,10 @@
                         <thead>
                             <tr>
                                 <th>NO</th>
-                                <th>NAMA</th>                                
+                                <th>NAMA</th> 
+                                <th>E-MAIL</th>                                     
                                 {{-- <th>TANGGAL BUAT</th> --}}
-                                <th>KETERANGAN</th>
+                                {{-- <th>KETERANGAN</th> --}}
                                 <th>AKSI</th>
                             </tr>
                         </thead>
@@ -42,7 +43,8 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->name }}</td>                                                                    
                                     {{-- <td>{{ $item->created_at->format ('d/m/Y H:i') }}</td> --}}
-                                    <td>{{ $item->akses }}</td>
+                                    {{-- <td>{{ $item->akses }}</td> --}}
+                                    <td>{{ $item->email }}</td>
                                     <td>
                                         {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
 

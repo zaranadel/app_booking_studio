@@ -6,13 +6,14 @@
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header">Booking</div>
+                <div class="card-header">DATA BOOKING</div>
 
                 <div class="card-body">
                    
                     <table class="table table-light table-striped">
                         <thead>
                             <tr>
+                                <th>NO.</th>
                                 <th>NAMA PEMESAN</th>
                                 <th>RUANG STUDIO</th>
                                 <th>NOMOR TELEPON</th>
@@ -24,7 +25,8 @@
                         </thead>
                         <tbody>
                             @foreach ($models as $item)
-                                <tr>                                    
+                                <tr>                   
+                                    <td>{{ $loop->iteration }}</td>                 
                                     <td>{{ $item->nama }}</td>
                                     <td>{{ $item->ruangstudio->namaruangstudio }}</td>
                                     <td>{{ $item->telp }}</td>

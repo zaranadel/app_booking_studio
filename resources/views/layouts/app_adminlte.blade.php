@@ -204,7 +204,7 @@
 
           <li class="nav-item">
             <a href="{{ route('sewa.index') }}" class="nav-link {{ request()->is('sewa*') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-guitar"></i>
+              <i class="nav-icon fas fa-book"></i>
               <p>
                 Data Booking
               </p>

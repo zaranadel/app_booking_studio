@@ -6,7 +6,7 @@
     <!-- Main content -->
     <section class="content">           
                     <div class="card">
-                        <div class="card-header">PROFIL DETAIL : {{ strtoupper ($model->name) }}</div>
+                        <div class="card-header">PROFIL DETAIL : {{ ($model->name) }}</div>
                         <div class="card-body">
                             <table class="table table-striped mb-4">
                                 <thead>
@@ -29,9 +29,13 @@
                                         <td>: {{ $model->created_at->format('d/m/y H:i') }}</td>
                                     </tr>
                                     <tr>
+                                        <td>KETERANGAN</td>
+                                        <td>: {{ $model->akses }}</td>
+                                    </tr>
+                                    {{-- <tr>
                                         <td>TANGGAL UPDATE</td>
                                         <td>: {{ $model->updated_at->format('d/m/y H:i') }}</td>
-                                    </tr>
+                                    </tr> --}}
                                     
                                 </thead>  
                             </table>
