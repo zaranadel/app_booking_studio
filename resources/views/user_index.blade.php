@@ -26,7 +26,7 @@
                         </div>
                     </div> --}}
 
-                    <table class="table table-light table-striped">
+                    <table class="table table-light table-striped" style="font-size: 14px">
                         <thead>
                             <tr>
                                 <th>NO</th>
@@ -48,11 +48,11 @@
                                     <td>
                                         {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
 
-                                        <a href="{{ route($routePrefix .'.edit', $item->id) }}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
+                                        <a href="{{ route($routePrefix .'.edit', $item->id) }}" class="btn btn-warning"><i class="fa fa-edit"></i> </a>
 
-                                        <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> Detail</a>
+                                        <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> </a>
                                        
-                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</button>
+                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> </button>
                                         
                                         {!! Form::close() !!}
                                     </td>
