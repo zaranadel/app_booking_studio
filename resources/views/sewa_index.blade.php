@@ -10,7 +10,7 @@
 
                 <div class="card-body">
                    
-                    <table class="table table-light table-striped " style="font-size: 14px">
+                    <table class="table table-light table-striped table-bordered" style="font-size: 14px">
                         <thead>
                             <tr>
                                 <th>NO.</th>
@@ -18,8 +18,9 @@
                                 <th>RUANG STUDIO</th>
                                 <th>NOMOR TELEPON</th>
                                 <th>TGL BOOKING</th>
-                                <th>WAKTU BOOKING</th> 
-                                <th>TOTAL BAYAR</th>                                
+                                <th>JAM MULAI</th> 
+                                <th>JAM SELESAI</th> 
+                                <th>TOTAL BAYAR (Rp.)</th>                                
                                 <th>AKSI</th>
                             </tr>
                         </thead>
@@ -32,6 +33,7 @@
                                     <td>{{ $item->telp }}</td>
                                     <td>{{ $item->tgl_sewa }}</td>
                                     <td>{{ $item->jam_sewa }}</td>
+                                    <td>{{ $item->selesai_sewa }}</td>
                                     <td>{{ $item->total_bayar }}</td>
                                     {{-- <td>{{ number_format($item->harga, 0, ",", ".") }}</td> --}}
                                     <td>

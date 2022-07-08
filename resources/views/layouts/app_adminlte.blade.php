@@ -224,7 +224,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ route('home') }}" class="nav-link {{ request()->is('gallery*') ? 'active' : '' }}">
+            <a href="{{ route('gallery.index') }}" class="nav-link {{ request()->is('gallery*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-image"></i>
               <p>
                 Gallery Studio
@@ -246,7 +246,7 @@
           
 
           <li class="nav-item">
-            <a href="{{ route('home') }}" class="nav-link {{ request()->is('gallery*') ? 'active' : '' }}">
+            <a href="{{ route('home') }}" class="nav-link {{ request()->is('laporan*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-file"></i>
               <p>
                 Laporan

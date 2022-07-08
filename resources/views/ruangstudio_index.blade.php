@@ -17,7 +17,7 @@
                             <tr>
                                 <th>NAMA RUANGAN</th>
                                 <th>GAMBAR</th>
-                                <th>HARGA SEWA/JAM</th>
+                                <th>HARGA SEWA PER JAM (Rp.)</th>
                                 <th>AKSI</th>
                             </tr>
                         </thead>
