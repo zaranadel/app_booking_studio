@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use \App\Sewa as Model;
+// use \App\RuangStudio;
 
 class SewaController extends Controller
 {
@@ -16,7 +17,7 @@ class SewaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {        
         $models = Model::latest()->paginate(15);
         $data['models'] = $models;
         $data['routePrefix'] = $this->routePrefix;

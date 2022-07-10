@@ -9,6 +9,20 @@
                 <div class="card-header">DATA BOOKING</div>
 
                 <div class="card-body">
+                    {{-- <div class="row">
+                        <div class="col-md-8">
+                            <div class="input-group mb-3">
+                            {!! Form::open(['method' => 'GET']) !!}
+                                <div class="custom-file">
+                                {!! Form::text('q', request('q'), ['class' => 'form-control']) !!}
+                                </div>
+                                <div class="input-group-append">
+                                {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!}
+                                </div>
+                            </div>
+                            {!! Form::close() !!}
+                        </div>
+                    </div> --}}
                    
                     <table class="table table-light table-striped table-bordered" style="font-size: 14px">
                         <thead>
@@ -40,13 +54,13 @@
                                         {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
 
                                         @if (auth()->user()->akses == 'admin')
-                                        <a href="{{ route($routePrefix .'.edit', $item->id) }}" class="btn btn-warning "><i class="fa fa-edit"></i> </a>
+                                        {{-- <a href="{{ route($routePrefix .'.edit', $item->id) }}" class="btn btn-warning "><i class="fa fa-edit"></i> </a> --}}
 
                                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> </button>
                                         @endif
                                         
 
-                                        <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> </a>
+                                        {{-- <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> </a> --}}
 
                                         
                                        

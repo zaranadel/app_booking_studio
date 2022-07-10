@@ -4,11 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class RuangStudio extends Model
 {
+    use SearchableTrait;
     protected $table = 'ruangstudio';
     protected $guarded = [];
+    protected $searchable = [        
+        'columns' => [          
+            'namaruangstudio' => 1,
+            'harga' => 2,
+        ],
+    ];
 
      /**
      * Get the user that owns the Sewa

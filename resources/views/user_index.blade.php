@@ -26,7 +26,7 @@
                         </div>
                     </div> --}}
 
-                    <table class="table table-light table-striped" style="font-size: 14px">
+                    <table class="table table-light table-striped table-bordered" style="font-size: 14px">
                         <thead>
                             <tr>
                                 <th>NO</th>

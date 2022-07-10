@@ -4,11 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+// use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Sewa extends Model
 {
+    // use SearchableTrait;
     protected $table = 'sewa';
     protected $guarded = [];
+    // protected $searchable = [
+        
+    //     'columns' => [          
+    //         'nama' => 10,
+    //     ],
+    // ];
 
      /**
      * Get the user that owns the Sewa
@@ -21,7 +29,7 @@ class Sewa extends Model
     }
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class)->withDefault();
+        return $this->belongsTo(User::class);
     }
 }
 

@@ -12,7 +12,21 @@
                     @if (auth()->user()->akses == 'admin')
                     <a href="{{ route($routePrefix .'.create') }}" class="btn btn-primary">Tambah Ruang Studio</a>
                     @endif
-                    <table class="table table-light table-striped" style="font-size: 14px">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="input-group mb-3">
+                            {!! Form::open(['method' => 'GET']) !!}
+                                <div class="custom-file">
+                                {!! Form::text('q', request('q'), ['class' => 'form-control']) !!}
+                                </div>
+                                <div class="input-group-append">
+                                {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!}
+                                </div>
+                            </div>
+                            {!! Form::close() !!}
+                        </div>
+                    </div>
+                    <table class="table table-light table-striped table-bordered" style="font-size: 14px">
                         <thead>
                             <tr>
                                 <th>NAMA RUANGAN</th>
