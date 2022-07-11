@@ -14,7 +14,6 @@ class RuangStudio extends Model
     protected $searchable = [        
         'columns' => [          
             'namaruangstudio' => 1,
-            'harga' => 2,
         ],
     ];
 

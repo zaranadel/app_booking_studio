@@ -12,6 +12,7 @@
                     @if (auth()->user()->akses == 'admin')
                     <a href="{{ route($routePrefix .'.create') }}" class="btn btn-primary">Tambah Ruang Studio</a>
                     @endif
+
                     <div class="row">
                         <div class="col-md-8">
                             <div class="input-group mb-3">
@@ -26,6 +27,19 @@
                             {!! Form::close() !!}
                         </div>
                     </div>
+
+                    {{-- <div class="card-tools">
+                        <form action="/ruangstudio/search" class="form-inline" method="GET">
+                            <input type="search" name="search" class="form-control float-right" placeholder="ss">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+
+                    </div> --}}
+
                     <table class="table table-light table-striped table-bordered" style="font-size: 14px">
                         <thead>
                             <tr>

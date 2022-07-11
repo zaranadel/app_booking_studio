@@ -14,7 +14,7 @@
 
                     <div class="form-group">
                         <label for="namaruangstudio">NAMA RUANG STUDIO</label>
-                        {!! Form::text('namaruangstudio', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('namaruangstudio', null, ['class' => 'form-control', 'placeholder' => 'Masukkan Nama']) !!}
                         <span class="text-danger">{{ $errors->first('namaruangstudio') }}</span>
                      </div>
 
@@ -25,14 +25,14 @@
                      </div>
 
                      <div class="form-group">
-                        <label for="harga">HARGA / JAM</label>
-                        {!! Form::text('harga', null, ['class' => 'form-control']) !!}
+                        <label for="harga">HARGA / JAM (Rp.)</label>
+                        {!! Form::text('harga', null, ['class' => 'form-control', 'placeholder' => 'Contoh: 50000']) !!}
                         <span class="text-danger">{{ $errors->first('harga') }}</span>
                      </div>
 
                      <div class="form-group">
                         <label for="deskripsi">DESKRIPSI</label>
-                        {!! Form::text('deskripsi', null, ['class' => 'form-control', 'autofocus' => true]) !!}
+                        {!! Form::text('deskripsi', null, ['class' => 'form-control', 'autofocus' => true, 'placeholder' => 'Masukkan Deskripsi']) !!}
                         <span class="text-danger">{{ $errors->first('deskripsi') }}</span>
                      </div>
 

@@ -24,9 +24,11 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('ruangstudio', 'RuangStudioController');
     Route::resource('sewa', 'SewaController');
     Route::resource('gallery', 'GalleryController');
+    
 });
-
+// Route::get('/ruangstudio/search', [RuangStudioController::class, 'search']);
 //tesubah
+
 
 Route::get('/', function () {
     return view('welcome');

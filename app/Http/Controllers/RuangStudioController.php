@@ -21,8 +21,7 @@ class RuangStudioController extends Controller
             $models = Model::search(request('q'))->paginate(100);
         }else{
             $models = Model::orderBy('id', 'desc')->paginate(100);
-        }
-        
+        }        
         // $models = Model::latest()->paginate(10);
         $data['models'] = $models;
         $data['routePrefix'] = $this->routePrefix;
@@ -145,4 +144,13 @@ class RuangStudioController extends Controller
         flash("Data Berhasil Dihapus");
         return back();
     }
+
+    // public function search(Request $request) {
+    //     if($request->has('search')){
+    //         $ruangstudio = RuangStudio::where('namaruangstudio', 'LIKE', '%'.$request->search.'%')->get();
+    //     } else {
+    //         $ruangstudio = RuangStudio::all();
+    //     }
+    //     return view($this->viewPrefix . '_index', $data);
+    // }
 }

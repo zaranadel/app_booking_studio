@@ -26,8 +26,8 @@
                      </div>
 
                      <div class="form-group">
-                        <label for="telp">NOMOR TELEPON</label>
-                        {!! Form::number('telp', null, ['class' => 'form-control', 'placeholder' => '08xxxxxxxxxx']) !!}
+                        <label for="telp">NOMOR HP</label>
+                        {!! Form::number('telp', null, ['class' => 'form-control', 'placeholder' => 'Masukkan Nomor HP']) !!}
                         <span class="text-danger">{{ $errors->first('telp') }}</span>
                      </div>
 

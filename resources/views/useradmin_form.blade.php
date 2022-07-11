@@ -13,13 +13,13 @@
                     
                      <div class="form-group">
                         <label for="name">NAMA</label>
-                        {!! Form::text('name', null, ['class' => 'form-control', 'autofocus' => true]) !!}
+                        {!! Form::text('name', null, ['class' => 'form-control', 'autofocus' => true, 'placeholder' => 'Masukkan Nama']) !!}
                         <span class="text-danger">{{ $errors->first('name') }}</span>
                      </div>
 
                      <div class="form-group">
                         <label for="email">EMAIL</label>
-                        {!! Form::email('email', null, ['class' => 'form-control']) !!}
+                        {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'user@example.com']) !!}
                         <span class="text-danger">{{ $errors->first('email') }}</span>
                      </div>
 
@@ -31,13 +31,13 @@
 
                      <div class="form-group">
                         <label for="password">Password</label>
-                        {!! Form::password('password', ['class' => 'form-control']) !!}
+                        {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Masukkan Password']) !!}
                         <span class="text-danger">{{ $errors->first('password') }}</span>
                      </div>
 
                      <div class="form-group">
                         <label for="password_confirmation">Konfirmasi Password</label>
-                        {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
+                        {!! Form::password('password_confirmation', ['class' => 'form-control', 'placeholder' => 'Konfirmasi Password']) !!}
                         <span class="text-danger">{{ $errors->first('password_confirmation') }}</span>
                      </div>
 
