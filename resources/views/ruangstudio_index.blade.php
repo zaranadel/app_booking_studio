@@ -10,15 +10,15 @@
 
                 <div class="card-body">
                     @if (auth()->user()->akses == 'admin')
-                    <a href="{{ route($routePrefix .'.create') }}" class="btn btn-primary">Tambah Ruang Studio</a>
+                    <a href="{{ route($routePrefix .'.create') }}" class="btn btn-primary mb-2">Tambah Ruang Studio</a>
                     @endif
 
                     <div class="row">
                         <div class="col-md-8">
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-2">
                             {!! Form::open(['method' => 'GET']) !!}
                                 <div class="custom-file">
-                                {!! Form::text('q', request('q'), ['class' => 'form-control']) !!}
+                                {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Search...']) !!}
                                 </div>
                                 <div class="input-group-append">
                                 {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!}
@@ -43,6 +43,7 @@
                     <table class="table table-light table-striped table-bordered" style="font-size: 14px">
                         <thead>
                             <tr>
+                                <th>NO.</th>
                                 <th>NAMA RUANGAN</th>
                                 <th>GAMBAR</th>
                                 <th>HARGA SEWA PER JAM (Rp.)</th>
@@ -52,6 +53,7 @@
                         <tbody>
                             @foreach ($models as $item)
                                 <tr>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->namaruangstudio }}</td>
                                     <td>{{ $item->foto }}</td>
                                     <td>{{ number_format($item->harga, 0, ",", ".") }}</td>
