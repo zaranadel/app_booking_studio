@@ -40,7 +40,7 @@ class GalleryController extends Controller
         $data['model'] = $model;
         $data['method'] = 'POST';
         $data['route'] = $this->routePrefix . '.store';
-        $data['namaTombol'] = 'Simpan';
+        $data['namaTombol'] = 'Upload';
         return view($this->viewPrefix . '_form', $data);
     }
 

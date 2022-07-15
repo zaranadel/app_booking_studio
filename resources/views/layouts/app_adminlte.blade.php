@@ -205,7 +205,7 @@
 
           @if (auth()->user()->akses == 'admin')
           <li class="nav-item">
-            <a href="{{ route('sewa.index') }}" class="nav-link {{ request()->is('sewa*') ? 'active' : '' }}">
+            <a href="{{ route('sewa.index') }}" class="nav-link {{ request()->is('sewa') ? 'active' : '' }}">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Data Booking
@@ -233,10 +233,20 @@
               </li>            
             
             <li class="nav-item">
-              <a href="{{ route('sewa.create') }}" class="nav-link {{ request()->is('sewa*') ? 'active' : '' }}">
+              <a href="{{ route('sewa.create') }}" class="nav-link {{ request()->is('sewa/create') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>
                   Form Booking
+                </p>
+              </a> 
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+              {{-- <a href="{{ route('sewapelanggan.show') }}" class="nav-link {{ request()->is('sewapelanggan/show') ? 'active' : '' }}"> --}}
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                  Detail Booking
                 </p>
               </a> 
             </li>

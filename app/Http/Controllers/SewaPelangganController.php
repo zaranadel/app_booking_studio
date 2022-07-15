@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 use \App\Sewa as Model;
 // use \App\RuangStudio;
 
-class SewaController extends Controller
+class SewaPelangganController extends Controller
 {
-    private $viewPrefix = "sewa";
-    private $routePrefix = "sewa";
+    private $viewPrefix = "sewapelanggan";
+    private $routePrefix = "sewapelanggan";
     /**
      * Display a listing of the resource.
      *
