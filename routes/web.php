@@ -24,6 +24,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('ruangstudio', 'RuangStudioController');
     Route::resource('sewa', 'SewaController');
     Route::resource('gallery', 'GalleryController');
+    Route::resource('sewapelanggan', 'SewaPelangganController');
     
 });
 // Route::get('/ruangstudio/search', [RuangStudioController::class, 'search']);

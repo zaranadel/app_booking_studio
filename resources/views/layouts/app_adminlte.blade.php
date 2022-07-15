@@ -203,6 +203,7 @@
           </li>
           @endif
 
+          @if (auth()->user()->akses == 'admin')
           <li class="nav-item">
             <a href="{{ route('sewa.index') }}" class="nav-link {{ request()->is('sewa*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-book"></i>
@@ -211,18 +212,43 @@
               </p>
             </a>            
           </li>
+          @endif
 
-          
-          
-
-          <li class="nav-item">
-            <a href="{{ route('ruangstudio.index') }}" class="nav-link {{ request()->is('ruangstudio*') ? 'active' : '' }}">
+          <li class="nav-item">            
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-guitar"></i>
               <p>
                 Ruang Studio
+                <i class="fas fa-angle-left right"></i>
               </p>
-            </a>            
-          </li>
+            </a>  
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('ruangstudio.index') }}" class="nav-link {{ request()->is('ruangstudio*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-guitar"></i>
+                  <p>
+                    Profil Ruang Studio
+                  </p>
+                </a>            
+              </li>            
+            
+            <li class="nav-item">
+              <a href="{{ route('sewa.create') }}" class="nav-link {{ request()->is('sewa*') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  Form Booking
+                </p>
+              </a> 
+            </li>
+            </ul>           
+            </li>
+
+        
+
+          
+          
+
+          
 
           <li class="nav-item">
             <a href="{{ route('gallery.index') }}" class="nav-link {{ request()->is('gallery*') ? 'active' : '' }}">

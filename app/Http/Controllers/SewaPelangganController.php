@@ -4,30 +4,21 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
-use \App\User as Model;
+use \App\Sewa as Model;
+// use \App\RuangStudio;
 
-class UserController extends Controller
+class SewaController extends Controller
 {
-    private $viewPrefix = "user";
-    private $routePrefix = "user";
+    private $viewPrefix = "sewa";
+    private $routePrefix = "sewa";
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        // if (request()->filled('q')) {
-        //     $models = Model::search(request('q'))->paginate(100);
-        // } else {
-        //     $models = Model::orderBy('id', 'desc')->paginate(100);
-        // }
-        if (request()->filled('q')) {
-            $models = Model::search(request('q'))->paginate(100);
-        }else{
-            $models = Model::orderBy('id', 'desc')->paginate(100);
-        }        
-        // $models = Model::latest()->paginate(15);
+    {        
+        $models = Model::latest()->paginate(15);
         $data['models'] = $models;
         $data['routePrefix'] = $this->routePrefix;
         return view($this->viewPrefix . '_index', $data);
@@ -44,7 +35,8 @@ class UserController extends Controller
         $data['model'] = $model;
         $data['method'] = 'POST';
         $data['route'] = $this->routePrefix . '.store';
-        $data['namaTombol'] = 'Simpan';
+        $data['namaTombol'] = 'Booking';
+        $data['ruangstudioList'] = \App\RuangStudio::pluck('namaruangstudio', 'id');
         return view($this->viewPrefix . '_form', $data);
     }
 
@@ -56,25 +48,33 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'akses' => 'nullable',
-            
-            'password' => 'required|confirmed',
-            
-
+        $requestData = $request->validate([
+            'nama' => 'required',
+            'telp' => 'required|numeric', 
+            'ruangstudio_id'=>'required',
+            'total_bayar' => 'nullable|numeric',
+            'jam_sewa' => 'required|after:now',
+            'selesai_sewa' => 'required|after:$jam_sewa',
+            'tgl_sewa' => 'required|after:yesterday', 
+            'status' => 'nullable',       
+            // 'dibuat_oleh'=>'required'  ,
         ]);
-        $model = new Model();
-        $model->name = $request->name;
-        $model->email = $request->email;
-        $model->akses = $request->akses;
+        // dd($requestData);
+        // $model = new Model();
+        // $model->nama = $request->nama;
+        // $model->telp = $request->telp;
+        // $model->ruangstudio_id =$request->ruangstudio->id;
+        // $model->total_bayar = $request->total_bayar;
+        // $model->jam_sewa = $request->jam_sewa;
+        // $model->tgl_sewa = $request->tgl_sewa;
+        // $model->namaruangstudio = $request->namaruangstudio;
+        // $model->status = 'proses';
+        // $model->save();
+        // $requestData['dibuat_oleh'] = Auth::user()->id;
+        Model::create($requestData);
+        flash("Data Booking Berhasil Dibuat");
+        return redirect()->route('sewa.index');
         
-        $model->password = bcrypt($request->password);
-        
-        $model->save();
-        flash("Data berhasil disimpan");
-        return back();
     }
 
     /**
@@ -117,14 +117,13 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' .  $id,
-            'akses' => 'nullable',
+            
             'password' => 'nullable|confirmed',
             
         ]);
         $model = Model::findOrFail($id);
         $model->name = $request->name;
         $model->email = $request->email;
-        $model->akses = $request->akses;
         
         if ($request->password) {
             $model->password = bcrypt($request->password);
@@ -143,10 +142,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        if($id == 1){
-            flash("Akun Pemilik Tidak Dapat Dihapus!!")->error();
-            return back();
-        }
+        // if($id == 1){
+        //     flash("Akun Pemilik Tidak Dapat Dihapus!!")->error();
+        //     return back();
+        // }
         $model = Model::findOrFail($id);
         $model->delete();
         flash("Data Berhasil Dihapus");

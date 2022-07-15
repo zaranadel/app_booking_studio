@@ -11,7 +11,12 @@ class User extends Authenticatable
 {
     
     use Notifiable;
-
+    use SearchableTrait;
+    protected $searchable = [        
+        'columns' => [          
+            'name' => 1,
+        ],
+    ];
     
 
     /**
@@ -41,6 +46,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+
 
 // class User extends Model
 // {

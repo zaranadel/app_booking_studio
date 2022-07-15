@@ -11,6 +11,21 @@
                 <div class="card-body">
                     <a href="useradmin/create" class="btn btn-primary mb-3">Tambah Admin</a>
 
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="input-group mb-2">
+                            {!! Form::open(['method' => 'GET']) !!}
+                                <div class="custom-file">
+                                {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Search...']) !!}
+                                </div>
+                                <div class="input-group-append">
+                                {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!}
+                                </div>
+                            </div>
+                            {!! Form::close() !!}
+                        </div>
+                    </div>
+
                     {{-- <div class="row">
                         <div class="col-md-8">
                             {!! Form::open(['method' => "GET"]) !!}
