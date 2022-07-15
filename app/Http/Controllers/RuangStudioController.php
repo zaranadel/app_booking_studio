@@ -135,22 +135,9 @@ class RuangStudioController extends Controller
      */
     public function destroy($id)
     {
-        //if($id == 1){
-            //flash("Akun Pemilik Tidak Dapat Dihapus!!")->error();
-            //return back();
-       // }
         $model = Model::findOrFail($id);
         $model->delete();
         flash("Data Berhasil Dihapus");
         return back();
     }
-
-    // public function search(Request $request) {
-    //     if($request->has('search')){
-    //         $ruangstudio = RuangStudio::where('namaruangstudio', 'LIKE', '%'.$request->search.'%')->get();
-    //     } else {
-    //         $ruangstudio = RuangStudio::all();
-    //     }
-    //     return view($this->viewPrefix . '_index', $data);
-    // }
 }

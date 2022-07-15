@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use \App\Gallery as Model;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
@@ -52,21 +53,18 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'akses' => 'nullable',
-            
-            'password' => 'required|confirmed',
-            
-
+            'gallery' => 'required|image|mimes:jpg,png,jpeg|max:2000',
+            'nama' => 'required',
+            'merek' => 'required',            
         ]);
+        if ($request->hasFile('gallery')){
+            $path = $request->file('gallery')->store('public/images');
+        }
+
         $model = new Model();
-        $model->name = $request->name;
-        $model->email = $request->email;
-        $model->akses = $request->akses;
-        
-        $model->password = bcrypt($request->password);
-        
+        $model->gallery = $request->gallery;
+        $model->nama = $request->nama;  
+        $model->merek = $request->merek;          
         $model->save();
         flash("Data berhasil disimpan");
         return back();
@@ -110,21 +108,16 @@ class GalleryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email,' .  $id,
-            'akses' => 'nullable',
-            'password' => 'nullable|confirmed',
+            'gallery' => 'required|image|mimes:jpg, png, jpeg|max:2000',
+            'nama' => 'required',
+            'merek' => 'required',
+            
             
         ]);
         $model = Model::findOrFail($id);
-        $model->name = $request->name;
-        $model->email = $request->email;
-        $model->akses = $request->akses;
-        
-        if ($request->password) {
-            $model->password = bcrypt($request->password);
-        }
-        
+        $model->gallery = $request->gallery;
+        $model->nama = $request->nama;
+        $model->merek = $request->merek;        
         $model->save();
         flash("Data berhasil diupdate");
         return back();
@@ -138,10 +131,6 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        if($id == 1){
-            flash("Akun Pemilik Tidak Dapat Dihapus!!")->error();
-            return back();
-        }
         $model = Model::findOrFail($id);
         $model->delete();
         flash("Data Berhasil Dihapus");

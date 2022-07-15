@@ -18,10 +18,14 @@
                             <div class="input-group mb-2">
                             {!! Form::open(['method' => 'GET']) !!}
                                 <div class="custom-file">
-                                {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Search...']) !!}
+                                {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Berdasarkan nama...']) !!}
                                 </div>
+                               
+                                
                                 <div class="input-group-append">
-                                {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!}
+                                    <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                    
+                                {{-- {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!} --}}
                                 </div>
                             </div>
                             {!! Form::close() !!}
@@ -47,7 +51,7 @@
                                 <th>NAMA RUANGAN</th>
                                 <th>GAMBAR</th>
                                 <th>HARGA SEWA PER JAM (Rp.)</th>
-                                <th>AKSI</th>
+                                <th>DETAIL</th>
                             </tr>
                         </thead>
                         <tbody>

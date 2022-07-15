@@ -225,7 +225,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{ route('ruangstudio.index') }}" class="nav-link {{ request()->is('ruangstudio*') ? 'active' : '' }}">
-                  <i class="nav-icon fas fa-guitar"></i>
+                  <i class="far fa-circle nav-icon"></i>
                   <p>
                     Profil Ruang Studio
                   </p>
@@ -234,7 +234,7 @@
             
             <li class="nav-item">
               <a href="{{ route('sewa.create') }}" class="nav-link {{ request()->is('sewa*') ? 'active' : '' }}">
-                <i class="nav-icon fas fa-book"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>
                   Form Booking
                 </p>
