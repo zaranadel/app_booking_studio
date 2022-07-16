@@ -53,8 +53,8 @@ class SewaController extends Controller
             'telp' => 'required|numeric', 
             'ruangstudio_id'=>'required',
             'total_bayar' => 'nullable|numeric',
-            'jam_sewa' => 'required|after:now',
-            'selesai_sewa' => 'required|after:$jam_sewa',
+            'jam_sewa' => 'required',
+            'selesai_sewa' => 'required',
             'tgl_sewa' => 'required|after:yesterday', 
             'status' => 'nullable',       
             // 'dibuat_oleh'=>'required'  ,
@@ -87,6 +87,9 @@ class SewaController extends Controller
     {
         $data['model'] = Model::findOrFail ($id);
         return view($this->viewPrefix . '_show', $data);
+            // $model = \App\Sewa::findOrFail($id);
+            // $data['model'] = $model;
+            // return view('sewa_show');
     }
     
     /**

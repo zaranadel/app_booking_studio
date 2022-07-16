@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 // use Nicolaslopezj\Searchable\SearchableTrait;
 
@@ -11,6 +12,7 @@ class Sewa extends Model
     // use SearchableTrait;
     protected $table = 'sewa';
     protected $guarded = [];
+    protected $dates = ['tgl_sewa'];
     // protected $searchable = [
         
     //     'columns' => [          
@@ -30,6 +32,21 @@ class Sewa extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get the user associated with the Sewa
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function bayar(): HasOne
+    {
+        return $this->hasOne(Bayar::class);
+    }
+
+    public function getJumlahRupiah()
+    {
+        return number_format($this->jumlah, 0, ",",".");
     }
 }
 
