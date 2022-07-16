@@ -22,13 +22,7 @@
                         {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'user@example.com']) !!}
                         <span class="text-danger">{{ $errors->first('email') }}</span>
                      </div>
-
-                     {{-- <div class="form-group">
-                        <label for="telp">NOMOR TELEPON</label>
-                        {!! Form::number('telp', null, ['class' => 'form-control', 'autofocus' => true]) !!}
-                        <span class="text-danger">{{ $errors->first('telp') }}</span>
-                     </div> --}}
-
+                   
                      <div class="form-group">
                         <label for="password">Password</label>
                         {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Masukkan Password']) !!}

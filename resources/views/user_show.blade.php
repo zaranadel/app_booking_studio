@@ -21,9 +21,7 @@
                                     <tr>
                                         <td>EMAIL</td>
                                         <td>: {{ $model->email }}</td>
-                                    </tr>
-                                                                  
-                                    
+                                    </tr>                  
                                     <tr>
                                         <td>TANGGAL BUAT</td>
                                         <td>: {{ $model->created_at->format('d/m/y H:i') }}</td>

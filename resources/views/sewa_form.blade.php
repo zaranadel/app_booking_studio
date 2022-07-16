@@ -18,7 +18,6 @@
                         <span class="text-danger">{{ $errors->first('nama') }}</span>
                      </div>
 
-
                      <div class="form-group">
                         <label for="ruangstudio_id">RUANG STUDIO</label>
                         {!! Form::select('ruangstudio_id', $ruangstudioList, null, ['class' => 'form-control']) !!}
