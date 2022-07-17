@@ -37,7 +37,7 @@
                                     
                                 </thead>  
                             </table>
-                            <a href="/user" class="btn btn-primary" >Kembali</a>
+                            <a href="/user" class="btn btn-danger" >Kembali</a>
                         </div>                    
                     </div> 
             </section>

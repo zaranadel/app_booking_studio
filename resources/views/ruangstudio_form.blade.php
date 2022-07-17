@@ -18,9 +18,13 @@
                         <span class="text-danger">{{ $errors->first('namaruangstudio') }}</span>
                      </div>
 
+                     @if ($method == "PUT")
+                         <img src="{{ \Storage::url($model->gambar) }}" width="150"/>
+                     @endif
+
                      <div class="form-group">
                         <label for="gambar">GAMBAR</label>
-                        {!! Form::file('gambar', null, ['class' => 'form-control']) !!}
+                        {!! Form::file('gambar', ['class' => 'form-control']) !!}
                         <span class="text-danger">{{ $errors->first('gambar') }}</span>
                      </div>
 

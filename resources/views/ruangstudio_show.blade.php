@@ -8,12 +8,10 @@
                     <div class="card">
                         <div class="card-header">PROFIL DETAIL RUANG STUDIO</div>
                         <div class="card-body">
-                            <table class="table table-striped">
+                            <img src="{{ \Storage::url($model->gambar ?? 'images/no-image.png') }}" width="150">
+                            <table class="table table-striped table-sm">
                                 <thead>
-                                    <tr>
-                                        <td>GAMBAR</td>
-                                        <td>: {{ $model->foto }}</td>
-                                    </tr>
+                                    
                                     <tr>
                                         <td>HARGA</td>
                                         <td>: {{ $model->harga }}</td>

@@ -56,9 +56,11 @@ class SewaController extends Controller
             'jam_sewa' => 'required',
             'selesai_sewa' => 'required',
             'tgl_sewa' => 'required|after:yesterday', 
-            'status' => 'nullable',       
+            'status' => 'nullable',
+
             // 'dibuat_oleh'=>'required'  ,
         ]);
+        $requestData['user_id'] = Auth::user()->id;
         // dd($requestData);
         // $model = new Model();
         // $model->nama = $request->nama;
@@ -117,11 +119,7 @@ class SewaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email,' .  $id,
-            
-            'password' => 'nullable|confirmed',
+        $requestData = $request->validate([
             
         ]);
         $model = Model::findOrFail($id);

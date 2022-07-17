@@ -28,13 +28,13 @@
                         <thead>
                             <tr>
                                 <th>NO.</th>
-                                <th>NAMA PEMESAN</th>
-                                <th>RUANG STUDIO</th>
+                                <th>NAMA BAND</th>
+                                {{-- <th>RUANG STUDIO</th> --}}
                                 <th>NOMOR TELEPON</th>
                                 <th>TGL BOOKING</th>
                                 <th>JAM MULAI</th> 
                                 <th>JAM SELESAI</th> 
-                                <th>TOTAL BAYAR (Rp.)</th>   
+                                {{-- <th>TOTAL BAYAR (Rp.)</th>    --}}
                                 <th>STATUS</th>                             
                                 <th>AKSI</th>
                             </tr>
@@ -44,12 +44,12 @@
                                 <tr>                   
                                     <td>{{ $loop->iteration }}</td>                 
                                     <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->ruangstudio->namaruangstudio }}</td>
+                                    {{-- <td>{{ $item->ruangstudio->namaruangstudio }}</td> --}}
                                     <td>{{ $item->telp }}</td>
                                     <td>{{ $item->tgl_sewa }}</td>
                                     <td>{{ $item->jam_sewa }}</td>
                                     <td>{{ $item->selesai_sewa }}</td>
-                                    <td>{{ $item->total_bayar }}</td>
+                                    {{-- <td>{{ $item->total_bayar }}</td> --}}
                                     <td></td>
                                     {{-- <td>{{ number_format($item->harga, 0, ",", ".") }}</td> --}}
                                     <td>

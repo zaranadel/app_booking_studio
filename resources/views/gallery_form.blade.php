@@ -11,12 +11,7 @@
                 <div class="card-body">
                     {!! Form::model($model, ['route' => $route, 'method' => $method,'files' => true]) !!}
 
-                     <div class="form-group">
-                        <label for="gallery">TAMBAH FOTO</label>
-                        {!! Form::file('gallery', null, ['class' => 'form-control']) !!}
-                        <span class="text-danger">{{ $errors->first('gallery') }}</span>
-                     </div>
-
+                    
                      <div class="form-group">
                         <label for="nama">NAMA ALAT</label>
                         {!! Form::text('nama', null, ['class' => 'form-control', 'placeholder' => 'Masukkan Nama']) !!}
@@ -27,6 +22,14 @@
                         <label for="merek">NAMA MEREK</label>
                         {!! Form::text('merek', null, ['class' => 'form-control', 'placeholder' => 'Masukkan Nama Merek']) !!}
                         <span class="text-danger">{{ $errors->first('merek') }}</span>
+                     </div>
+                     
+                     <div class="form-group">
+                        <label for="foto_gallery">TAMBAH FOTO</label>
+                        {!! Form::file('foto_gallery', ['class' => 'form-control']) !!}
+                        <small id="#" class="form-text text-muted">Upload gambar (jpg/png/jpeg)</small>
+
+                        <span class="text-danger">{{ $errors->first('foto_gallery') }}</span>
                      </div>
 
                      

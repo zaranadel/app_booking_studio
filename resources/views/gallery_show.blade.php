@@ -13,42 +13,28 @@
                     <div class="row">
                         <div class="col-md-12">                                                    
                         <div class="card card text-white bg-secondary mb-1">
-                            <div class="card-header">DATA BOOKING</div>  
-                            <table class="table bg-light">
+                            <div class="card-header">DETAIL FOTO</div> 
+                            <div class="card-body"> 
+                            <img class="mb-3" src="{{ \Storage::url($model->foto_gallery ?? 'images/no-image.png') }}" width="500">
+                            
+                            <table class="table table-striped">
+                                                           
                                     <tr>
-                                        <td>Akun Pemesan</td>
-                                        <td>: {{ $model->user->email }}</td>
-                                    </tr>                           
-                                    <tr>
-                                        <td width="25%">Nama Band</td>
+                                        <td width="25%">Nama Alat Musik</td>
                                         <td>: {{ $model->nama }}</td>
-                                    </tr>
-                                    {{-- <tr>
-                                        <td>Ruang Studio Yang Di Booking</td>
-                                        <td>: {{ $model->ruangstudio->namaruangstudio }}</td>
-                                    </tr> --}}
+                                    </tr>                                    
                                     <tr>
-                                        <td>Tanggal Booking</td>
-                                        <td>: {{ $model->tgl_sewa->translatedFormat('d F Y') }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jam Mulai Booking</td>
-                                        <td>: {{ $model->jam_sewa }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jam Selesai Booking</td>
-                                        <td>: {{ $model->selesai_sewa }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Status Konfirmasi</td>
-                                        <td>: {{ $model->status }}</td>
-                                    </tr>
-                            </table>                                          
+                                        <td>Merek Alat Musik</td>
+                                        <td>: {{ $model->merek }}</td>
+                                    </tr>                                   
+                            </table>     
+                        </div> 
+                        <a href="/gallery" class="btn btn-info" >Kembali</a>                                    
                         </div> 
                     </div>
                     </div>
 
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-md-6">
                             <div class="card text-center">
                                 <div class="card-header bg-dark">
@@ -91,7 +77,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <!-- Button trigger modal -->
 

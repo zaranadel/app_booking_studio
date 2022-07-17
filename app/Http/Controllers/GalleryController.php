@@ -52,20 +52,16 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'gallery' => 'required|image|mimes:jpg,png,jpeg|max:2000',
+        $requestData = $request->validate([
+            'foto_gallery' => 'nullable|image|mimes:jpg,png,jpeg|max:2000',
             'nama' => 'required',
             'merek' => 'required',            
         ]);
-        if ($request->hasFile('gallery')){
-            $path = $request->file('gallery')->store('public/images');
+        if ($request->hasFile('foto_gallery')){
+            $requestData['foto_gallery'] =  $request->file('foto_gallery')->store('public/images');
         }
 
-        $model = new Model();
-        $model->gallery = $request->gallery;
-        $model->nama = $request->nama;  
-        $model->merek = $request->merek;          
-        $model->save();
+        Model::create($requestData);   
         flash("Data berhasil disimpan");
         return back();
     }
@@ -108,7 +104,7 @@ class GalleryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'gallery' => 'required|image|mimes:jpg, png, jpeg|max:2000',
+            'foto_gallery' => 'required|image|mimes:jpg, png, jpeg|max:2000',
             'nama' => 'required',
             'merek' => 'required',
             
