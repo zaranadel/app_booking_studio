@@ -54,6 +54,7 @@ class SewaController extends Controller
             'ruangstudio_id'=>'required',
             'total_bayar' => 'nullable|numeric',
             'jam_sewa' => 'required',
+            'bank' => 'nullable',
             'selesai_sewa' => 'required',
             'tgl_sewa' => 'required|after:yesterday', 
             'status' => 'nullable',

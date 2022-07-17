@@ -23,7 +23,7 @@
                                         <td>: {{ $model->email }}</td>
                                     </tr>                  
                                     <tr>
-                                        <td>TANGGAL BUAT</td>
+                                        <td>TANGGAL BUAT AKUN</td>
                                         <td>: {{ $model->created_at->format('d/m/y H:i') }}</td>
                                     </tr>
                                     <tr>
@@ -37,7 +37,8 @@
                                     
                                 </thead>  
                             </table>
-                            <a href="/user" class="btn btn-danger" >Kembali</a>
+                            
+                            <a href="/user" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
                         </div>                    
                     </div> 
             </section>

@@ -6,10 +6,10 @@
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header">Data User</div>
+                <div class="card-header bg-danger">Data User</div>
 
                 <div class="card-body">
-                    <a href="useradmin/create" class="btn btn-primary mb-3">Tambah Admin</a>
+                    <a href="useradmin/create" class="btn btn-info mb-3"><i class="fa fa-plus"></i> Tambah Admin</a>
 
                     <div class="row">
                         <div class="col-md-8">
@@ -19,7 +19,8 @@
                                 {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Search...']) !!}
                                 </div>
                                 <div class="input-group-append">
-                                {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!}
+                                    <button type="submit" class="btn btn-dark"><i class="fa fa-search"></i> </button>
+                                {{-- {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!} --}}
                                 </div>
                             </div>
                             {!! Form::close() !!}
@@ -41,8 +42,8 @@
                         </div>
                     </div> --}}
 
-                    <table class="table table-light table-striped table-bordered" style="font-size: 14px">
-                        <thead>
+                    <table class="table table-light table-striped table-bordered table-hover" style="font-size: 14px">
+                        <thead class="table bg-dark">
                             <tr>
                                 <th>NO</th>
                                 <th>NAMA</th> 

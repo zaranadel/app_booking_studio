@@ -29,7 +29,7 @@
                             
                             {{-- <button class="btn btn-primary">Booking</button>     --}}
                             
-                            <a href="/ruangstudio" class="btn btn-primary">Kembali</a>
+                            <a href="/ruangstudio" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
                         </div> 
                                            
                     </div> 

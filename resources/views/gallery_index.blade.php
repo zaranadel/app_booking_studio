@@ -24,9 +24,7 @@
                         <tbody>
                             @foreach ($models as $item)
                                 <tr>
-
                                     
-
                                     <td><img src="{{ \Storage::url($item->foto_gallery ?? 'images/no-image.png') }}" width="110"></td>
                                     <td>{{ $item->nama }}</td>
                                     <td>{{ $item->merek }}</td> 

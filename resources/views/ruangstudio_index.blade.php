@@ -6,11 +6,11 @@
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header">Ruang Studio</div>
+                <div class="card-header bg-danger">Ruang Studio</div>
 
                 <div class="card-body">
                     @if (auth()->user()->akses == 'admin')
-                    <a href="{{ route($routePrefix .'.create') }}" class="btn btn-primary mb-2">Tambah Ruang Studio</a>
+                    <a href="{{ route($routePrefix .'.create') }}" class="btn btn-info mb-2"><i class="fa fa-plus"></i> Tambah Ruang Studio</a>
                     @endif
 
                     <div class="row">
@@ -23,7 +23,7 @@
                                
                                 
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                    <button class="btn btn-dark"><i class="fa fa-search"></i></button>
                                     
                                 {{-- {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!} --}}
                                 </div>
@@ -44,13 +44,13 @@
 
                     </div> --}}
 
-                    <table class="table table-light table-striped table-bordered" style="font-size: 14px">
-                        <thead>
+                    <table class="table table-light table-striped table-bordered text-center table-hover" style="font-size: 14px">
+                        <thead class="table bg-dark">
                             <tr>
                                 <th>NO.</th>
                                 <th>NAMA RUANGAN</th>
-                                <th>GAMBAR</th>
-                                <th>HARGA SEWA PER JAM (Rp.)</th>
+                                <th>FOTO</th>
+                                <th>HARGA SEWA PER JAM</th>
                                 <th>DETAIL</th>
                             </tr>
                         </thead>
@@ -59,8 +59,8 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->namaruangstudio }}</td>
-                                    <td>{{ $item->foto }}</td>
-                                    <td>{{ number_format($item->harga, 0, ",", ".") }}</td>
+                                    <td><img src="{{ \Storage::url($item->gambar ?? 'images/no-image.png') }}" width="55"></td>
+                                    <td>Rp. {{ number_format($item->harga, 0, ",", ".") }}</td>
                                     <td>
                                         {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
 
@@ -82,7 +82,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <a href="{{ route('sewa.create') }}" class="btn btn-primary mt-3">Booking Studio</a>
+                    <a href="{{ route('sewa.create') }}" class="btn btn-outline-primary mt-3"><i class="fa fa-book"></i> Booking Studio</a>
                 </div>
             </div>
         </section>

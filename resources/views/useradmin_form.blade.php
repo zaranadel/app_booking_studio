@@ -43,11 +43,10 @@
                       <span class="text-danger">{{ $errors->first('akses') }}</span>
                    </div>
 
+                   <a href="/user" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
                    
 
-                     {!! Form::submit($namaTombol, ['class' => 'btn btn-primary']) !!}
-                     <a href="/user" class="btn btn-primary">Kembali</a>
-
+                     {!! Form::submit($namaTombol, ['class' => 'btn btn-primary ml-1',]) !!}                     
                     {!! Form::close() !!}
                     
                 </div>
