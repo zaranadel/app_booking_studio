@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\RuangStudio;
+use App\User;
+use App\Gallery;
 
 class HomeController extends Controller
 {
@@ -22,7 +25,11 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
+    {        
+            $jumlah_ruangstudio = RuangStudio::all()->count();
+            $jumlah_user = User::all()->count();
+            $jumlah_alatmusik = Gallery::all()->count();
+             return view('home', compact('jumlah_ruangstudio', 'jumlah_user', 'jumlah_alatmusik'));   
     }
+    
 }

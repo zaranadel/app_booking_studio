@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use \App\Sewa as Model;
+use App\RuangStudio;
 // use \App\RuangStudio;
 
 class SewaController extends Controller
@@ -152,5 +153,16 @@ class SewaController extends Controller
         $model->delete();
         flash("Data Berhasil Dihapus");
         return back();
+    }
+
+    public function cetakForm(){
+        return view('laporan_form');
+    }
+
+    public function cetakLaporanPertanggal($tglawal, $tglakhir){
+
+        $cetakperTanggal = Model::with('ruangstudio')->whereBetween('tgl_sewa', [$tglawal, $tglakhir])->latest()->get();
+        return view('cetak-laporan-pertanggal', compact('cetakperTanggal'));
+
     }
 }

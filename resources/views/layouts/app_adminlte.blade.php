@@ -283,7 +283,7 @@
           
 
           <li class="nav-item">
-            <a href="{{ route('home') }}" class="nav-link {{ request()->is('laporan*') ? 'active' : '' }}">
+            <a href="{{ route('cetak-laporan-booking-form') }}" class="nav-link {{ request()->is('laporan*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-file"></i>
               <p>
                 Laporan
