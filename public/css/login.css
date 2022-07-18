@@ -1,0 +1,9 @@
+$w: 15px; // shadow size
+$color: #2C3E50;
+$box_w: 4 * 40px;
+$box_h: 3 * 40px;
+$box-color: #16A085;
+$label-color: #fff;
+$bgcolor: #1ABC9C;
+$text-color: #fff;
+.card {}

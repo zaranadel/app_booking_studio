@@ -15,13 +15,14 @@
                         <div class="col-md-8">
                             <div class="input-group mb-2">
                             {!! Form::open(['method' => 'GET']) !!}
-                                <div class="custom-file">
+                                <div class="custom-file mb-1">
                                 {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Search...']) !!}
                                 </div>
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-dark"><i class="fa fa-search"></i> </button>
                                 {{-- {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!} --}}
                                 </div>
+                                
                             </div>
                             {!! Form::close() !!}
                         </div>

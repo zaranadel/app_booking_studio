@@ -1,5 +1,6 @@
 @extends('layouts.app')
 <title>Traxx: Login</title>
+<link rel="stylesheet" href="public/login.css" />
 <link rel="shortcut icon" href="{{ asset('adminlte/Asset 2.png') }}" type="image/x-icon">
 @section('content')
 <div class="container">

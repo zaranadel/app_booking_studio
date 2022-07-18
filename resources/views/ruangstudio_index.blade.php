@@ -17,7 +17,7 @@
                         <div class="col-md-8">
                             <div class="input-group mb-2">
                             {!! Form::open(['method' => 'GET']) !!}
-                                <div class="custom-file">
+                                <div class="custom-file mb-1">
                                 {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Berdasarkan nama...']) !!}
                                 </div>
                                
