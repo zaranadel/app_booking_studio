@@ -41,6 +41,7 @@
                       <label for="akses">Akses</label>
                       {!! Form::select('akses', [
                         'pelanggan' => 'Pelanggan',
+                        'admin' => 'Admin',
                       ], null, ['class' => 'form-control']) !!}
                       <span class="text-danger">{{ $errors->first('akses') }}</span>
                    </div>
