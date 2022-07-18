@@ -55,7 +55,8 @@ class GalleryController extends Controller
         $requestData = $request->validate([
             'foto_gallery' => 'nullable|image|mimes:jpg,png,jpeg|max:2000',
             'nama' => 'required',
-            'merek' => 'required',            
+            'merek' => 'required', 
+            'deskripsi' => 'nullable',           
         ]);
         if ($request->hasFile('foto_gallery')){
             $requestData['foto_gallery'] =  $request->file('foto_gallery')->store('public/images');
@@ -75,6 +76,7 @@ class GalleryController extends Controller
     public function show($id)
     {
         $data['model'] = Model::findOrFail ($id);
+        $data['namaTombol'] = 'Detail';
         return view($this->viewPrefix . '_show', $data);
     }
     

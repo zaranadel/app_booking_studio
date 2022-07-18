@@ -32,11 +32,18 @@
                         <span class="text-danger">{{ $errors->first('foto_gallery') }}</span>
                      </div>
 
+                     <div class="form-group">
+                        <label for="deskripsi">DESKRIPSI</label>
+                        {!! Form::text('deskripsi', null, ['class' => 'form-control', 'placeholder' => 'Masukkan Deskripsi']) !!}
+                        <small id="#" class="form-text text-muted">(Optional)</small>
+                        <span class="text-danger">{{ $errors->first('deskripsi') }}</span>
+                     </div>
+
                      
 
-
+                     <a href="/gallery" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
                      {!! Form::submit($namaTombol, ['class' => 'btn btn-primary']) !!}
-                     <a href="/gallery" class="btn btn-primary">Kembali</a>
+                     
                     {!! Form::close() !!}
                     
                 </div>

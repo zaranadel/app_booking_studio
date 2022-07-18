@@ -20,7 +20,7 @@ class SewaController extends Controller
     {        
         $models = Model::latest()->paginate(15);
         $data['models'] = $models;
-        $data['routePrefix'] = $this->routePrefix;
+        $data['routePrefix'] = $this->routePrefix;       
         return view($this->viewPrefix . '_index', $data);
     }
 

@@ -12,12 +12,12 @@
 
                     <div class="row">
                         <div class="col-md-12">                                                    
-                        <div class="card card text-white bg-secondary mb-1">
-                            <div class="card-header">DETAIL FOTO</div> 
-                            <div class="card-body"> 
+                        <div class="card card text-white mb-1">
+                            <div class="card-header bg-danger">DETAIL FOTO</div> 
+                            <div class="card-body bg-dark"> 
                             <img class="mb-3" src="{{ \Storage::url($model->foto_gallery ?? 'images/no-image.png') }}" width="500">
                             
-                            <table class="table table-striped">
+                            <table class="table table-dark">
                                                            
                                     <tr>
                                         <td width="25%">Nama Alat Musik</td>
@@ -26,7 +26,11 @@
                                     <tr>
                                         <td>Merek Alat Musik</td>
                                         <td>: {{ $model->merek }}</td>
-                                    </tr>                                   
+                                    </tr>  
+                                    <tr>
+                                        <td>Deskripsi</td>
+                                        <td>: {{ $model->deskripsi }}</td>
+                                    </tr>                                  
                             </table>     
                         </div> 
                         <a href="/gallery" class="btn btn-info" >Kembali</a>                                    
