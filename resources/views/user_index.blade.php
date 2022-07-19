@@ -12,7 +12,7 @@
                     <a href="useradmin/create" class="btn btn-info mb-3"><i class="fa fa-plus"></i> Tambah Admin</a>
 
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-8 float-right">
                             <div class="input-group mb-2">
                             {!! Form::open(['method' => 'GET']) !!}
                                 <div class="custom-file mb-1">
