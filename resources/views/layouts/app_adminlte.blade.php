@@ -205,7 +205,7 @@
 
           @if (auth()->user()->akses == 'admin')
           <li class="nav-item">
-            <a href="{{ route('sewa.index') }}" class="nav-link {{ request()->is('sewa') ? 'active' : '' }}">
+            <a href="{{ route('sewa.index') }}" class="nav-link {{ request()->is('sewa*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Data Booking
@@ -242,8 +242,10 @@
             </li>
 
             <li class="nav-item">
+              {{-- @foreach ($models as $item) --}}
               <a href="#" class="nav-link">
               {{-- <a href="{{ route('sewapelanggan.show') }}" class="nav-link {{ request()->is('sewapelanggan/show') ? 'active' : '' }}"> --}}
+                {{-- @endforeach --}}
                 <i class="far fa-circle nav-icon"></i>
                 <p>
                   Detail Booking
@@ -268,20 +270,8 @@
               </p>
             </a>            
           </li>
-
-          {{-- <li class="nav-item">
-            <a href="{{ route('sewa.create') }}" class="nav-link {{ request()->is('sewa*') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-guitar"></i>
-              <p>
-                Booking Studio
-              </p>
-            </a>            
-          </li> --}}
-
           
-
-          
-
+          @if (auth()->user()->akses == 'admin')
           <li class="nav-item">
             <a href="{{ route('cetak-laporan-booking-form') }}" class="nav-link {{ request()->is('laporan*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-file"></i>
@@ -290,6 +280,7 @@
               </p>
             </a>            
           </li>
+          @endif
 
           <li class="nav-item">
             <a href="{{ route('logout') }}" class="nav-link {{ request()->is('logout*') ? 'active' : '' }}">

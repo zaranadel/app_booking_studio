@@ -91,10 +91,13 @@ class SewaController extends Controller
     {
         $data['model'] = Model::findOrFail ($id);
         return view($this->viewPrefix . '_show', $data);
-            // $model = \App\Sewa::findOrFail($id);
-            // $data['model'] = $model;
-            // return view('sewa_show');
     }
+
+    // public function showData($id)
+    // {
+    //     $data['model'] = Model::findOrFail ($id);
+    //     return view('sewa_show', $data);
+    // }
     
     /**
      * Show the form for editing the specified resource.
