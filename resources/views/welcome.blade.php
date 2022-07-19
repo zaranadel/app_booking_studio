@@ -86,7 +86,10 @@ https://www.tooplate.com/view/2117-infinite-loop
                     <div class="tm-intro-text-container">
                         <h2 class="tm-text-primary mb-4 tm-section-title">Tentang Studio</h2>
                         <p class="mb-4 tm-intro-text">
-                            Traxx Studio musik ini berdiri sejak tahun ... yang berlamatkan di Jl.Bhayangkara ... </p>
+                            Traxx Studio musik ini berdiri sejak tahun 1996 yang berlamatkan di Jl.Bhayangkara RT.21 No.115, Jambi Timur, Kota Jambi, Jambi. dengan pemilik Bpk. Hadiwibowo Ramadhan dengan nomor telepon 0852-6638-6003. 
+                        <br> <br> Traxx Studio Musik adalah sarana bagi para seniman musik (musisi) yang berupa ruangan yang mana didalamnya terdapat beberapa alat-alat musik seperti drum, gitar, dan lain-lain untuk mereka yang ingin merekam suara maupun hanya untuk sekedar latihan saja.
+                    <br> <br> Berdirinya Traxx Studio Musik ini selain pemilik memiliki hobi bermain alat-alat musik, juga dikarenakan pemilik melihat maraknya konser-konser band pada saat itu dan banyak digemari oleh masyarakat dari berbagai kalangan, sedangkan studio musik yang tersedia pada saat itu masih sangat sedikit.
+                </p>
                     </div>
                 </div>
             </div>
@@ -99,9 +102,9 @@ https://www.tooplate.com/view/2117-infinite-loop
                 </div>
                 <div class="col-lg-5">
                     <div class="tm-intro-text-container">
-                        <h2 class="tm-text-primary mb-4">Market Analysis</h2>
+                        {{-- <h2 class="tm-text-primary mb-4">Market Analysis</h2>
                         <p class="mb-4 tm-intro-text">
-                            Praesent sed pharetra lorem, blandit convallis mi. Aenean ornare elit ac metus lacinia, sed iaculis nibh semper. Pellentesque est urna.</p>
+                            Praesent sed pharetra lorem, blandit convallis mi. Aenean ornare elit ac metus lacinia, sed iaculis nibh semper. Pellentesque est urna.</p> --}}
                     </div>
                 </div>
 
@@ -110,9 +113,9 @@ https://www.tooplate.com/view/2117-infinite-loop
                 </div>
                 <div class="col-lg-5">
                     <div class="tm-intro-text-container">
-                        <h2 class="tm-text-primary mb-4">Fast Support</h2>
+                        {{-- <h2 class="tm-text-primary mb-4">Fast Support</h2>
                         <p class="mb-4 tm-intro-text">
-                            Credit goes to <a rel="nofollow" href="https://www.pexels.com">Pexels</a> website for all images used in this template. Cras condimentum mi et sapien dignissim luctus.</p>
+                            Credit goes to <a rel="nofollow" href="https://www.pexels.com">Pexels</a> website for all images used in this template. Cras condimentum mi et sapien dignissim luctus.</p> --}}
                     </div>
                 </div>
             </div>
@@ -125,9 +128,9 @@ https://www.tooplate.com/view/2117-infinite-loop
                 </div>
                 <div class="col-lg-5">
                     <div class="tm-intro-text-container">
-                        <h2 class="tm-text-primary mb-4">Top Security</h2>
+                        {{-- <h2 class="tm-text-primary mb-4">Top Security</h2>
                         <p class="mb-4 tm-intro-text">
-                            You have <strong>no</strong> authority to post this template as a ZIP file on your template collection websites. You can <strong>use</strong> this template for your commercial websites.</p>
+                            You have <strong>no</strong> authority to post this template as a ZIP file on your template collection websites. You can <strong>use</strong> this template for your commercial websites.</p> --}}
 
                         <div class="tm-continue">
                             <a href="#testimonials" class="tm-intro-text tm-btn-primary">Learn More</a>
@@ -140,10 +143,10 @@ https://www.tooplate.com/view/2117-infinite-loop
                 </div>
                 <div class="col-lg-5">
                     <div class="tm-intro-text-container">
-                        <h2 class="tm-text-primary mb-4">Social Work</h2>
+                        {{-- <h2 class="tm-text-primary mb-4">Social Work</h2>
                         <p class="mb-4 tm-intro-text">
                             You can change <a href="https://fontawesome.com/icons?d=gallery">Font Awesome icons</a> by either <b><em>fas or far</em></b> in the HTML codes. For Examples:<br>
-                            <em>&lt;i class=&quot;fas fa-users&quot;&gt;&lt;i class=&quot;far fa-chart-bar&quot;&gt;</em> </p>
+                            <em>&lt;i class=&quot;fas fa-users&quot;&gt;&lt;i class=&quot;far fa-chart-bar&quot;&gt;</em> </p> --}}
                         <div class="tm-continue">
                             <a href="#testimonials" class="tm-intro-text tm-btn-primary">Details</a>
                         </div>
