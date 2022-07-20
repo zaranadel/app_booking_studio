@@ -17,9 +17,14 @@ class SewaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {        
-        $models = Model::latest()->paginate(15);
+        if ($request->filled('bulan') && $request->filled('tahun')){
+            $models = Model::whereMonth('tgl_sewa', $request->bulan)->whereYear('tgl_sewa', $request->tahun)->latest()->get();
+        } 
+        else{
+            $models = Model::latest()->get();
+        }        
         $data['models'] = $models;
         $data['routePrefix'] = $this->routePrefix;       
         return view($this->viewPrefix . '_index', $data);

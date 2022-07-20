@@ -6,7 +6,7 @@
     <!-- Main content -->
     <section class="content">
       
-            <div class="card card-center" style="width: 40rem; " >
+            <div class="card ml-6" style="width: 40rem; " >
                 <div class="card-header bg-dark" style="font-size: 16px" >FORM BOOKING RUANG STUDIO</div>
 
                 <div class="card-body" style="font-size: 14px">
@@ -124,14 +124,15 @@
                         <span class="text-danger">{{ $errors->first('bank') }}</span>
                      </div>
 
-                     <a href="/ruangstudio" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
+                     
                      {!! Form::submit($namaTombol, ['class' => 'btn btn-primary']) !!}
-                    
+                     <a href="/ruangstudio" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
                     {!! Form::close() !!}
+                   
                     
                 </div>
             </div>
-           
+         </div>
         </section>
         <!-- /.content -->
 @endsection

@@ -24,7 +24,7 @@
 
                      <div class="form-group">
                         <label for="gambar">GAMBAR</label>
-                        {!! Form::file('gambar', ['class' => 'form-control']) !!}
+                        {!! Form::file('gambar', ['class' => 'custom-file']) !!}
                         <span class="text-danger">{{ $errors->first('gambar') }}</span>
                      </div>
 
@@ -42,7 +42,7 @@
 
 
                      {!! Form::submit($namaTombol, ['class' => 'btn btn-primary']) !!}
-                     <a href="/ruangstudio" class="btn btn-primary">Kembali</a>
+                     <a href="/ruangstudio" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
                     {!! Form::close() !!}
                     
                 </div>

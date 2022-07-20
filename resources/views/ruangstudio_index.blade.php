@@ -6,7 +6,7 @@
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header bg-danger">Ruang Studio</div>
+                <div class="card-header bg-dark">Ruang Studio</div>
 
                 <div class="card-body">
                     @if (auth()->user()->akses == 'admin')

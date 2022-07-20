@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use \App\RuangStudio as Model;
+use App\Sewa;
 
 class RuangStudioController extends Controller
 {

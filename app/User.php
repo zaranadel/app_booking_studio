@@ -11,6 +11,7 @@ class User extends Authenticatable
 {
     
     use Notifiable;
+    protected $dates = ['created_at'];
     use SearchableTrait;
     protected $searchable = [        
         'columns' => [          

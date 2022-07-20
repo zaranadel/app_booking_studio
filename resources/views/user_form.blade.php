@@ -6,7 +6,7 @@
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header">Edit User</div>
+                <div class="card-header bg-dark">Edit Data User</div>
 
                 <div class="card-body">
                     {!! Form::model($model, ['route' => $route, 'method' => $method]) !!}
@@ -24,16 +24,18 @@
                      </div>
 
                      
-
+                     
                      <div class="form-group">
                         <label for="password">Password</label>
-                        {!! Form::password('password', ['class' => 'form-control']) !!}
+                        
+                        {!! Form::password('password', ['class' => 'form-control', 'placeholder' => '(Optional)']) !!}
+                        <small>*Kosongkan Password Jika Tidak Ingin Diganti</small>
                         <span class="text-danger">{{ $errors->first('password') }}</span>
                      </div>
 
                      <div class="form-group">
                         <label for="password_confirmation">Konfirmasi Password</label>
-                        {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
+                        {!! Form::password('password_confirmation', ['class' => 'form-control', 'placeholder' => '(Optional)']) !!}
                         <span class="text-danger">{{ $errors->first('password_confirmation') }}</span>
                      </div>
 
@@ -49,7 +51,7 @@
                    
 
                      {!! Form::submit($namaTombol, ['class' => 'btn btn-primary']) !!}
-                     <a href="/user" class="btn btn-primary">Kembali</a>
+                     <a href="/user" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
 
                     {!! Form::close() !!}
                     

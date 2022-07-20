@@ -6,42 +6,33 @@
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header bg-danger">Data User</div>
+                <div class="card-header bg-dark">Data User</div>
 
                 <div class="card-body">
-                    <a href="useradmin/create" class="btn btn-info mb-3"><i class="fa fa-plus"></i> Tambah Admin</a>
-
+                    <div class="container">
                     <div class="row">
-                        <div class="col-md-8 float-right">
-                            <div class="input-group mb-2">
+                        <div class="col-md-4">
+                    <a href="useradmin/create" class="btn btn-info mb-3"><i class="fa fa-plus"></i> Tambah Admin</a>
+                        </div>
+
+                        <div class="col-md-4 ml-auto col-sm">
+                            <div class="input-group ">
                             {!! Form::open(['method' => 'GET']) !!}
-                                <div class="custom-file mb-1">
+                                <div class="custom-file ">
                                 {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Search...']) !!}
                                 </div>
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-dark"><i class="fa fa-search"></i> </button>
+                                    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> </button>
                                 {{-- {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!} --}}
                                 </div>
-                                
+                                {!! Form::close() !!}
                             </div>
-                            {!! Form::close() !!}
+                           
                         </div>
                     </div>
+                </div>
 
-                    {{-- <div class="row">
-                        <div class="col-md-8">
-                            {!! Form::open(['method' => "GET"]) !!}
-                            <div class="input-group mb-3">
-                                <div class="custom-file">
-                                    {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Pencarian berdasarkan nama atau hak akses']) !!}
-                                </div>
-                                <div class="input-group-append">
-                                    {!! Form::submit('pencarian', ['class' => 'btn btn-primary']) !!}
-                                </div>
-                            </div>
-                            {!! Form::close() !!}
-                        </div>
-                    </div> --}}
+                   
 
                     <table class="table table-light table-striped table-bordered table-hover" style="font-size: 14px">
                         <thead class="table bg-dark">
@@ -49,7 +40,7 @@
                                 <th>NO</th>
                                 <th>NAMA</th> 
                                 <th>E-MAIL</th>                                     
-                                {{-- <th>TANGGAL BUAT</th> --}}
+                                <th>TANGGAL BERGABUNG</th>
                                 {{-- <th>KETERANGAN</th> --}}
                                 <th>AKSI</th>
                             </tr>
@@ -59,9 +50,10 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->name }}</td>                                                                    
-                                    {{-- <td>{{ $item->created_at->format ('d/m/Y H:i') }}</td> --}}
+                                   
                                     {{-- <td>{{ $item->akses }}</td> --}}
                                     <td>{{ $item->email }}</td>
+                                    <td>{{ $item->created_at->translatedFormat('d F Y') }}</td>
                                     <td>
                                         {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
 

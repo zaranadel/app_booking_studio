@@ -15,19 +15,15 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        // if (request()->filled('q')) {
-        //     $models = Model::search(request('q'))->paginate(100);
-        // } else {
-        //     $models = Model::orderBy('id', 'desc')->paginate(100);
-        // }
+        
+
         if (request()->filled('q')) {
             $models = Model::search(request('q'))->paginate(100);
         }else{
             $models = Model::orderBy('id', 'desc')->paginate(100);
-        }        
-        // $models = Model::latest()->paginate(15);
+        } 
         $data['models'] = $models;
         $data['routePrefix'] = $this->routePrefix;
         return view($this->viewPrefix . '_index', $data);

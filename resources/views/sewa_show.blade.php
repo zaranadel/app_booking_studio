@@ -12,9 +12,9 @@
 
                     <div class="row">
                         <div class="col-md-12">                                                    
-                        <div class="card card text-white bg-secondary mb-1">
+                        <div class="card text-white bg-dark mb-1">
                             <div class="card-header">DATA BOOKING</div>  
-                            <table class="table bg-light">
+                            <table class="table table-borderless table-striped table-hover">
                                     <tr>
                                         <td>Akun Pemesan</td>
                                         <td>: {{ $model->user->email }}</td>
@@ -76,7 +76,9 @@
                                             <th>: </th>
                                         </tr>
                                     </table>
+                                    
                                 </div>
+                                <a href="/sewa" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
                             </div>
                         </div>
                         <div class="col-md-6">
