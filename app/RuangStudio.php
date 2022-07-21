@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
 class RuangStudio extends Model
@@ -22,8 +22,18 @@ class RuangStudio extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function sewa(): BelongsTo
+    // public function sewa(): BelongsTo
+    // {
+    //     return $this->belongsTo(Sewa::class)->withDefault();
+    // }
+
+    /**
+     * Get all of the sewa for the RuangStudio
+     *
+     * @return \Illuminate\DatabSewauent\Relations\HasMany
+     */
+    public function sewa(): HasMany
     {
-        return $this->belongsTo(Sewa::class)->withDefault();
+        return $this->hasMany(Sewa::class);
     }
 }

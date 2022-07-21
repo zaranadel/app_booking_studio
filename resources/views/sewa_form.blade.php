@@ -6,7 +6,7 @@
     <!-- Main content -->
     <section class="content">
       
-            <div class="card card-center" style="width: 40rem; " >
+            <div class="card ml-6" style="width: 40rem; " >
                 <div class="card-header bg-dark" style="font-size: 16px" >FORM BOOKING RUANG STUDIO</div>
 
                 <div class="card-body" style="font-size: 14px">
@@ -94,15 +94,18 @@
                         <span class="text-danger">{{ $errors->first('selesai_sewa') }}</span>
                      </div>
 
+                     {{-- {!! Form::model($modelBayar, ['route' => $route, 'method' = > $method]) !!}
+                     {!! Form::text('sewa_id', $model->id, []) !!} --}}
                      
                      <hr/>
                      <div class="form-group">
                         <label for="total_bayar">TOTAL BAYAR (Rp.)</label>
                         <small id="#" class="form-text text-muted">(Optional)</small>
                         {!! Form::number('total_bayar', null, ['class' => 'form-control', 'placeholder' => 'Contoh:100000']) !!}
-                        <small id="#" class="form-text text-muted">*Kosongkan jika tidak membayar</small>
+                        <small id="#" class="text-danger">*Kosongkan jika tidak membayar</small>
                         <span class="text-danger">{{ $errors->first('total_bayar') }}</span>
                      </div>
+
 
                   
                      <div class="dropright">
@@ -120,18 +123,19 @@
                         <label for="bank">Bank</label>
                         <small id="#" class="form-text text-muted">(Optional)</small>
                         {!! Form::text('bank', null, ['class' => 'form-control', 'placeholder' => 'Contoh : BRI']) !!}
-                        <small id="#" class="form-text text-muted">*Kosongkan jika tidak membayar</small>
+                        <small id="#" class="text-danger">*Kosongkan jika tidak membayar</small>
                         <span class="text-danger">{{ $errors->first('bank') }}</span>
                      </div>
 
-                     <a href="/ruangstudio" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
+                     
                      {!! Form::submit($namaTombol, ['class' => 'btn btn-primary']) !!}
-                    
+                     <a href="/ruangstudio" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
                     {!! Form::close() !!}
+                   
                     
                 </div>
             </div>
-           
+         </div>
         </section>
         <!-- /.content -->
 @endsection

@@ -6,7 +6,7 @@
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header">Tambah Gallery Ruang Studio</div>
+                <div class="card-header bg-dark">Tambah Gallery Ruang Studio</div>
 
                 <div class="card-body">
                     {!! Form::model($model, ['route' => $route, 'method' => $method,'files' => true]) !!}
@@ -26,7 +26,7 @@
                      
                      <div class="form-group">
                         <label for="foto_gallery">TAMBAH FOTO</label>
-                        {!! Form::file('foto_gallery', ['class' => 'form-control']) !!}
+                        {!! Form::file('foto_gallery', ['class' => 'custom-file']) !!}
                         <small id="#" class="form-text text-muted">Upload gambar (jpg/png/jpeg)</small>
 
                         <span class="text-danger">{{ $errors->first('foto_gallery') }}</span>
@@ -34,16 +34,16 @@
 
                      <div class="form-group">
                         <label for="deskripsi">DESKRIPSI</label>
-                        {!! Form::text('deskripsi', null, ['class' => 'form-control', 'placeholder' => 'Masukkan Deskripsi']) !!}
-                        <small id="#" class="form-text text-muted">(Optional)</small>
+                        {!! Form::text('deskripsi', null, ['class' => 'form-control', 'placeholder' => '(Optional)', 'text-area']) !!}
+                    
                         <span class="text-danger">{{ $errors->first('deskripsi') }}</span>
                      </div>
 
                      
 
-                     <a href="/gallery" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
+                    
                      {!! Form::submit($namaTombol, ['class' => 'btn btn-primary']) !!}
-                     
+                     <a href="/gallery" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
                     {!! Form::close() !!}
                     
                 </div>

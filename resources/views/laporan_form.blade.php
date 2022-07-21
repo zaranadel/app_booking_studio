@@ -5,9 +5,9 @@
 
     <!-- Main content -->
     <section class="content">
-            <div class="card card-info card-outline">
-                <div class="card-header">Cetak Laporan</div>
-                  <h3>Print Data Booking</h3>               
+            <div class="card">
+                <div class="card-header bg-dark">Cetak Laporan</div>
+                  <h3 class="ml-3">Print Data Booking</h3>               
             
             <div class="card-body">
               <div class="input-group mb-3">
