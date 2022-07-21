@@ -11,7 +11,7 @@
     }
 </style>
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="width: 100%">
         <div class="col-md-8">
             <div class="card" style=" box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5), 
             inset 10px 10px 15px rgba(70, 70, 70, 0.12);">
@@ -67,11 +67,11 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
+                                {{-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
-                                @endif
+                                @endif --}}
                             </div>
                         </div>
                     </form>
