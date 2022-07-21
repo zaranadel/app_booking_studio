@@ -9,7 +9,7 @@ class Bayar extends Model
 {
     protected $table = 'bayar';
     protected $guarded = [];
-    protected $dates = ['tgl_bayar'];
+    // protected $fillable = ['status'];
 
     /**
      * Get the user that owns the Bayar

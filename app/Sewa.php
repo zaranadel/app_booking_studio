@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+// use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 // use Nicolaslopezj\Searchable\SearchableTrait;
 
@@ -39,9 +39,9 @@ class Sewa extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function bayar(): HasOne
+    public function bayar(): BelongsTo
     {
-        return $this->hasOne(Bayar::class);
+        return $this->belongsTo(Bayar::class);
     }
 
     public function getJumlahRupiah()

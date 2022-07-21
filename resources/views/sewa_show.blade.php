@@ -67,15 +67,33 @@
                                     </table>
                                     <hr/>
                                     <table>                                        
-                                        <tr>
+                                        {{-- <tr>
                                             <td>Durasi Booking</td>
                                             <th>: .... Jam </th>
-                                        </tr>
+                                        </tr> --}}
                                         <tr>
                                             <td>Total Bayar (Optional)</td>
                                             <th>: </th>
                                         </tr>
                                     </table>
+                                    <hr/>
+                                    <H5>Form Konfirmasi Booking</H5>
+                                    {!! Form::model($modelBayar, ['route' => $route, 'method' => $method]) !!}
+                                    {!! Form::hidden('sewa_id', $model->id, []) !!}
+                                    <div class="form-group">
+                                        <label for="status">Approve Booking?</label>
+                                       {{-- {!! Form::select('jam_sewa', [ --}}
+                                       <select name="status" class="form-control col-md-6">
+                                        <option disabled selected>-- Pilih Status --</option>
+                                       <option value="Diterima">Ditolak</option>
+                                       <option value="Ditolak">Diterima</option>
+                                     </select>
+                                        <span class="text-danger">{{ $errors->first('status') }}</span>
+                                     </div>
+
+                                        {!! Form::submit('Konfirmasi', ['class' => 'btn btn-primary']) !!}
+                                        
+                                    {!! Form::close() !!}
                                     
                                 </div>
                                 <a href="/sewa" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
@@ -94,7 +112,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     {!! Form::open(['route' => ['sewa.create', $model->status], 'method' => 'POST', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
                     
 

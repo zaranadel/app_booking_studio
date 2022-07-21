@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Sewa;
+use \App\Bayar as Model;
 
 class BayarController extends Controller
 {
@@ -34,9 +37,45 @@ class BayarController extends Controller
      */
     public function store(Request $request)
     {
-        // $jumlah = $request->total_bayar;
+        // $status = $request->status;
+        // $bayar = $request->total_bayar;
         // $sewaId = $request->sewa_id;
-        // $bayar = Bayar::findOrFail($sewaId);
+        // $sewa = Sewa::findOrFail($sewaId);
+        // if ($sewa->status == "Diterima"){
+        //     flash("Data Booking Sudah Di Approve");
+        //     return back();
+        // }
+            // 
+            $data['model'] = Model::findOrFail ($id);
+           
+            // $total->sewa_id = $sewaId;
+            // $total->status = $status;
+            // $total->total_bayar = $bayar;
+            // $total->diterima_oleh = Auth::user()->name;
+             
+            $requestData = $request->validate([
+                'sewa_id' => 'required',
+                'status' => 'required',
+                'total_bayar' => 'numeric',
+                'diterima_oleh' => 'nullable',
+            ]);
+            
+            $requestData['diterima_oleh'] = Auth::user()->id;
+            Model::create($requestData && $model);
+            flash("Data Booking Telah Dikonfirmasi");
+            return back();
+
+    //    $status = $request->status;
+    //    $sewaId = $request->sewa_id;
+    //    $bayar = new Bayar();
+    //    $bayar = $diterima_oleh = Auth::user()->name;
+      
+    //    $bayar->
+    //    $bayar = $request->status;
+    //    $bayar = $diterima_oleh = Auth::user()->name;
+    //    $bayar->save();
+    //    flash('Sudah Dikonfirmasi');
+    //    return back();
     }
 
     /**
