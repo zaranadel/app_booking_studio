@@ -12,7 +12,7 @@
                     <div class="container">
                     <div class="row">
                         <div class="col-md-4">
-                    <a href="useradmin/create" class="btn btn-info mb-3"><i class="fa fa-plus"></i> Tambah Admin</a>
+                    <a href="useradmin/create" class="btn btn-info mb-3"><i class="fa fa-plus"></i> Tambah User</a>
                         </div>
 
                         <div class="col-md-4 ml-auto col-sm">

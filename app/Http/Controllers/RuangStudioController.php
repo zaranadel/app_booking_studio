@@ -142,6 +142,10 @@ class RuangStudioController extends Controller
     public function destroy($id)
     {
         $model = Model::findOrFail($id);
+        // if($model->sewa->count() >= 1){
+        //     flash('Data gagal dihapus karena ruang studio sedang dibooking')->error();
+        //     return back();
+        // }
         $model->delete();
         flash("Data Berhasil Dihapus");
         return back();

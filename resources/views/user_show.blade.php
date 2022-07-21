@@ -6,7 +6,7 @@
     <!-- Main content -->
     <section class="content">           
                     <div class="card">
-                        <div class="card-header bg-dark">PROFIL DETAIL  {{ ($model->name) }}</div>
+                        <div class="card-header bg-dark">PROFIL DETAIL  {{ strtoupper($model->name) }}</div>
                         <div class="card-body">
                             <table class="table table-striped mb-4">
                                 <thead>
@@ -16,7 +16,7 @@
                                     </tr>
                                     <tr>
                                         <td>NAMA</td>
-                                        <td>: {{ $model->name }}</td>
+                                        <td>: {{ strtoupper($model->name) }}</td>
                                     </tr>
                                     <tr>
                                         <td>EMAIL</td>
@@ -28,7 +28,7 @@
                                     </tr>
                                     <tr>
                                         <td>KETERANGAN</td>
-                                        <td>: {{ $model->akses }}</td>
+                                        <td>: {{ strtoupper($model->akses) }}</td>
                                     </tr>
                                     {{-- <tr>
                                         <td>TANGGAL UPDATE</td>

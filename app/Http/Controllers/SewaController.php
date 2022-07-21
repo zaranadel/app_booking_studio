@@ -6,6 +6,7 @@ use Auth;
 use Illuminate\Http\Request;
 use \App\Sewa as Model;
 use App\RuangStudio;
+use App\Bayar;
 // use \App\RuangStudio;
 
 class SewaController extends Controller
@@ -94,7 +95,13 @@ class SewaController extends Controller
      */
     public function show($id)
     {
-        $data['model'] = Model::findOrFail ($id);
+        $model = \App\Sewa::findOrFail($id);
+        $data['model'] = $model;
+
+        $modelBayar = new \App\Bayar();
+        $data['modelBayar'] = $modelBayar;
+        $data['method'] = 'POST';
+        $data['route'] = 'bayar.store';
         return view($this->viewPrefix . '_show', $data);
     }
 

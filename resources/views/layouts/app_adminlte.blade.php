@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="{{ asset('adminlte') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="{{ asset('adminlte') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="{{ asset('adminlte') }}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   @yield('css')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -208,18 +210,18 @@
           </li>
           @endif
 
-          @if (auth()->user()->akses == 'admin')
+          @if (auth()->user()->akses == 0)
           <li class="nav-item">
             <a href="{{ route('sewa.index') }}" class="nav-link {{ request()->is('sewa*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Data Booking
+                Tabel Booking
               </p>
             </a>            
           </li>
           @endif
 
-          @if (auth()->user()->akses == 'pelanggan')
+          {{-- @if (auth()->user()->akses == 0)
           <li class="nav-item">
             <a href="{{ route('sewa.index') }}" class="nav-link {{ request()->is('sewa') ? 'active' : '' }}">
               <i class="nav-icon fas fa-book"></i>
@@ -228,7 +230,7 @@
               </p>
             </a>            
           </li>
-          @endif
+          @endif --}}
 
           <li class="nav-item">            
             <a href="#" class="nav-link">
@@ -356,6 +358,9 @@
 <script src="{{ asset('adminlte') }}/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="{{ asset('adminlte') }}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="{{ asset('adminlte') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- daterangepicker -->
+<script src="{{ asset('adminlte') }}/plugins/moment/moment.min.js"></script>
+<script src="{{ asset('adminlte') }}/plugins/daterangepicker/daterangepicker.js"></script>
 @yield('js')
 </body>
 </html>

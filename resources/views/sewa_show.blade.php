@@ -94,6 +94,7 @@
                             </div>
                         </div>
                     </div>
+                    {!! Form::checkbox('status', null, null, []) !!}
 
                     <!-- Button trigger modal -->
 

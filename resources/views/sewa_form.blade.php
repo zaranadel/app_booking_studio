@@ -94,6 +94,8 @@
                         <span class="text-danger">{{ $errors->first('selesai_sewa') }}</span>
                      </div>
 
+                     {{-- {!! Form::model($modelBayar, ['route' => $route, 'method' = > $method]) !!}
+                     {!! Form::text('sewa_id', $model->id, []) !!} --}}
                      
                      <hr/>
                      <div class="form-group">
@@ -103,6 +105,7 @@
                         <small id="#" class="form-text text-muted">*Kosongkan jika tidak membayar</small>
                         <span class="text-danger">{{ $errors->first('total_bayar') }}</span>
                      </div>
+
 
                   
                      <div class="dropright">

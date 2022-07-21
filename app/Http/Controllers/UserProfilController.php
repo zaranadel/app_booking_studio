@@ -41,14 +41,14 @@ class UserProfilController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' .  $id,
-            'telp' => 'required|numeric|min:13',
+            // 'telp' => 'nullable|numeric|min:13',
             'password' => 'nullable|confirmed',
             
         ]);
         $model = Model::findOrFail($id);
         $model->name = $request->name;
         $model->email = $request->email;
-        $model->telp = $request->telp;
+        // $model->telp = $request->telp;
         if ($request->password) {
             $model->password = bcrypt($request->password);
         } else {

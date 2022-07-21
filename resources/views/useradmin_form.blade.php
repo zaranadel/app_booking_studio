@@ -6,7 +6,7 @@
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header">Tambah Admin</div>
+                <div class="card-header bg-dark">Tambah Admin</div>
 
                 <div class="card-body">
                     {!! Form::model($model, ['route' => $route, 'method' => $method]) !!}
@@ -43,10 +43,10 @@
                       <span class="text-danger">{{ $errors->first('akses') }}</span>
                    </div>
 
-                   <a href="/user" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
                    
 
-                     {!! Form::submit($namaTombol, ['class' => 'btn btn-primary ml-1',]) !!}                     
+                     {!! Form::submit($namaTombol, ['class' => 'btn btn-primary ml-1',]) !!}  
+                     <a href="/user" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>                   
                     {!! Form::close() !!}
                     
                 </div>
