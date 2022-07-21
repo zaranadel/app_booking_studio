@@ -102,7 +102,7 @@
                         <label for="total_bayar">TOTAL BAYAR (Rp.)</label>
                         <small id="#" class="form-text text-muted">(Optional)</small>
                         {!! Form::number('total_bayar', null, ['class' => 'form-control', 'placeholder' => 'Contoh:100000']) !!}
-                        <small id="#" class="form-text text-muted">*Kosongkan jika tidak membayar</small>
+                        <small id="#" class="text-danger">*Kosongkan jika tidak membayar</small>
                         <span class="text-danger">{{ $errors->first('total_bayar') }}</span>
                      </div>
 
@@ -123,7 +123,7 @@
                         <label for="bank">Bank</label>
                         <small id="#" class="form-text text-muted">(Optional)</small>
                         {!! Form::text('bank', null, ['class' => 'form-control', 'placeholder' => 'Contoh : BRI']) !!}
-                        <small id="#" class="form-text text-muted">*Kosongkan jika tidak membayar</small>
+                        <small id="#" class="text-danger">*Kosongkan jika tidak membayar</small>
                         <span class="text-danger">{{ $errors->first('bank') }}</span>
                      </div>
 

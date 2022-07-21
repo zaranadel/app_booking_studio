@@ -69,6 +69,23 @@ class SewaController extends Controller
             // 'dibuat_oleh'=>'required'  ,
         ]);
         $requestData['user_id'] = Auth::user()->id;
+        $cek = Model::where('ruangstudio_id', $request->ruangstudio_id)
+                    ->where('tgl_sewa', $request->tgl_sewa)
+                    ->where('jam_sewa', $request->jam_sewa)
+                    ->count();
+
+                    if ($cek > 0){
+                        // return back()->with(['keterangan' => 'Ruang Studio Sudah Ada Yang Booking', 'tipe' => 'danger']);
+                        flash('Ruang Studio Sudah Ada Yang Booking')->error();
+                        return back();
+                    }else{
+                        Model::create($requestData);
+                        
+                        flash('Booking Berhasil, Tinggal Menunggu Approve Dari Admin');
+                        return back();
+                    };
+
+        
         // dd($requestData);
         // $model = new Model();
         // $model->nama = $request->nama;
@@ -81,8 +98,8 @@ class SewaController extends Controller
         // $model->status = 'proses';
         // $model->save();
         // $requestData['dibuat_oleh'] = Auth::user()->id;
-        Model::create($requestData);
-        flash("Data Booking Berhasil Dibuat");
+        // Model::create($requestData);
+        // flash("Data Booking Berhasil Dibuat");
         return redirect()->route('sewa.index');
         
     }

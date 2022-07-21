@@ -94,7 +94,9 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::checkbox('status', null, null, []) !!}
+                    
+                    {!! Form::open(['route' => ['sewa.create', $model->status], 'method' => 'POST', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
+                    
 
                     <!-- Button trigger modal -->
 

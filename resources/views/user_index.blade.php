@@ -19,7 +19,7 @@
                             <div class="input-group ">
                             {!! Form::open(['method' => 'GET']) !!}
                                 <div class="custom-file ">
-                                {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Search...']) !!}
+                                {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Cari Nama atau Email']) !!}
                                 </div>
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> </button>

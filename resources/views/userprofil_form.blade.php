@@ -33,7 +33,7 @@
                         <label for="password">Password</label>
                         {!! Form::password('password', ['class' => 'form-control', 'placeholder' => '(Optional)']) !!}
                         <span class="text-danger">{{ $errors->first('password') }}</span>
-                        <small>*Kosongkan Password Jika Tidak Ingin Diganti</small>
+                        <small class="text-danger">*Kosongkan Password Jika Tidak Ingin Diganti</small>
                      </div>
                     
                      <div class="form-group">
