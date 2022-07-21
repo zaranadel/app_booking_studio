@@ -98,7 +98,7 @@ https://www.tooplate.com/view/2117-infinite-loop
             <div class="row tm-content-box">
                 <!-- second row -->
                 <div class="col-lg-1">
-                    <i class="far fa-3x fa-chart-bar text-center tm-icon"></i>
+                    {{-- <i class="far fa-3x fa-chart-bar text-center tm-icon"></i> --}}
                 </div>
                 <div class="col-lg-5">
                     <div class="tm-intro-text-container">
@@ -109,7 +109,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                 </div>
 
                 <div class="col-lg-1">
-                    <i class="far fa-3x fa-comment-alt text-center tm-icon"></i>
+                    {{-- <i class="far fa-3x fa-comment-alt text-center tm-icon"></i> --}}
                 </div>
                 <div class="col-lg-5">
                     <div class="tm-intro-text-container">
@@ -124,7 +124,7 @@ https://www.tooplate.com/view/2117-infinite-loop
             <div class="row tm-content-box">
                 <!-- third row -->
                 <div class="col-lg-1">
-                    <i class="fas fa-3x fa-fingerprint text-center tm-icon"></i>
+                    {{-- <i class="fas fa-3x fa-fingerprint text-center tm-icon"></i> --}}
                 </div>
                 <div class="col-lg-5">
                     <div class="tm-intro-text-container">
@@ -139,7 +139,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                 </div>
 
                 <div class="col-lg-1">
-                    <i class="fas fa-3x fa-users text-center tm-icon"></i>
+                   {{--  <i class="fas fa-3x fa-users text-center tm-icon"></i> --}}
                 </div>
                 <div class="col-lg-5">
                     <div class="tm-intro-text-container">
@@ -180,9 +180,9 @@ https://www.tooplate.com/view/2117-infinite-loop
                             </figure>
 
                             <figure class="tm-testimonial-item">
-                                <img src="img/1.jpg" alt="Image" class="img-fluid mx-auto">
+                                <img src="img/1.jpeg" alt="Image" class="img-fluid mx-auto">
                                 <blockquote></blockquote>
-                                <figcaption>Rivaldi Sastra Fadila <br>(Feeder/AFK)</figcaption>
+                                <figcaption>Rivaldi Sastra Fadila <br>(Proposal)</figcaption>
                             </figure>
                         </div>
                     </div>

@@ -1,10 +1,18 @@
 @extends('layouts.app')
 <title>Traxx: Register</title>
 @section('content')
+<style>
+    body {
+        background-image: url('{{ asset("img/11.jpg") }}');
+        background-size: cover;
+        opacity: 0.8;
+    }
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card"  style="box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5), 
+            inset 10px 10px 15px rgba(70, 70, 70, 0.12);">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
