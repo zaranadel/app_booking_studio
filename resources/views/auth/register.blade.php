@@ -7,12 +7,16 @@
         background-size: cover;
         opacity: 0.8;
     }
+    .card {
+        margin-top: 70px;
+        box-shadow: 10px 10px 15px rgba(255, 255, 255, 0.5), 
+              -10px -10px 15px rgba(70, 70, 70, 0.12);
+    }
 </style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card"  style="box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5), 
-            inset 10px 10px 15px rgba(70, 70, 70, 0.12);">
+            <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">

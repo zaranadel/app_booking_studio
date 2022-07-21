@@ -132,8 +132,8 @@ https://www.tooplate.com/view/2117-infinite-loop
                         <p class="mb-4 tm-intro-text">
                             You have <strong>no</strong> authority to post this template as a ZIP file on your template collection websites. You can <strong>use</strong> this template for your commercial websites.</p> --}}
 
-                        <div class="tm-continue">
-                            <a href="#testimonials" class="tm-intro-text tm-btn-primary">Learn More</a>
+                        {{-- <div class="tm-continue"> --}}
+                            {{-- <a href="#testimonials" class="tm-intro-text tm-btn-primary">Learn More</a> --}}
                         </div>
                     </div>
                 </div>
@@ -147,8 +147,8 @@ https://www.tooplate.com/view/2117-infinite-loop
                         <p class="mb-4 tm-intro-text">
                             You can change <a href="https://fontawesome.com/icons?d=gallery">Font Awesome icons</a> by either <b><em>fas or far</em></b> in the HTML codes. For Examples:<br>
                             <em>&lt;i class=&quot;fas fa-users&quot;&gt;&lt;i class=&quot;far fa-chart-bar&quot;&gt;</em> </p> --}}
-                        <div class="tm-continue">
-                            <a href="#testimonials" class="tm-intro-text tm-btn-primary">Details</a>
+                        {{-- <div class="tm-continue"> --}}
+                            {{-- <a href="#testimonials" class="tm-intro-text tm-btn-primary">Details</a> --}}
                         </div>
                     </div>
                 </div>
@@ -168,7 +168,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                     <div class="mx-auto tm-gallery-container tm-gallery-container-2">
                         <div class="tm-testimonials-carousel">
                             <figure class="tm-testimonial-item">
-                                <img src="img/testimonial-img-01.jpg" alt="Image" class="img-fluid mx-auto">
+                                <img src="img/3.jpeg" alt="Image" class="img-fluid mx-auto">
                                 <blockquote></blockquote>
                                 <figcaption>M. Zar'an Adel Syahputra <br>(Back End Dev)</figcaption>
                             </figure>
@@ -206,65 +206,65 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <div class="col-12">
                     <div class="mx-auto tm-gallery-container">
                         <div class="grid tm-gallery">
-                            <a href="img/gallery-img-01.jpg">
+                            <a href="img/12.jpg">
                                 <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/gallery-tn-01.jpg" alt="Image 1" class="img-fluid">
+                                    <img src="img/12.jpg" alt="Image 1" class="img-fluid">
                                     <figcaption>
                                         <h2><i>Physical Health <span>Exercise!</span></i></h2>
                                     </figcaption>
                                 </figure>
                             </a>
-                            <a href="img/gallery-img-02.jpg">
+                            <a href="img/13.jpg">
                                 <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/gallery-tn-02.jpg" alt="Image 2" class="img-fluid">
+                                    <img src="img/13.jpg" alt="Image 2" class="img-fluid"  style="background-size: cover;">
                                     <figcaption>
                                         <h2><i>Rain on Glass <span>Second Image</span></i></h2>
                                     </figcaption>
                                 </figure>
                             </a>
-                            <a href="img/gallery-img-03.jpg">
+                            <a href="img/14.jpg">
                                 <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/gallery-tn-03.jpg" alt="Image 3" class="img-fluid">
+                                    <img src="img/14.jpg" alt="Image 3" class="img-fluid">
                                     <figcaption>
                                         <h2><i><span>Sea View</span> Mega City</i></h2>
                                     </figcaption>
                                 </figure>
                             </a>
-                            <a href="img/gallery-img-04.jpg">
+                            <a href="img/15.jpg">
                                 <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/gallery-tn-04.jpg" alt="Image 4" class="img-fluid">
+                                    <img src="img/15.jpg" alt="Image 4" class="img-fluid">
                                     <figcaption>
                                         <h2><i>Dream Girl <span>Thoughts</span></i></h2>
                                     </figcaption>
                                 </figure>
                             </a>
-                            <a href="img/gallery-img-05.jpg">
+                            <a href="img/16.jpg">
                                 <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/gallery-tn-05.jpg" alt="Image 5" class="img-fluid">
+                                    <img src="img/16.jpg" alt="Image 5" class="img-fluid">
                                     <figcaption>
                                         <h2><i><span>Workstation</span> Offices</i></h2>
                                     </figcaption>
                                 </figure>
                             </a>
-                            <a href="img/gallery-img-06.jpg">
+                            <a href="img/17.png">
                                 <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/gallery-tn-06.jpg" alt="Image 6" class="img-fluid">
+                                    <img src="img/17.png" alt="Image 6" class="img-fluid">
                                     <figcaption>
                                         <h2><i>Just Above <span>The City</span></i></h2>
                                     </figcaption>
                                 </figure>
                             </a>
-                            <a href="img/gallery-img-01.jpg">
+                            <a href="img/18.jpg">
                                 <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/gallery-tn-01.jpg" alt="Image 7" class="img-fluid">
+                                    <img src="img/18.jpg" alt="Image 7" class="img-fluid">
                                     <figcaption>
                                         <h2><i>Another <span>Exercise Time</span></i></h2>
                                     </figcaption>
                                 </figure>
                             </a>
-                            <a href="img/gallery-img-02.jpg">
+                            <a href="img/20.jpg">
                                 <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/gallery-tn-02.jpg" alt="Image 8" class="img-fluid">
+                                    <img src="img/20.jpg" alt="Image 8" class="img-fluid">
                                     <figcaption>
                                         <h2><i>Repeated <span>Image Spot</span></i></h2>
                                     </figcaption>
