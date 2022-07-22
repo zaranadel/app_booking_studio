@@ -259,17 +259,7 @@
               </a> 
             </li>
 
-            <li class="nav-item">
-              {{-- @foreach ($models as $item) --}}
-              <a href="#" class="nav-link">
-              {{-- <a href="{{ route('sewapelanggan.show') }}" class="nav-link {{ request()->is('sewapelanggan/show') ? 'active' : '' }}"> --}}
-                {{-- @endforeach --}}
-                <i class="far fa-circle nav-icon"></i>
-                <p>
-                  Detail Booking
-                </p>
-              </a> 
-            </li>
+           
             </ul>           
             </li>
 

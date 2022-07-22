@@ -46,7 +46,7 @@ class BayarController extends Controller
         //     return back();
         // }
             // 
-            $data['model'] = Model::findOrFail ($id);
+            // $data['model'] = Model::findOrFail ($id);
            
             // $total->sewa_id = $sewaId;
             // $total->status = $status;
@@ -61,7 +61,7 @@ class BayarController extends Controller
             ]);
             
             $requestData['diterima_oleh'] = Auth::user()->id;
-            Model::create($requestData && $model);
+            Model::create($requestData);
             flash("Data Booking Telah Dikonfirmasi");
             return back();
 

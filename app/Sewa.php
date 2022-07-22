@@ -41,7 +41,7 @@ class Sewa extends Model
      */
     public function bayar(): BelongsTo
     {
-        return $this->belongsTo(Bayar::class);
+        return $this->belongsTo(Bayar::class)->withDefault();
     }
 
     public function getJumlahRupiah()
