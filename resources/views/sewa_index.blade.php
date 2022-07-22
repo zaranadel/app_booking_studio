@@ -44,7 +44,7 @@
 
                     </div>
                     
-                    <table class="table table-light table-striped table-bordered" style="font-size: 14px" id="example1">                        
+                    <table class="table table-light table-striped table-bordered" style="font-size: 12px" id="example1">                        
                         <thead>
                             <tr>
                                 <th>NO.</th>
@@ -72,7 +72,7 @@
                                     <td>{{ $item->jam_sewa }}</td>
                                     <td>{{ $item->selesai_sewa }}</td>
                                     {{-- <td>{{ $item->total_bayar }}</td> --}}
-                                    <td>{{ $item->status }}</td>
+                                    <td>{{ $item->bayar->status }}</td>
                                     {{-- <td>{{ number_format($item->harga, 0, ",", ".") }}</td> --}}
                                     @if (auth()->user()->akses == 'admin')
                                     <td>

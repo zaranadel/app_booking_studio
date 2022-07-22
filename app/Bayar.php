@@ -18,6 +18,6 @@ class Bayar extends Model
      */
     public function sewa(): BelongsTo
     {
-        return $this->belongsTo(Sewa::class);
+        return $this->belongsTo(Sewa::class)->withDefault();
     }
 }

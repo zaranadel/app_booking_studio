@@ -41,7 +41,7 @@
                                     </tr>
                                     <tr>
                                         <td>Status Konfirmasi</td>
-                                        <td>: {{ $model->status }}</td>
+                                        <td>: {{ $model->bayar->status }}</td>
                                     </tr>
                             </table>                                          
                         </div> 
