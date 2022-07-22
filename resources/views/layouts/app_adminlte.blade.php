@@ -212,7 +212,7 @@
 
           @if (auth()->user()->akses == 0)
           <li class="nav-item">
-            <a href="{{ route('sewa.index') }}" class="nav-link {{ request()->is('sewa*') ? 'active' : '' }}">
+            <a href="{{ route('sewa.index') }}" class="nav-link {{ request()->is('sewa') ? 'active' : '' }}">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Tabel Booking

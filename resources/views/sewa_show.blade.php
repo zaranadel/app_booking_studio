@@ -85,8 +85,8 @@
                                        {{-- {!! Form::select('jam_sewa', [ --}}
                                        <select name="status" class="form-control col-md-6">
                                         <option disabled selected>-- Pilih Status --</option>
-                                       <option value="Diterima">Ditolak</option>
-                                       <option value="Ditolak">Diterima</option>
+                                       <option value="Diterima">Diterima</option>
+                                       <option value="Ditolak">Ditolak</option>
                                      </select>
                                         <span class="text-danger">{{ $errors->first('status') }}</span>
                                      </div>

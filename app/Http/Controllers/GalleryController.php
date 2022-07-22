@@ -105,18 +105,16 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'foto_gallery' => 'required|image|mimes:jpg, png, jpeg|max:2000',
+        $requestData = $request->validate([
+            'foto_gallery' => 'nullable|image|mimes:jpg,png,jpeg|max:2000',
             'nama' => 'required',
-            'merek' => 'required',
-            
-            
+            'merek' => 'required', 
+            'deskripsi' => 'nullable',           
         ]);
-        $model = Model::findOrFail($id);
-        $model->gallery = $request->gallery;
-        $model->nama = $request->nama;
-        $model->merek = $request->merek;        
-        $model->save();
+        if ($request->hasFile('foto_gallery')){
+            $requestData['foto_gallery'] =  $request->file('foto_gallery')->store('public/images');
+        }
+        Model::where('id', $id)->update($requestData);
         flash("Data berhasil diupdate");
         return back();
     }

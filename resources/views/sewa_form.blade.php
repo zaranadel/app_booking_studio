@@ -129,7 +129,7 @@
 
                      
                      {!! Form::submit($namaTombol, ['class' => 'btn btn-primary']) !!}
-                     <a href="/ruangstudio" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
+                     <a href="/sewa" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
                     {!! Form::close() !!}
                    
                     

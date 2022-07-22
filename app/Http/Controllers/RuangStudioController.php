@@ -117,7 +117,7 @@ class RuangStudioController extends Controller
             // 'harga' => 'required|numeric',
             // 'gambar' => 'nullable|image|mimes:jpg, png, jpeg|max:2000',
             // 'deskripsi' => 'required',
-            'namaruangstudio' => 'required' .$id,
+            'namaruangstudio' => 'required',
             'harga' => 'required|numeric',
             'gambar' => 'nullable|image|mimes:jpg,png,jpeg|max:2000',
             'deskripsi' => 'nullable',
@@ -127,7 +127,7 @@ class RuangStudioController extends Controller
             // $model = Model::findOrFail($id);
 
         }
-       
+        // Model::create($requestData);   
         Model::where('id', $id)->update($requestData);
         flash("Data berhasil diupdate");
         return back();
