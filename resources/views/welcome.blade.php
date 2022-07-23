@@ -198,7 +198,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <div class="text-center col-12">
                     <h2 class="tm-text-primary tm-section-title mb-4">Gallery</h2>
                     <p class="mx-auto tm-section-desc">
-                        Ini adalah gallery dari Traxx Studio yang berisikan potret studio dan beberapa fasilitas studio
+                        Ini adalah gallery dari Traxx Studio yang berisikan potret beberapa fasilitas studio
                     </p>
                 </div>
             </div>
@@ -210,7 +210,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                                 <figure class="effect-honey tm-gallery-item">
                                     <img src="img/12.jpg" alt="Image 1" class="img-fluid">
                                     <figcaption>
-                                        <h2><i>Physical Health <span>Exercise!</span></i></h2>
+                                        <h2><i>Drumset Tama Swingstar <span>S52KH6 BK-VTR</span></i></h2>
                                     </figcaption>
                                 </figure>
                             </a>
@@ -218,7 +218,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                                 <figure class="effect-honey tm-gallery-item">
                                     <img src="img/13.jpg" alt="Image 2" class="img-fluid"  style="background-size: cover;">
                                     <figcaption>
-                                        <h2><i>Rain on Glass <span>Second Image</span></i></h2>
+                                        <h2><i>Tama Superstar Classic Dark Red Sparkle<span> CK52KR-DRP 22"</span></i></h2>
                                     </figcaption>
                                 </figure>
                             </a>
@@ -226,7 +226,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                                 <figure class="effect-honey tm-gallery-item">
                                     <img src="img/14.jpg" alt="Image 3" class="img-fluid">
                                     <figcaption>
-                                        <h2><i><span>Sea View</span> Mega City</i></h2>
+                                        <h2><i><span>DW Drum Set Red</span> DDLG2215CS</i></h2>
                                     </figcaption>
                                 </figure>
                             </a>
@@ -234,7 +234,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                                 <figure class="effect-honey tm-gallery-item">
                                     <img src="img/15.jpg" alt="Image 4" class="img-fluid">
                                     <figcaption>
-                                        <h2><i>Dream Girl <span>Thoughts</span></i></h2>
+                                        <h2><i>Stick Promark <span> Mike Portnoy</span></i></h2>
                                     </figcaption>
                                 </figure>
                             </a>
@@ -242,7 +242,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                                 <figure class="effect-honey tm-gallery-item">
                                     <img src="img/16.jpg" alt="Image 5" class="img-fluid">
                                     <figcaption>
-                                        <h2><i><span>Workstation</span> Offices</i></h2>
+                                        <h2><i>Guitar Electric<span> Xaviere</span></i></h2>
                                     </figcaption>
                                 </figure>
                             </a>
@@ -250,7 +250,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                                 <figure class="effect-honey tm-gallery-item">
                                     <img src="img/17.png" alt="Image 6" class="img-fluid">
                                     <figcaption>
-                                        <h2><i>Just Above <span>The City</span></i></h2>
+                                        <h2><i>Guitar Electric <span>Epiphone</span></i></h2>
                                     </figcaption>
                                 </figure>
                             </a>
@@ -258,7 +258,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                                 <figure class="effect-honey tm-gallery-item">
                                     <img src="img/18.jpg" alt="Image 7" class="img-fluid">
                                     <figcaption>
-                                        <h2><i>Another <span>Exercise Time</span></i></h2>
+                                        <h2><i>Microphone Shure <span> SM58-LCE Dynamic </span></i></h2>
                                     </figcaption>
                                 </figure>
                             </a>
@@ -266,7 +266,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                                 <figure class="effect-honey tm-gallery-item">
                                     <img src="img/20.jpg" alt="Image 8" class="img-fluid">
                                     <figcaption>
-                                        <h2><i>Repeated <span>Image Spot</span></i></h2>
+                                        <h2><i>Microphone <span>My Mic FG01 Professional Retro Condenser</span></i></h2>
                                     </figcaption>
                                 </figure>
                             </a>

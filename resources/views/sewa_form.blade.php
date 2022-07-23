@@ -6,7 +6,7 @@
     <!-- Main content -->
     <section class="content">
       
-            <div class="card ml-6" style="width: 40rem; " >
+            <div class="card ml-6" style="width: 40rem; margin: 0 auto">
                 <div class="card-header bg-dark" style="font-size: 16px" >FORM BOOKING RUANG STUDIO</div>
 
                 <div class="card-body" style="font-size: 14px">

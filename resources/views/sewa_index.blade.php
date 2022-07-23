@@ -24,7 +24,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-8">
-                            <h5>Pastikan waktu booking yang ingin anda pesan tersedia<i class="fas fa-bullhorn"></i></h5>
+                            <h5> Pastikan waktu booking yang ingin anda pesan tersedia  <i class="fas fa-bullhorn"></i></h5>
                         </div>
 
                         <div class="col-md-4">

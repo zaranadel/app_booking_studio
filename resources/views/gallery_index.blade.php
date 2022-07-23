@@ -12,13 +12,13 @@
                     @if (auth()->user()->akses == 'admin')
                     <a href="{{ route($routePrefix .'.create') }}" class="btn btn-info mb-2"><i class="fa fa-plus"></i> Tambah Data Gallery</a>
                     @endif
-                    <table class="table table-striped table-bordered table-hover" style="font-size: 16px">
+                    <table class="table table-striped table-bordered table-hover table-responsive" style="font-size: 14px">
                         <thead class="thead-dark text-center">
                             <tr>
                                 <th>FOTO</th>
                                 <th>NAMA ALAT</th>
                                 <th>MEREK</th>                               
-                                <th>DESKRIPSI</th>
+                                <th style="width: 50%">DESKRIPSI</th>
                                 @if (auth()->user()->akses == 'admin')
                                 <th>AKSI</th>
                                 @endif
