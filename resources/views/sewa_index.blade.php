@@ -44,7 +44,7 @@
                         </div>
 
                     </div>
-                    
+                    <h2 class="text-center">{{ $title }}</h2>
                     <table class="table table-light table-striped table-bordered table-hover" style="font-size: 12px" id="example1">                        
                         <thead class="bg-dark">
                             <tr>
@@ -63,39 +63,47 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($models as $item)
-                                <tr>                   
-                                    <td>{{ $loop->iteration }}</td>                 
-                                    <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->ruangstudio->namaruangstudio }}</td>
-                                    <td>{{ $item->telp }}</td>
-                                    <td>{{ $item->tgl_sewa->translatedFormat('d F Y') }}</td>
-                                    <td>{{ $item->jam_sewa }}</td>
-                                    {{-- <td>{{ $item->selesai_sewa }}</td> --}}
-                                    {{-- <td>{{ $item->total_bayar }}</td> --}}
-                                    <td>{{ $item->bayar->status }}</td>
-                                    {{-- <td>{{ number_format($item->harga, 0, ",", ".") }}</td> --}}
-                                    @if (auth()->user()->akses == 'admin')
-                                    <td>
-                                        {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
 
-                                        
-                                        {{-- <a href="{{ route($routePrefix .'.edit', $item->id) }}" class="btn btn-warning "><i class="fa fa-edit"></i> </a> --}}
+                            @forelse ($models as $item)
+                            <tr>                   
+                                <td>{{ $loop->iteration }}</td>                 
+                                <td>{{ $item->nama }}</td>
+                                <td>{{ $item->ruangstudio->namaruangstudio }}</td>
+                                <td>{{ $item->telp }}</td>
+                                <td>{{ $item->tgl_sewa->translatedFormat('d F Y') }}</td>
+                                <td>{{ $item->jam_sewa }}</td>
+                                {{-- <td>{{ $item->selesai_sewa }}</td> --}}
+                                {{-- <td>{{ $item->total_bayar }}</td> --}}
+                                <td>{{ $item->bayar->status ?? 'On Proses' }}</td>
+                                {{-- <td>{{ number_format($item->harga, 0, ",", ".") }}</td> --}}
+                                @if (auth()->user()->akses == 'admin')
+                                <td>
+                                    {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
 
-                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                        
-                                        
+                                    
+                                    {{-- <a href="{{ route($routePrefix .'.edit', $item->id) }}" class="btn btn-warning "><i class="fa fa-edit"></i> </a> --}}
 
-                                        <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> </a>
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> </button>
+                                    
+                                    
 
-                                        
-                                       
-                                        
-                                        {!! Form::close() !!}
-                                    </td>
-                                    @endif
+                                    <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> </a>
+
+                                    
+                                   
+                                    
+                                    {!! Form::close() !!}
+                                </td>
+                                @endif
+                            </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="8" class="text-center">Silahkan Pilih Bulan Dan Tahun Untuk Mencari Data Ketersediaan Booking</td>
                                 </tr>
-                            @endforeach
+                            @endforelse
+
+
+                           
                         </tbody>
                     </table>
                     {{-- <a href="{{ route('sewa.create') }}" class="btn btn-primary">Booking Studio</a> --}}

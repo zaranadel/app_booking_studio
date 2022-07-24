@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use \App\Sewa as Model;
 use App\RuangStudio;
 use App\Bayar;
+use Carbon\Carbon;
 // use \App\RuangStudio;
 
 class SewaController extends Controller
@@ -20,12 +21,16 @@ class SewaController extends Controller
      */
     public function index(Request $request)
     {        
+        $title = null;
         if ($request->filled('bulan') && $request->filled('tahun')){
             $models = Model::whereMonth('tgl_sewa', $request->bulan)->whereYear('tgl_sewa', $request->tahun)->latest()->get();
+            $bulan = Carbon::parse("2020-" . $request->bulan. "-01")->translatedFormat('F');
+            $title = "Data Booking Bulan" . $bulan . " " . $request->tahun;
         } 
         else{
-            $models = Model::latest()->get();
+            $models = collect([]);
         }        
+        $data['title'] = $title;
         $data['models'] = $models;
         $data['routePrefix'] = $this->routePrefix;       
         return view($this->viewPrefix . '_index', $data);

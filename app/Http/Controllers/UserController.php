@@ -144,7 +144,7 @@ class UserController extends Controller
         }
 
         $model = Model::findOrFail($id);
-        if($model->sewa->count() >=1){
+        if($model->sewa->count() >= 1){
             flash('Data gagal dihapus karena sedang membooking ruang studio')->error();
             return back();
         }
