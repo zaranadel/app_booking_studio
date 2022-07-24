@@ -59,7 +59,8 @@ class BayarController extends Controller
                 'total_bayar' => 'numeric',
                 'diterima_oleh' => 'nullable',
             ]);
-            
+            // $data['model'] = Model::findOrFail ($id);
+            // $data['model'] = $model;
             $requestData['diterima_oleh'] = Auth::user()->id;
             Model::create($requestData);
             flash("Data Booking Telah Dikonfirmasi");

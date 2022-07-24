@@ -35,10 +35,10 @@
                                         <td>Jam Mulai Booking</td>
                                         <td>: {{ $model->jam_sewa }}</td>
                                     </tr>
-                                    <tr>
+                                    {{-- <tr>
                                         <td>Jam Selesai Booking</td>
                                         <td>: {{ $model->selesai_sewa }}</td>
-                                    </tr>
+                                    </tr> --}}
                                     <tr>
                                         <td>Status Konfirmasi</td>
                                         <td>: {{ $model->bayar->status }}</td>
@@ -62,7 +62,8 @@
                                         </tr>
                                         <tr>
                                             <td>Harga Booking Per Jam</td>
-                                            <th>: Rp. {{ $model->ruangstudio->harga}}</th>
+                                            {{-- <th>: Rp. {{ $model->ruangstudio->harga}}</th> --}}
+                                            <th>: Rp. {{ number_format($model->ruangstudio->harga, 0, ",", ".") }}</th>
                                         </tr>           
                                     </table>
                                     <hr/>
@@ -73,7 +74,7 @@
                                         </tr> --}}
                                         <tr>
                                             <td>Total Bayar (Optional)</td>
-                                            <th>: </th>
+                                            <th>: Rp. {{ number_format($model->total_bayar, 0, ",", ".") }}</th>
                                         </tr>
                                     </table>
                                     <hr/>
@@ -83,7 +84,7 @@
                                     <div class="form-group">
                                         <label for="status">Approve Booking?</label>
                                        {{-- {!! Form::select('jam_sewa', [ --}}
-                                       <select name="status" class="form-control col-md-6">
+                                       <select name="status" class="form-control col-md-12">
                                         <option disabled selected>-- Pilih Status --</option>
                                        <option value="Diterima">Diterima</option>
                                        <option value="Ditolak">Ditolak</option>
@@ -91,7 +92,7 @@
                                         <span class="text-danger">{{ $errors->first('status') }}</span>
                                      </div>
 
-                                        {!! Form::submit('Konfirmasi', ['class' => 'btn btn-primary']) !!}
+                                        {!! Form::submit('Konfirmasi', ['class' => 'btn btn-primary ']) !!}
                                         
                                     {!! Form::close() !!}
                                     
