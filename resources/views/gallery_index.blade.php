@@ -18,10 +18,10 @@
                                 <th>FOTO</th>
                                 <th>NAMA ALAT</th>
                                 <th>MEREK</th>                               
-                                <th style="width: 50%">DESKRIPSI</th>
-                                @if (auth()->user()->akses == 'admin')
+                                <th style="width: 100%">DESKRIPSI</th>
+                                {{-- @if (auth()->user()->akses == 'admin') --}}
                                 <th>AKSI</th>
-                                @endif
+                                {{-- @endif --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -32,20 +32,21 @@
                                     <td class="text-center">{{ $item->nama }}</td>
                                     <td class="text-center">{{ $item->merek }}</td> 
                                     <td class="text-left">{{ $item->deskripsi }}</td> 
-                                    @if (auth()->user()->akses == 'admin')                                   
+                                    
                                     <td>
+                                      @if (auth()->user()->akses == 'admin')                                   
                                         {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
 
                                        
                                         <a href="{{ route($routePrefix .'.edit', $item->id) }}" class="btn btn-warning"><i class="fa fa-edit"></i> </a>
                                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-
+                                        @endif
                                         <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> </a>
                                         
                                       
                                         
                                         {!! Form::close() !!}
-                                        @endif 
+ 
                                     </td>
                                 </tr>
                             @endforeach
