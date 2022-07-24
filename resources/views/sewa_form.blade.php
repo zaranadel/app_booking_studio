@@ -1,12 +1,25 @@
 @extends('layouts.app_adminlte')
 <title>Form Booking</title>
 @section('content')
+<style>
+   section {
+       background-image: url('{{ asset("img/bgmusic.jpg") }}');
+       background-size: cover;
+       opacity: 0.9;
+   }
+   .card {
+       margin-top: 70px;
+       
+       box-shadow: 10px 10px 15px rgba(255, 255, 255, 0.5), 
+            -10px -10px 15px rgba(70, 70, 70, 0.12);
+   }
+</style>
 
 
     <!-- Main content -->
     <section class="content">
       
-            <div class="card ml-6" style="width: 40rem; margin: 0 auto">
+            <div class="card ml-6" style="width: 40rem; margin: 0 auto;">
                 <div class="card-header bg-dark" style="font-size: 16px" >FORM BOOKING RUANG STUDIO</div>
 
                 <div class="card-body" style="font-size: 14px">
