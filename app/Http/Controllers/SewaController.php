@@ -193,7 +193,7 @@ class SewaController extends Controller
 
     public function cetakLaporanPertanggal($tglawal, $tglakhir){
 
-        $cetakperTanggal = Model::with('ruangstudio')->whereBetween('tgl_sewa', [$tglawal, $tglakhir])->latest()->get();
+        $cetakperTanggal = Model::with('ruangstudio')->whereBetween('tgl_sewa', [$tglawal, $tglakhir])->latest('tgl_sewa')->get();
         return view('cetak-laporan-pertanggal', compact('cetakperTanggal'));
 
     }

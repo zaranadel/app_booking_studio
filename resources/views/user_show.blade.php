@@ -27,8 +27,8 @@
                                         <td>: {{ $model->created_at->translatedFormat('d F Y')}}</td>
                                     </tr>
                                     <tr>
-                                        <td>KETERANGAN</td>
-                                        <td>: {{ strtoupper($model->akses) }}</td>
+                                        {{-- <td>KETERANGAN</td> --}}
+                                        <td style="font-size: 150%"> {{ strtoupper($model->akses) }}</td>
                                     </tr>
                                     {{-- <tr>
                                         <td>TANGGAL UPDATE</td>

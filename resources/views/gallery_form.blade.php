@@ -34,7 +34,7 @@
 
                      <div class="form-group">
                         <label for="deskripsi">DESKRIPSI</label>
-                        {!! Form::text('deskripsi', null, ['class' => 'form-control', 'placeholder' => '(Optional)', 'text-area']) !!}
+                        {!! Form::textarea('deskripsi', null, ['class' => 'form-control', 'placeholder' => '(Optional)', 'rows' => 3]) !!}
                     
                         <span class="text-danger">{{ $errors->first('deskripsi') }}</span>
                      </div>

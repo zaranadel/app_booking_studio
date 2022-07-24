@@ -48,6 +48,14 @@ class Sewa extends Model
     {
         return number_format($this->jumlah, 0, ",",".");
     }
+
+    public function getStatusAttribute($input){
+        return [
+            0 => 'On Proses',
+            1 => 'Sukses',
+            2 => 'Batal'
+        ][$input];
+    }
 }
 
 // public function ruangstudio(): BelongsTo

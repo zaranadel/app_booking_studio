@@ -5,16 +5,17 @@
 
     <!-- Main content -->
     <section class="content">           
-                    <div class="card">
-                        <div class="card-header">PROFIL DETAIL RUANG STUDIO</div>
-                        <div class="card-body">
-                            <img src="{{ \Storage::url($model->gambar ?? 'images/no-image.png') }}" width="150">
-                            <table class="table table-striped table-sm">
+                    <div class="card text-white">
+                        <div class="card-header bg-danger">PROFIL DETAIL RUANG STUDIO</div>
+                        <div class="card-body bg-dark">
+                            <img class="mb-3" src="{{ \Storage::url($model->gambar ?? 'images/no-image.png') }}" width="500">
+                            <table class="table table-dark">
                                 <thead>
-                                    
+                                   
                                     <tr>
-                                        <td>HARGA</td>
-                                        <td>: {{ $model->harga }}</td>
+                                        <td width="25%">HARGA</td>
+                                        <td>: {{ number_format($model->harga, 0, ",", ".") }} / Jam</td>
+                                        
                                     </tr>
                                     <tr>
                                         <td>DESKRIPSI</td>
@@ -29,7 +30,7 @@
                             
                             {{-- <button class="btn btn-primary">Booking</button>     --}}
                             
-                            <a href="/ruangstudio" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
+                            <a href="/ruangstudio" class="btn btn-info mt-3"><i class="fa fa-backward"></i> Kembali</a>
                         </div> 
                                            
                     </div> 

@@ -62,6 +62,7 @@ class BayarController extends Controller
             // $data['model'] = Model::findOrFail ($id);
             // $data['model'] = $model;
             $requestData['diterima_oleh'] = Auth::user()->id;
+            // Model::where('id', $id)->update($requestData);
             Model::create($requestData);
             flash("Data Booking Telah Dikonfirmasi");
             return back();

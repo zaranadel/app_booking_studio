@@ -42,7 +42,7 @@
               <div class="icon">
                 <i class="fa fa-door-closed"></i>
               </div>
-              <a href="/ruangstudio" class="small-box-footer"><i class="fas fa-dragon-red mb-4"></i></a>
+              <a href="/home" class="small-box-footer"><i class="fas fa-dragon-red mb-4"></i></a>
             </div>            
           </div>
 
@@ -76,8 +76,55 @@
             </div>
           </div>
           </div>
+
+          <div class="row">
+            <div class="col-lg-12 col-6">
+              <!-- small box -->
+              <div class="small-box" style="background-color: blueviolet">
+                <div class="inner">
+                  <h3></h3>
+                <img src="" alt="">
+                  
+                </div>
+                <div class="icon">
+                  <i class=""></i>
+                </div>
+                <a href="/ruangstudio" class="small-box-footer"><i class="fas fa-dragon-red mb-4"></i></a>
+              </div>            
+            </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-4 col-6">
+                <!-- small box -->
+                <div class="small-box" style="background-color: whitesmoke">
+                  <div class="inner">
+                    <h5 style="color: blue">Jadwal Buka Traxx Studio Musik</h5>
+                    <h6>Senin - Sabtu</h6>
+                    <hr>
+                    <h6>Jam Operasional</h6>
+                    <p>08.00 AM - 22.00 PM</p>
+                    <br>
+                    <div>
+                      <a href="/sewa"  class="btn btn-outline-dark" style="width: 100%"><h5>BOOK NOW!</h5></a>
+                    
+                  </div>
+                  </div>
+                  <div class="icon">
+                    <i class=""></i>
+                  </div>
+                  <a href="/ruangstudio" class="small-box-footer"><i class="fas fa-dragon-red mb-4"></i></a>
+                </div>            
+              </div>
+
+             
+
+              </div>
+
+              
+
           <!-- Calendar -->
-          <div class="card bg-gradient-success">
+          {{-- <div class="card bg-gradient-success">
             <div class="card-header border-0">
 
               <h3 class="card-title">
@@ -113,7 +160,7 @@
               <div id="calendar" style="width: 100%"></div>
             </div>
             <!-- /.card-body -->
-          </div>
+          </div> --}}
 
         <!-- /.card-body -->
         

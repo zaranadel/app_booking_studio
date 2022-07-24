@@ -19,15 +19,15 @@ Route::get('logout', function () {
 Route::middleware(['auth'])->group(function () {
     Route::resource('user', 'UserController')->middleware('admin');
     Route::resource('userprofil', 'UserProfilController');
-    Route::resource('useradmin', 'UserAdminController');
+    Route::resource('useradmin', 'UserAdminController')->middleware('admin');
     //Route::get('user', 'UserController');
     Route::resource('ruangstudio', 'RuangStudioController');
     Route::resource('sewa', 'SewaController');
     Route::resource('gallery', 'GalleryController');
     Route::resource('sewapelanggan', 'SewaPelangganController');    
     Route::resource('bayar', 'BayarController');    
-    Route::get('/cetak-laporan-booking-form', 'SewaController@cetakForm')->name('cetak-laporan-booking-form');
-    Route::get('/cetak-laporan-booking-pertanggal/{tglawal}/{tglakhir}', 'SewaController@cetakLaporanPertanggal')->name('cetak-laporan-booking-pertanggal');
+    Route::get('/cetak-laporan-booking-form', 'SewaController@cetakForm')->name('cetak-laporan-booking-form')->middleware('admin');
+    Route::get('/cetak-laporan-booking-pertanggal/{tglawal}/{tglakhir}', 'SewaController@cetakLaporanPertanggal')->name('cetak-laporan-booking-pertanggal')->middleware('admin');
     
 });
 // Route::get('/ruangstudio/search', [RuangStudioController::class, 'search']);

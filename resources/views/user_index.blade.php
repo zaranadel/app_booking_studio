@@ -12,7 +12,7 @@
                     <div class="container">
                     <div class="row">
                         <div class="col-md-4">
-                    <a href="useradmin/create" class="btn btn-info mb-3"><i class="fa fa-plus"></i> Tambah User</a>
+                    <a href="useradmin/create" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Tambah User</a>
                         </div>
 
                         <div class="col-md-4 ml-auto col-sm">
@@ -22,7 +22,7 @@
                                 {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Cari Nama atau Email']) !!}
                                 </div>
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> </button>
+                                    <button type="submit" class="btn btn-info" style="width: 100%"><i class="fa fa-search"></i> </button>
                                 {{-- {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!} --}}
                                 </div>
                                 {!! Form::close() !!}

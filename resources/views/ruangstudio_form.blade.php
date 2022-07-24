@@ -36,7 +36,7 @@
 
                      <div class="form-group">
                         <label for="deskripsi">DESKRIPSI</label>
-                        {!! Form::text('deskripsi', null, ['class' => 'form-control', 'autofocus' => true, 'placeholder' => 'Masukkan Deskripsi']) !!}
+                        {!! Form::textarea('deskripsi', null, ['class' => 'form-control', 'autofocus' => true, 'placeholder' => 'Masukkan Deskripsi', 'rows' => 3]) !!}
                         <span class="text-danger">{{ $errors->first('deskripsi') }}</span>
                      </div>
 

@@ -9,28 +9,34 @@
                 <div class="card-header bg-dark">Ruang Studio</div>
 
                 <div class="card-body">
+                    <div class="container">
+                        <div class="row">
                     @if (auth()->user()->akses == 'admin')
-                    <a href="{{ route($routePrefix .'.create') }}" class="btn btn-info mb-2"><i class="fa fa-plus"></i> Tambah Ruang Studio</a>
+                    <div class="col-md-4">
+                    <a href="{{ route($routePrefix .'.create') }}" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Tambah Ruang Studio</a>
+                </div>
                     @endif
 
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="input-group mb-2">
+                    {{-- <div class="row"> --}}
+                        <div class="col-md-4 ml-auto col-sm">
+                            <div class="input-group">
                             {!! Form::open(['method' => 'GET']) !!}
-                                <div class="custom-file mb-1">
+                                <div class="custom-file">
                                 {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Berdasarkan nama...']) !!}
-                                </div>
-                               
+                                </div>                               
                                 
                                 <div class="input-group-append">
-                                    <button class="btn btn-dark"><i class="fa fa-search"></i></button>
+                                    <button class="btn btn-info" style="width: 100%"><i class="fa fa-search"></i></button>
                                     
                                 {{-- {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!} --}}
                                 </div>
-                            </div>
+                            
                             {!! Form::close() !!}
                         </div>
                     </div>
+                    {{-- </div> --}}
+                </div>
+            </div>
 
                     {{-- <div class="card-tools">
                         <form action="/ruangstudio/search" class="form-inline" method="GET">
