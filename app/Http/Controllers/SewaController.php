@@ -25,7 +25,7 @@ class SewaController extends Controller
         if ($request->filled('bulan') && $request->filled('tahun')){
             $models = Model::whereMonth('tgl_sewa', $request->bulan)->whereYear('tgl_sewa', $request->tahun)->latest()->get();
             $bulan = Carbon::parse("2020-" . $request->bulan. "-01")->translatedFormat('F');
-            $title = "Data Booking Bulan" . $bulan . " " . $request->tahun;
+            $title = "Booking Bulan" . $bulan . " " . $request->tahun;
         } 
         else{
             $models = collect([]);
@@ -73,6 +73,7 @@ class SewaController extends Controller
 
             // 'dibuat_oleh'=>'required'  ,
         ]);
+        $requestData['status'] = 'Belum Disetujui';
         $requestData['user_id'] = Auth::user()->id;
         $cek = Model::where('ruangstudio_id', $request->ruangstudio_id)
                     ->where('tgl_sewa', $request->tgl_sewa)
