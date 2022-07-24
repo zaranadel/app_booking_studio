@@ -62,7 +62,7 @@ class SewaController extends Controller
             'total_bayar' => 'nullable|numeric',
             'jam_sewa' => 'required',
             'bank' => 'nullable',
-            'selesai_sewa' => 'required',
+            'selesai_sewa' => 'nullable',
             'tgl_sewa' => 'required|after:yesterday', 
             'status' => 'nullable',
 

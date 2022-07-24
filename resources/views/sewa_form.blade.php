@@ -46,33 +46,38 @@
                         <input type="text" id="datepicker" class="form-control col-md-6" name="tgl_sewa" placeholder="Tanggal Booking" autocomplete="off" />
                     </div> --}}
 
+                   {{-- <div class="form-group">
+                     <label for="jam_sewa">JAmbOOKING</label>
+                     {!! Form::time('jam_sewa', null, ['class' => 'form-control']) !!}
+                     <span class="text-danger">{{ $errors->first('jam_sewa') }}</span>
+                   </div> --}}
+
                      <div class="form-group">
-                        <label for="jam_sewa">MULAI JAM</label>
-                       {{-- {!! Form::select('jam_sewa', [ --}}
+                        <label for="jam_sewa">JAM BOOKING</label>                      
                        <select name="jam_sewa" class="form-control col-md-6">
-                        <option disabled selected>-- Pilih Mulai Jam Booking --</option>
-                       <option value="08:00:00">08:00</option>
-                       <option value="09:00:00">09:00</option>
-                       <option value="10:00:00">10:00</option>
-                       <option value="11:00:00">11:00</option>
-                       <option value="12:00:00">12:00</option>
-                       <option value="13:00:00">13:00</option>
-                       <option value="14:00:00">14:00</option>
-                       <option value="15:00:00">15:00</option>
-                       <option value="16:00:00">16:00</option>
-                       <option value="17:00:00">17:00</option>
-                       <option value="18:00:00">18:00</option>
-                       <option value="19:00:00">19:00</option>
-                       <option value="20:00:00">20:00</option>
-                       <option value="21:00:00">21:00</option>
-                       <option value="22:00:00">22:00</option>  
+                        <option disabled selected>-- Pilih Jam Booking --</option>
+                       <option value="08:00:00">08:00 AM</option>
+                       <option value="09:00:00">09:00 AM</option>
+                       <option value="10:00:00">10:00 AM</option>
+                       <option value="11:00:00">11:00 AM</option>
+                       <option value="12:00:00">12:00 PM</option>
+                       <option value="13:00:00">13:00 PM</option>
+                       <option value="14:00:00">14:00 PM</option>
+                       <option value="15:00:00">15:00 PM</option>
+                       <option value="16:00:00">16:00 PM</option>
+                       <option value="17:00:00">17:00 PM</option>
+                       <option value="18:00:00">18:00 PM</option>
+                       <option value="19:00:00">19:00 PM</option>
+                       <option value="20:00:00">20:00 PM</option>
+                       <option value="21:00:00">21:00 PM</option>
+                       <option value="22:00:00">22:00 PM</option>  
                      </select>
                         <span class="text-danger">{{ $errors->first('jam_sewa') }}</span>
                      </div>
 
-                     <div class="form-group">
+                     {{-- <div class="form-group">
                         <label for="selesai_sewa">SELESAI JAM</label>
-                       {{-- {!! Form::select('jam_sewa', [ --}}
+                      
                        <select name="selesai_sewa" class="form-control col-md-6">
                         <option disabled selected>-- Pilih Selesai Jam Booking --</option>
                        <option value="08:00:00">08:00</option>
@@ -92,7 +97,7 @@
                        <option value="22:00:00">22:00</option>  
                      </select>
                         <span class="text-danger">{{ $errors->first('selesai_sewa') }}</span>
-                     </div>
+                     </div> --}}
 
                      {{-- {!! Form::model($modelBayar, ['route' => $route, 'method' = > $method]) !!}
                      {!! Form::text('sewa_id', $model->id, []) !!} --}}
