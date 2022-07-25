@@ -74,7 +74,7 @@
                                 <td>{{ $item->jam_sewa }}</td>
                                 {{-- <td>{{ $item->selesai_sewa }}</td> --}}
                                 {{-- <td>{{ $item->total_bayar }}</td> --}}
-                                <td>{{ $item->status }}</td>
+                                <td>{{ $item->bayar->status }}</td>
                                 {{-- <td>{{ number_format($item->harga, 0, ",", ".") }}</td> --}}
                                 @if (auth()->user()->akses == 'admin')
                                 <td>
@@ -88,6 +88,8 @@
                                     
 
                                     <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> </a>
+
+                                    
 
                                     
                                    

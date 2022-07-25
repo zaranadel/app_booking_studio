@@ -15,7 +15,7 @@
                         <div class="card card text-white mb-1">
                             <div class="card-header bg-danger">DETAIL FOTO</div> 
                             <div class="card-body bg-dark"> 
-                            <img class="mb-3" src="{{ \Storage::url($model->foto_gallery ?? 'images/no-image.png') }}" style="width: auto" {{-- width="500" --}}>
+                            <img class="mb-3" src="{{ \Storage::url($model->foto_gallery ?? 'images/no-image.png') }}" style="width: 400px" {{-- width="500" --}}>
                             
                             <table class="table table-dark">
                                                            

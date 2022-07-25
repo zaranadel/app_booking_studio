@@ -41,7 +41,7 @@
                                     </tr> --}}
                                     <tr>
                                         <td>Status Konfirmasi</td>
-                                        <td>: {{ $model->bayar->status ?? 'Belum Dikonfirmasi'}}</td>
+                                        <td>: </td>
                                     </tr>
                             </table>                                          
                         </div> 
@@ -110,6 +110,7 @@
                                     Detail Gambar Ruang Studio
                                   </button>
                                 </div>
+                              
                             </div>
                         </div>
                     </div>
@@ -123,8 +124,8 @@
   <!-- Modal -->
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
+      <div class="modal-content bg-light">
+        <div class="modal-header bg-danger">
           <h5 class="modal-title" id="exampleModalLongTitle">Detail Gambar Ruang Studio</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -132,9 +133,13 @@
         </div>
         <div class="modal-body">
             <img src="{{ \Storage::url($model->ruangstudio->gambar ?? 'images/no-image.png') }}" width="100%">
+            <hr>
+            <div>
+                <p>{{ $model->ruangstudio->deskripsi }}</p>
+            </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-info" data-dismiss="modal"><i class="fa fa-backward"></i> Kembali</button>
           
         </div>
       </div>

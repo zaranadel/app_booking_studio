@@ -37,47 +37,36 @@ class BayarController extends Controller
      */
     public function store(Request $request)
     {
-        // $status = $request->status;
-        // $bayar = $request->total_bayar;
-        // $sewaId = $request->sewa_id;
-        // $sewa = Sewa::findOrFail($sewaId);
-        // if ($sewa->status == "Diterima"){
-        //     flash("Data Booking Sudah Di Approve");
-        //     return back();
-        // }
-            // 
-            // $data['model'] = Model::findOrFail ($id);
-           
-            // $total->sewa_id = $sewaId;
-            // $total->status = $status;
-            // $total->total_bayar = $bayar;
-            // $total->diterima_oleh = Auth::user()->name;
-             
-            $requestData = $request->validate([
-                'sewa_id' => 'required',
-                'status' => 'required',
-                'total_bayar' => 'numeric',
-                'diterima_oleh' => 'nullable',
-            ]);
-            // $data['model'] = Model::findOrFail ($id);
-            // $data['model'] = $model;
-            $requestData['diterima_oleh'] = Auth::user()->id;
-            // Model::where('id', $id)->update($requestData);
-            Model::create($requestData);
-            flash("Data Booking Telah Dikonfirmasi");
+       
+        $sewaId = $request->sewa_id;
+        $totalBayar = $request->total_bayar;
+        $booking = Sewa::findOrFail($sewaId);
+        if ($booking->status == "Accepted"){
+            flash("Data Booking Sudah Diterima");
             return back();
+        }
+        $bayar = new Model();
+        $bayar->sewa_id = $sewaId;
+        $bayar->total_bayar = $totalBayar;
+        $bayar->status = $request->status;
+        $bayar->diterima_oleh = Auth::user()->name;
+        $bayar->save();
+        flash("Konfirmasi Berhasil")->success();
+        return back();             
+            // $requestData = $request->validate([
+            //     'sewa_id' => 'required',
+            //     'status' => 'required',
+            //     'total_bayar' => 'numeric',
+            //     'diterima_oleh' => 'nullable',
+            // ]);
+            // // $data['model'] = Model::findOrFail ($id);
+            // // $data['model'] = $model;
+            // $requestData['diterima_oleh'] = Auth::user()->id;
+            // // Model::where('id', $id)->update($requestData);
+            // Model::create($requestData);
+            // flash("Data Booking Telah Dikonfirmasi");
+            // return back();
 
-    //    $status = $request->status;
-    //    $sewaId = $request->sewa_id;
-    //    $bayar = new Bayar();
-    //    $bayar = $diterima_oleh = Auth::user()->name;
-      
-    //    $bayar->
-    //    $bayar = $request->status;
-    //    $bayar = $diterima_oleh = Auth::user()->name;
-    //    $bayar->save();
-    //    flash('Sudah Dikonfirmasi');
-    //    return back();
     }
 
     /**

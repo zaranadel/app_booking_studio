@@ -70,10 +70,21 @@ class SewaController extends Controller
             'selesai_sewa' => 'nullable',
             'tgl_sewa' => 'required|after:yesterday', 
             'status' => 'nullable',
-
-            // 'dibuat_oleh'=>'required'  ,
         ]);
-        $requestData['status'] = 'Belum Disetujui';
+        // $jumlah = $request->total_bayar;
+        // $hargaStudio = RuangStudio::findOrFail($request->ruangstudio_id);
+        // if($jumlah == $hargaStudio->harga){
+        //     $hargaStudio->status = "Lunas";
+        //     $hargaStudio->save();
+        // }
+        $status = new Model();
+        $status->status = $request->status;
+        $status->save();
+        flash("Konfirmasi Berhasil")->success();
+        return back();  
+            
+        // $status = $request->bayar->status;
+        // $requestData['status'] = 'Belum Disetujui';
         $requestData['user_id'] = Auth::user()->id;
         $cek = Model::where('ruangstudio_id', $request->ruangstudio_id)
                     ->where('tgl_sewa', $request->tgl_sewa)
@@ -118,14 +129,30 @@ class SewaController extends Controller
      */
     public function show($id)
     {
-        $model = \App\Sewa::findOrFail($id);
+        $model = Model::findOrFail($id);
+        // $data['models'] = new Model();
         $data['model'] = $model;
-
+        // $data['route'] = 'sewa.store';
+        // $data['methods'] = 'PUT';
+        // // $status = new Model();
+        // $status->status = $id->status;
+        // $status->save();
+        // flash("Konfirmasi Berhasil")->success();
+        // return back();   
+    
+        // $bayar = \App\Bayar::findOrFail('status');
         $modelBayar = new \App\Bayar();
         $data['modelBayar'] = $modelBayar;
         $data['method'] = 'POST';
         $data['route'] = 'bayar.store';
         return view($this->viewPrefix . '_show', $data);
+    
+        // // $model = Model::findOrFail($id);
+        // $datas['models'] = $model;
+        // $datas['methods'] = 'PUT';
+        // $datas['routes'] = 'sewa.store';
+        // // $datas['namaTombol'] = 'Update';
+        // return view($this->viewPrefix . '_show', $data);
     }
 
     // public function showData($id)
