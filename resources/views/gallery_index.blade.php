@@ -18,9 +18,9 @@
                                 <th>FOTO</th>
                                 <th>NAMA ALAT</th>
                                 <th>MEREK</th>                               
-                                <th style="width: 100%">DESKRIPSI</th>
+                                <th style="width: 37%">DESKRIPSI</th>
                                 {{-- @if (auth()->user()->akses == 'admin') --}}
-                                <th>AKSI</th>
+                                <th style="width: 17%">AKSI</th>
                                 {{-- @endif --}}
                             </tr>
                         </thead>
