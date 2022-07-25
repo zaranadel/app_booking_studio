@@ -25,7 +25,7 @@ class SewaController extends Controller
         if ($request->filled('bulan') && $request->filled('tahun')){
             $models = Model::whereMonth('tgl_sewa', $request->bulan)->whereYear('tgl_sewa', $request->tahun)->latest()->get();
             $bulan = Carbon::parse("2020-" . $request->bulan. "-01")->translatedFormat('F');
-            $title = "Booking Bulan" . $bulan . " " . $request->tahun;
+            $title = "Booking Bulan " . $bulan . " " . $request->tahun;
         } 
         else{
             $models = collect([]);
