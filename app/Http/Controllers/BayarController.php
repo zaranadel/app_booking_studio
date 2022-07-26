@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Sewa;
+use \App\Sewa;
 use \App\Bayar as Model;
+use \App\User;
 
 class BayarController extends Controller
 {
+    private $viewPrefix = "bayar";
+    private $routePrefix = "bayar";
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +19,10 @@ class BayarController extends Controller
      */
     public function index()
     {
-        //
+        $models = Model::latest()->paginate(15);
+        $data['models'] = $models;
+        $data['routePrefix'] = $this->routePrefix;
+        return view($this->viewPrefix . '_index', $data);
     }
 
     /**
@@ -47,7 +53,7 @@ class BayarController extends Controller
         }
         $bayar = new Model();
         $bayar->sewa_id = $sewaId;
-        $bayar->total_bayar = $totalBayar;
+        $bayar->total_bayar = $request->total_bayar;
         $bayar->status = $request->status;
         $bayar->diterima_oleh = Auth::user()->name;
         $bayar->save();

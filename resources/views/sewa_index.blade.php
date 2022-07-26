@@ -51,7 +51,9 @@
                                 <th>NO.</th>
                                 <th>NAMA BAND</th>
                                 <th>RUANG STUDIO</th>
+                                @if (auth()->user()->akses == 'admin')  
                                 <th>NOMOR TELEPON</th>
+                                @endif
                                 <th>TGL BOOKING</th>
                                 <th>JAM BOOKING</th> 
                                 {{-- <th>JAM SELESAI</th>  --}}
@@ -69,12 +71,14 @@
                                 <td>{{ $loop->iteration }}</td>                 
                                 <td>{{ $item->nama }}</td>
                                 <td>{{ $item->ruangstudio->namaruangstudio }}</td>
+                                @if (auth()->user()->akses == 'admin') 
                                 <td>{{ $item->telp }}</td>
+                                @endif
                                 <td>{{ $item->tgl_sewa->translatedFormat('d F Y') }}</td>
                                 <td>{{ $item->jam_sewa }}</td>
                                 {{-- <td>{{ $item->selesai_sewa }}</td> --}}
                                 {{-- <td>{{ $item->total_bayar }}</td> --}}
-                                <td>{{ $item->bayar->status }}</td>
+                                <td>{{ $item->bayar->status ?? 'Pending'}}</td>
                                 {{-- <td>{{ number_format($item->harga, 0, ",", ".") }}</td> --}}
                                 @if (auth()->user()->akses == 'admin')
                                 <td>

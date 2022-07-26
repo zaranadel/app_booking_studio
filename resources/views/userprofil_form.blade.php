@@ -1,12 +1,12 @@
 @extends('layouts.app_adminlte')
-<title>Edit Profil Admin</title>
+<title>Edit Profil</title>
 @section('content')
 
 
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header bg-dark">EDIT PROFIL</div>
+                <div class="card-header bg-dark">EDIT PROFIL {{ strtoupper($model->name) }}</div>
 
                 <div class="card-body">
                     {!! Form::model($model, ['route' => $route, 'method' => $method]) !!}

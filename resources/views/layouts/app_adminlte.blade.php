@@ -191,6 +191,17 @@
           </li>
           @endif
 
+          @if (auth()->user()->akses == 'admin')
+          <li class="nav-item">
+            <a href="{{ route('bayar.index') }}" class="nav-link {{ request()->is('laporan*') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-file"></i>
+              <p>
+                Data Pembayaran
+              </p>
+            </a>            
+          </li>
+          @endif
+
           <li class="nav-item">
             <a href="{{ route('logout') }}" class="nav-link {{ request()->is('logout*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-sign-out-alt"></i>

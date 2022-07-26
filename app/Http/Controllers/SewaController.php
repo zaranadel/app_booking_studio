@@ -77,11 +77,11 @@ class SewaController extends Controller
         //     $hargaStudio->status = "Lunas";
         //     $hargaStudio->save();
         // }
-        $status = new Model();
-        $status->status = $request->status;
-        $status->save();
-        flash("Konfirmasi Berhasil")->success();
-        return back();  
+        // $status = new Model();
+        // $status->status = $request->status;
+        // $status->save();
+        // flash("Konfirmasi Berhasil")->success();
+        // return back();  
             
         // $status = $request->bayar->status;
         // $requestData['status'] = 'Belum Disetujui';
@@ -129,7 +129,7 @@ class SewaController extends Controller
      */
     public function show($id)
     {
-        $model = Model::findOrFail($id);
+        $model = Model::with('bayar')->findOrFail($id);
         // $data['models'] = new Model();
         $data['model'] = $model;
         // $data['route'] = 'sewa.store';
@@ -139,6 +139,8 @@ class SewaController extends Controller
         // $status->save();
         // flash("Konfirmasi Berhasil")->success();
         // return back();   
+        $modelBayar = \App\Bayar::where('status', $model->status)->get();
+        $data['modelBayar'] = $modelBayar;
     
         // $bayar = \App\Bayar::findOrFail('status');
         $modelBayar = new \App\Bayar();

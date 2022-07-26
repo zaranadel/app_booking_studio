@@ -41,7 +41,7 @@
                                     </tr> --}}
                                     <tr>
                                         <td>Status Konfirmasi</td>
-                                        <td>: </td>
+                                        <td>: {{ $model->bayar->status }}</td>
                                     </tr>
                             </table>                                          
                         </div> 
@@ -76,11 +76,16 @@
                                             <td>Total Bayar (Optional)</td>
                                             <th>: Rp. {{ number_format($model->total_bayar, 0, ",", ".") }}</th>
                                         </tr>
+                                        <tr>
+                                            <td>Sisa Bayar</td>
+                                            <th>: Rp. {{ number_format($model->total_bayar, 0, ",", ".") }}</th>
+                                        </tr>
                                     </table>
                                     <hr/>
                                     <H5>Form Konfirmasi Booking</H5>
                                     {!! Form::model($modelBayar, ['route' => $route, 'method' => $method]) !!}
                                     {!! Form::hidden('sewa_id', $model->id, []) !!}
+                                    {!! Form::hidden('total_bayar', $model->total_bayar, []) !!}
                                     <div class="form-group">
                                         <label for="status">Approve Booking?</label>
                                        {{-- {!! Form::select('jam_sewa', [ --}}

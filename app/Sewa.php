@@ -29,16 +29,13 @@ class Sewa extends Model
     {
         return $this->belongsTo(RuangStudio::class)->withDefault();
     }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    /**
-     * Get the user associated with the Sewa
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
+    
     public function bayar(): BelongsTo
     {
         return $this->belongsTo(Bayar::class)->withDefault();
