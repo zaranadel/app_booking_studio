@@ -34,7 +34,7 @@
 
                      <div class="form-group">
                         <label for="ruangstudio_id">RUANG STUDIO</label>
-                        {!! Form::select('ruangstudio_id', $ruangstudioList, null, ['class' => 'form-control']) !!}
+                        {!! Form::select('ruangstudio_id', $ruangstudioList, null, ['class' => 'form-control', 'placeholder' => '-- Pilih Ruang Studio --']) !!}
                         <span class="text-danger">{{ $errors->first('ruangstudio_id') }}</span>
                      </div>
 

@@ -89,7 +89,7 @@
                 <div class="icon">
                   <i class=""></i>
                 </div>
-                <a href="/ruangstudio" class="small-box-footer"><i class="fas fa-dragon-red mb-4"></i></a>
+                <a href="#" class="small-box-footer"><i class="fas fa-dragon-red mb-4"></i></a>
               </div>            
             </div>
             </div>
