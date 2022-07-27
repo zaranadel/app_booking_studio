@@ -12,13 +12,13 @@
                     <div class="container">
                         <div class="row">
                
-                    <div class="col-md-4">
+                    {{-- <div class="col-md-4">
                     <a href="{{ route($routePrefix .'.create') }}" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Tambah Ruang Studio</a>
-                </div>
+                </div> --}}
                    
 
                     {{-- <div class="row"> --}}
-                        <div class="col-md-4 ml-auto col-sm">
+                        {{-- <div class="col-md-4 ml-auto col-sm">
                             <div class="input-group">
                             {!! Form::open(['method' => 'GET']) !!}
                                 <div class="custom-file">
@@ -26,14 +26,16 @@
                                 </div>                               
                                 
                                 <div class="input-group-append">
-                                    <button class="btn btn-info" style="width: 100%"><i class="fa fa-search"></i></button>
+                                    <button class="btn btn-info" style="width: 100%"><i class="fa fa-search"></i></button> --}}
                                     
                                 {{-- {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!} --}}
                                 </div>
                             
-                            {!! Form::close() !!}
+                            {{-- {!! Form::close() !!}
                         </div>
-                    </div>
+                    </div> --}}
+
+
                     {{-- </div> --}}
                 </div>
             </div>
@@ -56,9 +58,12 @@
                                 <th>NO.</th>
                                 <th>ID SEWA</th>
                                 <th>NAMA BAND</th>
+                                
+                                {{-- <th>HARGA STUDIO</th> --}}
                                 <th>TANGGAL MAIN</th>
                                 <th>BAYAR DP/LUNAS</th>
-                                <th></th>
+                                <th>STATUS</th>
+                                <th>AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -67,8 +72,11 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->sewa_id }}</td>
                                     <td>{{ $item->sewa->nama }}</td>
+                                    {{-- <td>{{ $item->ruangstudio->harga }}</td> --}}
                                     <td>{{ $item->sewa->tgl_sewa->translatedFormat('d F Y') }}</td>
+                                    {{-- <td>{{ $item->ruangstudio->harga }}</td> --}}
                                     <td>Rp. {{ number_format($item->total_bayar, 0, ",", ".") }}</td>
+                                    <td>{{ $item->status }}</td>
                                     <td>
                                         {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
 
@@ -90,7 +98,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <a href="{{ route('sewa.create') }}" class="btn btn-outline-primary mt-3"><i class="fa fa-book"></i> Booking Studio</a>
+                   
                 </div>
             </div>
         </section>

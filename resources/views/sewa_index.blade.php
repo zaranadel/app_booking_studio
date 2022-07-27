@@ -93,6 +93,7 @@
 
                                     <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> </a>
 
+                                    <a href="{{ route($routePrefix.'.edit', $item->id) }}" class="btn btn-info"><i class="fa fa-door"></i> </a>
                                     
 
                                     

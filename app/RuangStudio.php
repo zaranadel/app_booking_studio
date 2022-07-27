@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
 class RuangStudio extends Model
@@ -35,5 +36,10 @@ class RuangStudio extends Model
     public function sewa(): HasMany
     {
         return $this->hasMany(Sewa::class);
+    }
+
+    public function bayar(): BelongsTo
+    {
+        return $this->belongsTo(Bayar::class);
     }
 }

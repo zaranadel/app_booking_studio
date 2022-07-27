@@ -71,20 +71,7 @@ class SewaController extends Controller
             'tgl_sewa' => 'required|after:yesterday', 
             'status' => 'nullable',
         ]);
-        // $jumlah = $request->total_bayar;
-        // $hargaStudio = RuangStudio::findOrFail($request->ruangstudio_id);
-        // if($jumlah == $hargaStudio->harga){
-        //     $hargaStudio->status = "Lunas";
-        //     $hargaStudio->save();
-        // }
-        // $status = new Model();
-        // $status->status = $request->status;
-        // $status->save();
-        // flash("Konfirmasi Berhasil")->success();
-        // return back();  
-            
-        // $status = $request->bayar->status;
-        // $requestData['status'] = 'Belum Disetujui';
+       
         $requestData['user_id'] = Auth::user()->id;
         $cek = Model::where('ruangstudio_id', $request->ruangstudio_id)
                     ->where('tgl_sewa', $request->tgl_sewa)
@@ -103,20 +90,7 @@ class SewaController extends Controller
                     };
 
         
-        // dd($requestData);
-        // $model = new Model();
-        // $model->nama = $request->nama;
-        // $model->telp = $request->telp;
-        // $model->ruangstudio_id =$request->ruangstudio->id;
-        // $model->total_bayar = $request->total_bayar;
-        // $model->jam_sewa = $request->jam_sewa;
-        // $model->tgl_sewa = $request->tgl_sewa;
-        // $model->namaruangstudio = $request->namaruangstudio;
-        // $model->status = 'proses';
-        // $model->save();
-        // $requestData['dibuat_oleh'] = Auth::user()->id;
-        // Model::create($requestData);
-        // flash("Data Booking Berhasil Dibuat");
+       
         return redirect()->route('sewa.index');
         
     }
@@ -130,6 +104,8 @@ class SewaController extends Controller
     public function show($id)
     {
         $model = Model::with('bayar')->findOrFail($id);
+        
+        // dd($model->bayar);   
         // $data['models'] = new Model();
         $data['model'] = $model;
         // $data['route'] = 'sewa.store';
@@ -176,7 +152,7 @@ class SewaController extends Controller
         $data['method'] = 'PUT';
         $data['route'] = [$this->routePrefix . '.update', $id];
         $data['namaTombol'] = 'Update';
-        return view($this->viewPrefix . '_form', $data);
+        return view($this->viewPrefix . '_edit', $data);
     }
 
     /**
@@ -189,18 +165,36 @@ class SewaController extends Controller
     public function update(Request $request, $id)
     {
         $requestData = $request->validate([
-            
+            'nama' => 'required',
+            'telp' => 'required|numeric', 
+            'ruangstudio_id'=>'required',
+            'total_bayar' => 'nullable|numeric',
+            'jam_sewa' => 'required',
+            'bank' => 'nullable',
+            'selesai_sewa' => 'nullable',
+            'tgl_sewa' => 'required|after:yesterday', 
+            'status' => 'nullable',
         ]);
-        $model = Model::findOrFail($id);
-        $model->name = $request->name;
-        $model->email = $request->email;
+       
+        $requestData['user_id'] = Auth::user()->id;
+        // $cek = Model::where('ruangstudio_id', $request->ruangstudio_id)
+        //             ->where('tgl_sewa', $request->tgl_sewa)
+        //             ->where('jam_sewa', $request->jam_sewa)
+        //             ->count();
+
+        //             if ($cek > 0){
+        //                 // return back()->with(['keterangan' => 'Ruang Studio Sudah Ada Yang Booking', 'tipe' => 'danger']);
+        //                 flash('Ruang Studio Sudah Ada Yang Booking')->error();
+        //                 return back();
+        //             }else{
+        //                 Model::create($requestData);
+                        
+        //                 flash('Booking Berhasil, Tinggal Menunggu Approve Dari Admin');
+        //                 return back();
+        //             };
+
         
-        if ($request->password) {
-            $model->password = bcrypt($request->password);
-        }
-        
-        $model->save();
-        flash("Data berhasil diupdate");
+       
         return back();
     }
 

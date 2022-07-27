@@ -25,4 +25,9 @@ class Bayar extends Model
     {
         return $this->belongsTo(User::class)->withDefault();
     }
+
+    public function ruangstudio(): BelongsTo
+    {
+        return $this->belongsTo(RuangStudio::class);
+    }
 }

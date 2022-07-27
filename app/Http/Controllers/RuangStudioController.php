@@ -6,6 +6,7 @@ use Auth;
 use Illuminate\Http\Request;
 use \App\RuangStudio as Model;
 use App\Sewa;
+use App\Bayar;
 
 class RuangStudioController extends Controller
 {

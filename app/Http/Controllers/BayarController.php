@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use \App\Sewa;
 use \App\Bayar as Model;
 use \App\User;
+use \App\RuangStudio;
 
 class BayarController extends Controller
 {

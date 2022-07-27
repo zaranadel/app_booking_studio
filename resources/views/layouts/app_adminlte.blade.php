@@ -194,7 +194,7 @@
           @if (auth()->user()->akses == 'admin')
           <li class="nav-item">
             <a href="{{ route('bayar.index') }}" class="nav-link {{ request()->is('laporan*') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-file"></i>
+              <i class="nav-icon fas fa-money-bill"></i>
               <p>
                 Data Pembayaran
               </p>

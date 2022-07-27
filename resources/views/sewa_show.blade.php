@@ -41,7 +41,27 @@
                                     </tr> --}}
                                     <tr>
                                         <td>Status Konfirmasi</td>
-                                        <td>: {{ $model->bayar->status }}</td>
+                                        <td>: {{ $model->status }}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Konfirmasi Booking?</td>
+                                        <td>
+                                            {!! Form::model($model, ['routes' => $route, 'methods' => $method]) !!}
+                                            <div class="form-group">
+                                                <label for="status">Approve Booking?</label>
+                                               {{-- {!! Form::select('jam_sewa', [ --}}
+                                               <select name="status" class="form-control col-md-12">
+                                                <option disabled selected>-- Pilih Status --</option>
+                                               <option value="Diterima">Diterima</option>
+                                               <option value="Ditolak">Ditolak</option>
+                                             </select>
+                                                <span class="text-danger">{{ $errors->first('status') }}</span>
+                                             </div>
+                                             {!! Form::submit('Konfirmasi', ['class' => 'btn btn-primary ']) !!}
+                                        
+                                    {!! Form::close() !!}
+                                        </td>
                                     </tr>
                             </table>                                          
                         </div> 
@@ -87,7 +107,7 @@
                                     {!! Form::hidden('sewa_id', $model->id, []) !!}
                                     {!! Form::hidden('total_bayar', $model->total_bayar, []) !!}
                                     <div class="form-group">
-                                        <label for="status">Approve Booking?</label>
+                                        <label for="status">Approve Pembayaran</label>
                                        {{-- {!! Form::select('jam_sewa', [ --}}
                                        <select name="status" class="form-control col-md-12">
                                         <option disabled selected>-- Pilih Status --</option>
