@@ -1,6 +1,19 @@
 @extends('layouts.app_adminlte')
 <title>Data Bayar</title>
 @section('content')
+<style>
+    section {
+        background-image: url('{{ asset("img/bgmusic.jpg") }}');
+        background-size: cover;
+        opacity: ;
+    }
+    .card {
+        margin-top: 1px;
+        
+        box-shadow: 10px 10px 15px rgba(255, 255, 255, 0.5), 
+             -10px -10px 15px rgba(70, 70, 70, 0.12);
+    }
+ </style>
 
 
     <!-- Main content -->
@@ -9,35 +22,14 @@
                 <div class="card-header bg-dark">Data Pembayaran</div>
                 
                 <div class="card-body">
-                    <h4>Total Pendapatan : </h4>
+                    {{-- <h4>Total Pendapatan : </h4> --}}
                     <div class="container">
                         <div class="row">
                
-                    {{-- <div class="col-md-4">
-                    <a href="{{ route($routePrefix .'.create') }}" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Tambah Ruang Studio</a>
-                </div> --}}
-                   
-
-                    {{-- <div class="row"> --}}
-                        {{-- <div class="col-md-4 ml-auto col-sm">
-                            <div class="input-group">
-                            {!! Form::open(['method' => 'GET']) !!}
-                                <div class="custom-file">
-                                {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Berdasarkan nama...']) !!}
-                                </div>                               
-                                
-                                <div class="input-group-append">
-                                    <button class="btn btn-info" style="width: 100%"><i class="fa fa-search"></i></button> --}}
-                                    
-                                {{-- {!! Form::submit('Pencarian', ['class' => 'btn btn-primary']) !!} --}}
+                
                                 </div>
                             
-                            {{-- {!! Form::close() !!}
-                        </div>
-                    </div> --}}
-
-
-                    {{-- </div> --}}
+              
                 </div>
             </div>
 
@@ -53,7 +45,7 @@
 
                     </div> --}}
 
-                    <table class="table table-light table-striped table-bordered text-center table-hover" style="font-size: 14px">
+                    <table class="table table-light table-striped table-bordered text-center table-hover" style="font-size: 14px" >
                         <thead class="table bg-dark">
                             <tr>
                                 <th>NO.</th>

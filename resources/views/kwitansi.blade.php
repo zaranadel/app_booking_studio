@@ -7,15 +7,18 @@
     <link rel="stylesheet" href="{{ asset('adminlte') }}/dist/css/adminlte.min.css">
     <title> Kwitansi {{ $model->sewa->nama }}</title>
 </head>
-<body>
-    <h3 class="text-center mb-4"> KWITANSI</h3>
+<body style="background-color: rgb(255, 191, 0)">
+    <h3 class="text-center mb-4">KWITANSI</h3>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <table class="table">
                     <tr>
                         <td>
-                            Nama Band : {{ $model->sewa->nama }}
+                            Nama Band 
+                        </td>
+                        <td>
+                        : {{ $model->sewa->nama }}
                         </td>
                        
                     </tr>
@@ -29,20 +32,20 @@
                         <td >
                             Total Bayar
                         </td>
-                        <td>: Rp. {{ number_format($model->total_bayar, 0, ",", ".") }}</td>
+                        <td>: <b>Rp. {{ number_format($model->total_bayar, 0, ",", ".") }}</td></b>
                     </tr>
                     <tr>
                         <td>
                             Status
                         </td>
-                        <td>: {{$model->status }}</td>
+                        <td>: <b>{{$model->status }}</td></b>
                     </tr>
                 </table>
                 <div class="row">
                     <div class="col-md-9">
-                        Terbilang : {{ $model->getJumlahTerbilang() }}
+                        Terbilang : <b>{{ $model->getJumlahTerbilang() }}</b>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3" style="text-align: center">
                         Jambi, {{ date('d F Y') }}
                         <br/>
                         <br/>
@@ -54,5 +57,8 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        window.print();
+    </script>
 </body>
 </html>

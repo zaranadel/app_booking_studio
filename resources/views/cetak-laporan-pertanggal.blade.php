@@ -3,7 +3,10 @@
 
 <head>
 <title>Traxx Studio Musik</title>
-
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('adminlte') }}/dist/css/adminlte.min.css">
 <style>
     table.static{
         position: relative;
@@ -19,12 +22,12 @@
     
    
             <div class="form-group">
-                <p align="center" style="background-color: red"><b>LAPORAN DATA BOOKING TRAXX STUDIO MUSIK</b> </p>
+                
                 <div class="card-body">                  
-                   
+                    <p align="center" style="background-color: red"><b>LAPORAN DATA BOOKING TRAXX STUDIO MUSIK </b> </p>
                     <table class="static" align="center" rules="all" border="1px" style="width: 95%">
                        
-                            <tr>
+                            <tr style="text-align: center">
                                 <th>NO.</th>
                                 <th>NAMA BAND</th>
                                 <th>RUANG STUDIO</th>
@@ -47,21 +50,28 @@
                                     <td>{{ $item->tgl_sewa->translatedFormat('d F Y') }}</td>
                                     <td>{{ $item->jam_sewa }}</td>
                                     {{-- <td>{{ $item->selesai_sewa }}</td> --}}
-                                    <td>{{ $item->bayar->status }}</td>    
+                                    <td>{{ $item->status }}</td>    
                                 </tr>
                             @endforeach
                      
                     </table>
                     {{-- <a href="{{ route('sewa.create') }}" class="btn btn-primary">Booking Studio</a> --}}
+                    <div class="row mt-5">
+                        <div class="col-md-9">
+                           
+                        </div>
+                        <div class="col-md-3">
+                            <h3>Traxx Studio Musik</h3>
+                            Jambi, {{ date('d F Y') }}
+                            <br/>
+                            <br/>
+                            <br/>
+                            {{-- <u>{{ Auth::user()->name }}</u><br/>
+                            (Admin) --}}
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3>Traxx Studio Musik</h3>
-                    <p>Pemilik,</p>
-                    <br>
-                    <br>
-                    <p>Hadiwibowo Ramadhan </p>
-                <hr/>
-                </div>
+               
                 </div>
             </div>
 

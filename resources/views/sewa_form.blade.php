@@ -5,7 +5,7 @@
    section {
        background-image: url('{{ asset("img/bgmusic.jpg") }}');
        background-size: cover;
-       opacity: 0.9;
+       opacity: ;
    }
    .card {
        margin-top: 70px;

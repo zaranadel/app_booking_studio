@@ -1,12 +1,25 @@
 @extends('layouts.app_adminlte')
 <title>Gallery Studio</title>
 @section('content')
+<style>
+  section {
+      background-image: url('{{ asset("img/bgmusic.jpg") }}');
+      background-size: cover;
+      opacity: ;
+  }
+  .card {
+      margin-top: 1px;
+      
+      box-shadow: 10px 10px 15px rgba(255, 255, 255, 0.5), 
+           -10px -10px 15px rgba(70, 70, 70, 0.12);
+  }
+</style>
 
 
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header">Gallery Alat Musik Studio</div>
+                <div class="card-header bg-dark">GALLERY ALAT MUSIK STUDIO</div>
 
                 <div class="card-body">
                     @if (auth()->user()->akses == 'admin')

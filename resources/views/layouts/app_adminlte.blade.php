@@ -182,7 +182,7 @@
           
           @if (auth()->user()->akses == 'admin')
           <li class="nav-item">
-            <a href="{{ route('cetak-laporan-booking-form') }}" class="nav-link {{ request()->is('laporan*') ? 'active' : '' }}">
+            <a href="{{ route('cetak-laporan-booking-form') }}" class="nav-link {{ request()->is('cetak-laporan-booking-form*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-file"></i>
               <p>
                 Laporan
@@ -193,7 +193,7 @@
 
           @if (auth()->user()->akses == 'admin')
           <li class="nav-item">
-            <a href="{{ route('bayar.index') }}" class="nav-link {{ request()->is('laporan*') ? 'active' : '' }}">
+            <a href="{{ route('bayar.index') }}" class="nav-link {{ request()->is('bayar*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-money-bill"></i>
               <p>
                 Data Pembayaran

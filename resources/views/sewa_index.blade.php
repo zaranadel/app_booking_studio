@@ -14,6 +14,19 @@
 @endsection
 <title>Booking</title>
 @section('content')
+<style>
+    section {
+        background-image: url('{{ asset("img/bgmusic.jpg") }}');
+        background-size: cover;
+        opacity: ;
+    }
+    .card {
+        margin-top: 1px;
+        
+        box-shadow: 10px 10px 15px rgba(255, 255, 255, 0.5), 
+             -10px -10px 15px rgba(70, 70, 70, 0.12);
+    }
+ </style>
 
 
     <!-- Main content -->
@@ -46,7 +59,7 @@
                     </div>
                     <h2 class="text-center">{{ $title }}</h2>
                     <table class="table table-light table-striped table-bordered table-hover" style="font-size: 12px" id="example1">                        
-                        <thead class="bg-dark">
+                        <thead class="bg-dark" style="text-align: center">
                             <tr>
                                 <th>NO.</th>
                                 <th>NAMA BAND</th>
