@@ -91,6 +91,8 @@
                                 <td>{{ $item->jam_sewa }}</td>
                                 {{-- <td>{{ $item->selesai_sewa }}</td> --}}
                                 {{-- <td>{{ $item->total_bayar }}</td> --}}
+                                
+
                                 <td>{{ $item->status ?? 'Pending'}}</td>
                                 {{-- <td>{{ number_format($item->harga, 0, ",", ".") }}</td> --}}
                                 @if (auth()->user()->akses == 'admin')
