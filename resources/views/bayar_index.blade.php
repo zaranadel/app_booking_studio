@@ -6,9 +6,10 @@
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header bg-dark">Data Pembayaran DP/Lunas</div>
-
+                <div class="card-header bg-dark">Data Pembayaran</div>
+                
                 <div class="card-body">
+                    <h4>Total Pendapatan : </h4>
                     <div class="container">
                         <div class="row">
                
@@ -61,9 +62,9 @@
                                 
                                 {{-- <th>HARGA STUDIO</th> --}}
                                 <th>TANGGAL MAIN</th>
-                                <th>BAYAR DP/LUNAS</th>
+                                <th>TOTAL BAYAR</th>
                                 <th>STATUS</th>
-                                <th>AKSI</th>
+                                <th>PRINT</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -78,16 +79,16 @@
                                     <td>Rp. {{ number_format($item->total_bayar, 0, ",", ".") }}</td>
                                     <td>{{ $item->status }}</td>
                                     <td>
-                                        {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
+                                        {{-- {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
 
                                         @if (auth()->user()->akses == 'admin')
                                         <a href="{{ route($routePrefix .'.edit', $item->id) }}" class="btn btn-warning"><i class="fa fa-edit"></i> </a>
 
                                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                        @endif
+                                        @endif --}}
                                         
 
-                                        <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> </a>
+                                        <a href="{{ route('kwitansi.show', $item->id) }}" target="blank"><i class="fa fa-print"></i> </a>
 
                                         
                                        

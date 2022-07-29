@@ -8,7 +8,7 @@
        opacity: 0.9;
    }
    .card {
-       margin-top: 70px;
+       margin-top: 10px;
        
        box-shadow: 10px 10px 15px rgba(255, 255, 255, 0.5), 
             -10px -10px 15px rgba(70, 70, 70, 0.12);
@@ -29,12 +29,10 @@
                   <p>Tanggal Booking : {{ $model->tgl_sewa->translatedFormat('d F Y') }}</p>
                   <p>Jam Booking : {{ $model->jam_sewa }}</p>
                   <p>Harga Ruang Studio : Rp. {{ number_format($model->ruangstudio->harga, 0, ",", ".") }}</p>
-                  <h3>Status : {{ $model->status }}</h3>
+                  <h5>Status : {{ $model->status ?? 'Belum Dikonfirmasi' }}</h5>
                
                 </div>
-                {{-- <div class="icon">
-                  <i class="fa fa-door-closed"></i>
-                </div> --}}
+                
                 
               </div>            
             </div>
@@ -59,7 +57,11 @@
       
             <div class="card">
                 <div class="card-header bg-dark" style="font-size: 16px" >FORM KONFIRMASI BOOKING STUDIO</div>
-
+                @if ($model->status == "Diterima")
+                    <div class="bg-success" style="text-align: center">
+                        <h4>SUDAH DIKONFIRMASI</h4>
+                    </div>
+                @else
                 <div class="card-body" style="font-size: 14px">
                     {!! Form::model($model, ['route' => $route, 'method' => $method,'files' => true]) !!}
 
@@ -75,33 +77,28 @@
                     {!! Form::hidden('user_id', $model->user_id, []) !!}
                     
                      <div class="form-group">
-                        <label for="status">Konfirmasi</label>                      
+                        <label for="status">Konfirmasi Admin</label>                      
                        <select name="status" class="form-control col-md-6">
                         <option disabled selected>-- Pilih Aksi --</option>
                        <option value="Diterima">Diterima</option>
-                       <option value="Ditolak">Ditolak</option>
+                       
                        
                        
                      </select>
                         <span class="text-danger">{{ $errors->first('status') }}</span>
                      </div>
-
-                     
-
-                     
-
-                    
-                     
                      <hr/>
-                    
-
-                     
                      {!! Form::submit($namaTombol, ['class' => 'btn btn-primary']) !!}
-                     <a href="/sewa" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
+                     
                     {!! Form::close() !!}
                    
                     
                 </div>
+                @endif
+                <a href="/sewa" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
+                
+
+              
 
                 
             </div>
