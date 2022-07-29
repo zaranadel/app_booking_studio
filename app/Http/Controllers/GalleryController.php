@@ -112,7 +112,11 @@ class GalleryController extends Controller
             'deskripsi' => 'nullable',           
         ]);
         if ($request->hasFile('foto_gallery')){
+            $model = Model::findOrFail($id);
             $requestData['foto_gallery'] =  $request->file('foto_gallery')->store('public/images');
+            if($model->foto_gallery != null){
+                \Storage::delete($model->foto_gallery);
+            }
         }
         Model::where('id', $id)->update($requestData);
         flash("Data berhasil diupdate");

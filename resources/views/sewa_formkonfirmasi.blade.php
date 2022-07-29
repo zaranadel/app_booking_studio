@@ -1,5 +1,5 @@
 @extends('layouts.app_adminlte')
-<title>Form Booking</title>
+<title>Form Konfirmasi Booking</title>
 @section('content')
 <style>
    section {
@@ -65,7 +65,7 @@
                      <span class="text-danger">{{ $errors->first('jam_sewa') }}</span>
                    </div> --}}
 
-                     <div class="form-group">
+                     {{-- <div class="form-group">
                         <label for="jam_sewa">JAM BOOKING</label>                      
                        <select name="jam_sewa" class="form-control col-md-6">
                         <option disabled selected>-- Pilih Jam Booking --</option>
@@ -86,6 +86,18 @@
                        <option value="22:00:00">22:00 PM</option>  
                      </select>
                         <span class="text-danger">{{ $errors->first('jam_sewa') }}</span>
+                     </div> --}}
+
+                     <div class="form-group">
+                        <label for="status">KONFIRMASI BOOKING</label>                      
+                       <select name="status" class="form-control col-md-6">
+                        <option disabled selected>-- Konfirmasi Booking --</option>
+                       <option value="Diterima">Diterima</option>
+                       <option value="Ditolak">Ditolak</option>
+                       
+                        
+                     </select>
+                        <span class="text-danger">{{ $errors->first('status') }}</span>
                      </div>
 
                     

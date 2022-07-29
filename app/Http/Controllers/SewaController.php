@@ -89,6 +89,8 @@ class SewaController extends Controller
                         return back();
                     };
 
+                    
+
         
        
         return redirect()->route('sewa.index');
@@ -103,22 +105,13 @@ class SewaController extends Controller
      */
     public function show($id)
     {
-        $model = Model::with('bayar')->findOrFail($id);
-        
-        // dd($model->bayar);   
-        // $data['models'] = new Model();
+        $model = Model::findOrFail($id);      
         $data['model'] = $model;
-        // $data['route'] = 'sewa.store';
-        // $data['methods'] = 'PUT';
-        // // $status = new Model();
-        // $status->status = $id->status;
-        // $status->save();
-        // flash("Konfirmasi Berhasil")->success();
-        // return back();   
+         
         $modelBayar = \App\Bayar::where('status', $model->status)->get();
         $data['modelBayar'] = $modelBayar;
     
-        // $bayar = \App\Bayar::findOrFail('status');
+
         $modelBayar = new \App\Bayar();
         $data['modelBayar'] = $modelBayar;
         $data['method'] = 'POST';
@@ -151,7 +144,8 @@ class SewaController extends Controller
         $data['model'] = $model;
         $data['method'] = 'PUT';
         $data['route'] = [$this->routePrefix . '.update', $id];
-        $data['namaTombol'] = 'Update';
+        $data['ruangstudioList'] = \App\RuangStudio::pluck('namaruangstudio', 'id');
+        $data['namaTombol'] = 'Konfirmasi';
         return view($this->viewPrefix . '_edit', $data);
     }
 
@@ -193,8 +187,8 @@ class SewaController extends Controller
         //                 return back();
         //             };
 
-        
-       
+        Model::where('id', $id)->update($requestData);
+        flash("Data berhasil diupdate");
         return back();
     }
 

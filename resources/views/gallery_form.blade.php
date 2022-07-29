@@ -23,6 +23,10 @@
                         {!! Form::text('merek', null, ['class' => 'form-control', 'placeholder' => 'Masukkan Nama Merek']) !!}
                         <span class="text-danger">{{ $errors->first('merek') }}</span>
                      </div>
+
+                     @if ($method == "PUT")
+                     <img src="{{ \Storage::url($model->foto_gallery) }}" width="150">
+                     @endif
                      
                      <div class="form-group">
                         <label for="foto_gallery">TAMBAH FOTO</label>

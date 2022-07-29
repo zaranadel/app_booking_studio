@@ -78,7 +78,7 @@
                                 <td>{{ $item->jam_sewa }}</td>
                                 {{-- <td>{{ $item->selesai_sewa }}</td> --}}
                                 {{-- <td>{{ $item->total_bayar }}</td> --}}
-                                <td>{{ $item->bayar->status ?? 'Pending'}}</td>
+                                <td>{{ $item->status ?? 'Pending'}}</td>
                                 {{-- <td>{{ number_format($item->harga, 0, ",", ".") }}</td> --}}
                                 @if (auth()->user()->akses == 'admin')
                                 <td>
@@ -93,9 +93,9 @@
 
                                     <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> </a>
 
-                                    <a href="{{ route($routePrefix.'.edit', $item->id) }}" class="btn btn-info"><i class="fa fa-door"></i> </a>
                                     
-
+                                    
+                                    <a href="{{ route($routePrefix .'.edit', $item->id) }}" class="btn btn-warning"><i class="fa fa-edit"></i> </a>
                                     
                                    
                                     

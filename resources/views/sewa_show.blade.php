@@ -41,26 +41,26 @@
                                     </tr> --}}
                                     <tr>
                                         <td>Status Konfirmasi</td>
-                                        <td>: {{ $model->status }}</td>
+                                        <td>: {{ $model->bayar->status }}</td>
                                     </tr>
 
                                     <tr>
                                         <td>Konfirmasi Booking?</td>
                                         <td>
-                                            {!! Form::model($model, ['routes' => $route, 'methods' => $method]) !!}
+                                            {{-- {!! Form::open('route' => 'sewa.store' ['sewa.store', 'PUT']) !!} --}}
                                             <div class="form-group">
-                                                <label for="status">Approve Booking?</label>
+                                                <label for="status">Approve Booking</label>
                                                {{-- {!! Form::select('jam_sewa', [ --}}
                                                <select name="status" class="form-control col-md-12">
                                                 <option disabled selected>-- Pilih Status --</option>
-                                               <option value="Lunas">Lunas</option>
-                                               <option value="Belum Lunas">Belum Lunas</option>
+                                               <option value="Diterima">Diterima</option>
+                                               <option value="Ditolak">Ditolak</option>
                                              </select>
                                                 <span class="text-danger">{{ $errors->first('status') }}</span>
                                              </div>
                                              {!! Form::submit('Konfirmasi', ['class' => 'btn btn-primary ']) !!}
                                         
-                                    {!! Form::close() !!}
+                                             {!! Form::close() !!}
                                         </td>
                                     </tr>
                             </table>                                          
@@ -96,14 +96,19 @@
                                             <td>Total Bayar (Optional)</td>
                                             <th>: Rp. {{ number_format($model->total_bayar, 0, ",", ".") }}</th>
                                         </tr>
-                                        <tr>
+                                        {{-- <tr>
                                             <td>Sisa Bayar</td>
                                             <th>: Rp. {{ number_format($model->total_bayar, 0, ",", ".") }}</th>
+                                        </tr> --}}
+                                        <tr>
+                                            <td>Bukti Bayar</td>
+                                            <th>: <img class="mt-2" src="{{ \Storage::url($model->bukti_bayar ?? 'images/no-image.png') }}" style="width: 100px" {{-- width="500" --}}></th>
                                         </tr>
                                     </table>
                                     <hr/>
-                                    <H5>Form Konfirmasi Booking</H5>
+                                    <H5>Form Konfirmasi Pembayaran</H5>
                                     {!! Form::model($modelBayar, ['route' => $route, 'method' => $method]) !!}
+                                   
                                     {!! Form::hidden('sewa_id', $model->id, []) !!}
                                     {!! Form::hidden('total_bayar', $model->total_bayar, []) !!}
                                     <div class="form-group">
@@ -112,7 +117,8 @@
                                        <select name="status" class="form-control col-md-12">
                                         <option disabled selected>-- Pilih Status --</option>
                                        <option value="Lunas">Lunas</option>
-                                       <option value="Belum Lunas">Belum Lunas</option>
+                                       <option value="Bayar DP">Bayar DP</option>
+                                       <option value="Tidak Bayar">Tidak Bayar</option>
                                      </select>
                                         <span class="text-danger">{{ $errors->first('status') }}</span>
                                      </div>

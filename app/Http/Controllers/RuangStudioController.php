@@ -124,7 +124,11 @@ class RuangStudioController extends Controller
             'deskripsi' => 'nullable',
         ]);
         if ($request->hasFile('gambar')){
+            $model = Model::findOrFail($id);
             $requestData['gambar'] = $request->file('gambar')->store('public/images');
+            if ($model->gambar != null){
+                \Storage::delete($model->gambar);
+            }
             // $model = Model::findOrFail($id);
 
         }
