@@ -1,7 +1,16 @@
 @extends('layouts.app_adminlte')
 <title>Data User</title>
 @section('content')
-
+<style>
+    section {
+       background-image: url('{{ asset("img/bgmusic.jpg") }}');
+       background-size: cover;
+       opacity: ;
+   }
+    .content {
+    height: 100%;
+  }
+</style>
 
     <!-- Main content -->
     <section class="content">           

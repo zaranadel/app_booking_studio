@@ -7,6 +7,9 @@
        background-size: cover;
        opacity: ;
    }
+   .content {
+    height: 100%;
+  }
    .card {
        margin-top: 1px;
        
