@@ -29,7 +29,7 @@
                   <p>Tanggal Booking : {{ $model->tgl_sewa->translatedFormat('d F Y') }}</p>
                   <p>Jam Booking : {{ $model->jam_sewa }}</p>
                   <p>Harga Ruang Studio : Rp. {{ number_format($model->ruangstudio->harga, 0, ",", ".") }}</p>
-                  <h5>Status : {{ $model->status ?? 'Belum Dikonfirmasi' }}</h5>
+                  <h5>Status : <u>{{ $model->status ?? 'Belum Dikonfirmasi' }}</u></h5>
                
                 </div>
                 
@@ -81,6 +81,7 @@
                        <select name="status" class="form-control col-md-6">
                         <option disabled selected>-- Pilih Aksi --</option>
                        <option value="Diterima">Diterima</option>
+                       <option value="Ditolak">Ditolak</option>
                        
                        
                        
@@ -88,7 +89,7 @@
                         <span class="text-danger">{{ $errors->first('status') }}</span>
                      </div>
                      <hr/>
-                     {!! Form::submit($namaTombol, ['class' => 'btn btn-primary']) !!}
+                     {!! Form::submit($namaTombol, ['class' => 'btn btn-success']) !!}
                      
                     {!! Form::close() !!}
                    

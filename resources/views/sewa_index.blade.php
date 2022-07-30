@@ -55,8 +55,11 @@
                                 </div>
                             </div>
                         </div>
-
+                       
+                       
                     </div>
+                   
+                   
                     <h2 class="text-center">{{ $title }}</h2>
                     <table class="table table-light table-striped table-bordered table-hover" style="font-size: 12px" id="example1">                        
                         <thead class="bg-dark" style="text-align: center">
@@ -92,11 +95,11 @@
                                 {{-- <td>{{ $item->selesai_sewa }}</td> --}}
                                 {{-- <td>{{ $item->total_bayar }}</td> --}}
                                 
-
-                                <td>{{ $item->status ?? 'Pending'}}</td>
+                                
+                                <td><b>{{ $item->status ?? 'Pending'}}</b></td>
                                 {{-- <td>{{ number_format($item->harga, 0, ",", ".") }}</td> --}}
                                 @if (auth()->user()->akses == 'admin')
-                                <td>
+                                <td class="col-md-3">
                                     {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
 
                                     
@@ -106,11 +109,11 @@
                                     
                                     
 
-                                    <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-info"><i class="fa fa-eye"></i> </a>
+                                    <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-light border border-dark"><i class="fas fa-money-bill-wave"></i> </a>
 
                                     
                                     
-                                    <a href="{{ route($routePrefix .'.edit', $item->id) }}" class="btn btn-warning"><i class="fa fa-edit"></i> </a>
+                                    <a href="{{ route($routePrefix .'.edit', $item->id) }}" class="btn btn-success"><i class="fas fa-calendar-check"> Konfirmasi</i> </a>
                                     
                                    
                                     
@@ -129,8 +132,16 @@
                         </tbody>
                     </table>
                     {{-- <a href="{{ route('sewa.create') }}" class="btn btn-primary">Booking Studio</a> --}}
+                    
                 </div>
+                <div class="text-center mr-3 d-flex p-2">
+                
+                <span class="border border-warning ml-3 bg-dark"><small class=" bg-danger">Note : </small>
+                <small><br> Jika Status <u>Ditolak</u>, <br> Pesan Ulang Jika Data Sudah Tidak Tersedia</small></span>
+               
             </div>
+            </div>
+            
         </section>
         <!-- /.content -->
 @endsection
