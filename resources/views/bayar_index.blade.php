@@ -58,7 +58,7 @@
                                 {{-- <th>HARGA STUDIO</th> --}}
                                 <th>TANGGAL MAIN</th>
                                 <th>TOTAL BAYAR</th>
-                                <th>STATUS</th>
+                                <th>KETERANGAN</th>
                                 <th>PRINT</th>
                             </tr>
                         </thead>

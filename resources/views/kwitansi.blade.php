@@ -36,7 +36,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Status
+                            Keterangan
                         </td>
                         <td>: <b>{{$model->status }}</td></b>
                     </tr>

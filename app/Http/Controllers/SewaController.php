@@ -70,8 +70,12 @@ class SewaController extends Controller
             'selesai_sewa' => 'nullable',
             'tgl_sewa' => 'required|after:yesterday', 
             'status' => 'nullable',
+            'bukti_bayar' => 'nullable|image|mimes:jpg,png,jpeg|max:2000',
         ]);
-       
+        if ($request->hasFile('bukti_bayar')){
+            $requestData['bukti_bayar'] = $request->file('bukti_bayar')->store('public/images');
+        }
+
         $requestData['user_id'] = Auth::user()->id;
         $cek = Model::where('ruangstudio_id', $request->ruangstudio_id)
                     ->where('tgl_sewa', $request->tgl_sewa)
