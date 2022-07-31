@@ -61,7 +61,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <br>
                 <h2 class="tm-hero-title">Traxx Studio</h2>
                 <p class="tm-hero-subtitle">
-                    Wellcome to Traxx Studio Music
+                    Welcome to Traxx Studio Music
                     <br>Tengok-tengokla Dulu
                     <br>
                 </p>
@@ -291,14 +291,14 @@ https://www.tooplate.com/view/2117-infinite-loop
                     </p><br>
                 </div>
 
-                <div class="col-sm-12 col-md-6">
+                {{-- <div class="col-sm-12 col-md-6">
                     <form action="" method="get">
                         <input id="name" name="name" type="text" placeholder="Your Name" class="tm-input" required />
                         <input id="email" name="email" type="email" placeholder="Your Email" class="tm-input" required />
                         <textarea id="message" name="message" rows="8" placeholder="Message" class="tm-input" required></textarea>
                         <button type="submit" class="btn tm-btn-submit">Submit</button>
                     </form>
-                </div>
+                </div> --}}
 
                 <div class="col-sm-12 col-md-6">
 

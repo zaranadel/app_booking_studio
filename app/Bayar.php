@@ -4,11 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+// use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Bayar extends Model
 {
     protected $table = 'bayar';
     protected $guarded = [];
+  //   protected $searchable = [        
+  //     'columns' => [          
+  //         'name' => 1,
+  //         'email' => 2,
+  //     ],
+  // ];
     // protected $fillable = ['status'];
 
     /**

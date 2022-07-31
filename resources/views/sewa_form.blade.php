@@ -8,7 +8,7 @@
        opacity: ;
    }
    .content {
-    height: 150%;
+    height: 165%;
   }
    .card {
        margin-top: 70px;
@@ -109,14 +109,14 @@
                           Info Pilihan BANK
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" >BRI</a>
-                          <a class="dropdown-item" >BCA</a>
-                          <a class="dropdown-item" >MANDIRI</a>
+                          <a class="dropdown-item" >BRI     : <u> 3263-01-012057-53-9</u></a>
+                          {{-- <a class="dropdown-item" >BCA</a> --}}
+                          <a class="dropdown-item" >MANDIRI : <u> 113-00-1522616-1</u></a>
                         </div>
                       </div>
 
                      <div class="form-group">
-                        <label for="bank">Bank</label>
+                        <label for="bank">NAMA BANK TUJUAN</label>
                         <small id="#" class="form-text text-muted">(Optional)</small>
                         {!! Form::text('bank', null, ['class' => 'form-control', 'placeholder' => 'Contoh : BRI']) !!}
                         <small id="#" class="text-danger">*Kosongkan jika tidak membayar</small>

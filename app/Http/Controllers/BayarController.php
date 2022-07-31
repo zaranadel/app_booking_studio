@@ -20,6 +20,11 @@ class BayarController extends Controller
      */
     public function index()
     {
+        // if (request()->filled('q')) {
+        //     $models = Model::search(request('q'))->paginate(100);
+        // }else{
+        //     $models = Model::orderBy('id', 'desc')->paginate(100);
+        // } 
         $models = Model::latest()->paginate(15);
         $data['models'] = $models;
         $data['routePrefix'] = $this->routePrefix;
@@ -118,6 +123,9 @@ class BayarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Model::findOrFail($id);
+        $model->delete();
+        flash("Data Berhasil Dihapus");
+        return back();
     }
 }

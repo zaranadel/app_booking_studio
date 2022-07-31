@@ -25,8 +25,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('sewa', 'SewaController');
     Route::resource('gallery', 'GalleryController');
     Route::resource('sewapelanggan', 'SewaPelangganController');    
-    Route::resource('bayar', 'BayarController');    
-    Route::resource('kwitansi', 'KwitansiController');  
+    Route::resource('bayar', 'BayarController')->middleware('admin');;    
+    Route::resource('kwitansi', 'KwitansiController')->middleware('admin');;  
     Route::get('/cetak-laporan-booking-form', 'SewaController@cetakForm')->name('cetak-laporan-booking-form')->middleware('admin');
     Route::get('/cetak-laporan-booking-pertanggal/{tglawal}/{tglakhir}', 'SewaController@cetakLaporanPertanggal')->name('cetak-laporan-booking-pertanggal')->middleware('admin');
     

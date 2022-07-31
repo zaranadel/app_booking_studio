@@ -22,7 +22,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            <div class="col-lg-4 col-6">
+            <div class="col-lg-4 col-4">
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
@@ -40,15 +40,17 @@
               </div>            
             </div>
 
-            <div class="col-lg-4 col-6">
+            <div class="col-lg-8 col-8">
                 <!-- small box -->
                 <div class="small-box bg-warning">
                   <div class="inner">
-                    <h5>Bukti Bayar</h5>  
+                    <h5><b>BUKTI BAYAR</b></h5>  
                    
                     @if ($method == "PUT")
                     <img src="{{ \Storage::url($model->bukti_bayar  ?? 'images/no-image.png') }}" width="150">
                     @endif
+                    <br>
+                    <p>    </p>
                     
                     {!! Form::hidden('bukti_bayar', $model->bukti_bayar, []) !!}
                   </div>
