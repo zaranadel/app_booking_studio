@@ -49,7 +49,7 @@
                             <div class="input-group mb-3 w-100">
                                 {!! Form::selectMonth('bulan', request('bulan'), ['class' => 'form-control', 'placeholder' => 'Pilih Bulan']) !!}
 
-                                {!! Form::selectRange('tahun', date('Y'), 2021, request('tahun'), ['class' => "form-control", 'placeholder' => 'Pilih Tahun'])!!}
+                                {!! Form::selectRange('tahun', date('Y'), 2022, request('tahun'), ['class' => "form-control", 'placeholder' => 'Pilih Tahun'])!!}
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-info">
                                         <i class="fa fa-search"></i>
@@ -64,7 +64,7 @@
                    
                    
                     <h2 class="text-center">{{ $title }}</h2>
-                    <table class="table table-light table-striped table-bordered table-hover" style="font-size: 12px" id="example1">                        
+                    <table class="table table-light table-striped table-bordered table-hover" style="font-size: 11px" id="example1">                        
                         <thead class="bg-dark" style="text-align: center">
                             <tr>
                                 <th>NO.</th>
@@ -99,7 +99,19 @@
                                 {{-- <td>{{ $item->total_bayar }}</td> --}}
                                 
                                 
-                                <td><b>{{ $item->status ?? 'Pending'}}</b></td>
+                                <td>
+                                    
+                                    @if ($item->status === 'Diterima')
+                                    <div class="badge badge-success">{{ $item->status }}</div>
+                                    @else
+                                    <div class="badge badge-danger">{{ $item->status }}</div>
+                                    @endif
+                                    @if ($item->status === null)
+                                    <div class="badge badge-warning">Pending</div> 
+                                    @endif
+                                    {{-- <div class="badge {{ $item->status ==='Diterima' ? 'badge-success' : 'badge-danger' }}">{{ $item->status }}</div></td> --}}
+                                    {{-- <b>{{ $item->status ?? 'Pending'}}</b> --}}
+                                </td>
                                 {{-- <td>{{ number_format($item->harga, 0, ",", ".") }}</td> --}}
                                 @if (auth()->user()->akses == 'admin')
                                 <td class="col-md-3">

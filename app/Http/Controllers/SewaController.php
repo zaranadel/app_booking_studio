@@ -83,7 +83,7 @@ class SewaController extends Controller
                     ->count();
 
                     if ($cek > 0){
-                        // return back()->with(['keterangan' => 'Ruang Studio Sudah Ada Yang Booking', 'tipe' => 'danger']);
+                       
                         flash('Ruang Studio Sudah Ada Yang Booking')->error();
                         return back();
                     }else{
@@ -122,19 +122,10 @@ class SewaController extends Controller
         $data['route'] = 'bayar.store';
         return view($this->viewPrefix . '_show', $data);
     
-        // // $model = Model::findOrFail($id);
-        // $datas['models'] = $model;
-        // $datas['methods'] = 'PUT';
-        // $datas['routes'] = 'sewa.store';
-        // // $datas['namaTombol'] = 'Update';
-        // return view($this->viewPrefix . '_show', $data);
+    
     }
 
-    // public function showData($id)
-    // {
-    //     $data['model'] = Model::findOrFail ($id);
-    //     return view('sewa_show', $data);
-    // }
+  
     
     /**
      * Show the form for editing the specified resource.
@@ -175,21 +166,7 @@ class SewaController extends Controller
         ]);
        
         $requestData['user_id'] = Auth::user()->id;
-        // $cek = Model::where('ruangstudio_id', $request->ruangstudio_id)
-        //             ->where('tgl_sewa', $request->tgl_sewa)
-        //             ->where('jam_sewa', $request->jam_sewa)
-        //             ->count();
-
-        //             if ($cek > 0){
-        //                 // return back()->with(['keterangan' => 'Ruang Studio Sudah Ada Yang Booking', 'tipe' => 'danger']);
-        //                 flash('Ruang Studio Sudah Ada Yang Booking')->error();
-        //                 return back();
-        //             }else{
-        //                 Model::create($requestData);
-                        
-        //                 flash('Booking Berhasil, Tinggal Menunggu Approve Dari Admin');
-        //                 return back();
-        //             };
+       
 
         Model::where('id', $id)->update($requestData);
         flash("Data berhasil diupdate");
@@ -204,10 +181,7 @@ class SewaController extends Controller
      */
     public function destroy($id)
     {
-        // if($id == 1){
-        //     flash("Akun Pemilik Tidak Dapat Dihapus!!")->error();
-        //     return back();
-        // }
+       
         $model = Model::findOrFail($id);
         $model->delete();
         flash("Data Berhasil Dihapus");

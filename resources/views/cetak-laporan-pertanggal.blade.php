@@ -50,7 +50,7 @@
                                     <td>{{ $item->tgl_sewa->translatedFormat('d F Y') }}</td>
                                     <td>{{ $item->jam_sewa }}</td>
                                     {{-- <td>{{ $item->selesai_sewa }}</td> --}}
-                                    <td>{{ $item->status }}</td>    
+                                    <td>{{ $item->status ?? 'Pending' }}</td>    
                                 </tr>
                             @endforeach
                      
