@@ -34,6 +34,7 @@
                         {!! Form::text('nama', null, ['class' => 'form-control', 'placeholder' => 'Masukkan Nama Band']) !!}
                         <span class="text-danger">{{ $errors->first('nama') }}</span>
                      </div>
+                     
 
                      <div class="form-group">
                         <label for="ruangstudio_id">RUANG STUDIO</label>

@@ -25,7 +25,7 @@ class Bayar extends Model
      */
     public function sewa(): BelongsTo
     {
-        return $this->belongsTo(Sewa::class);
+        return $this->belongsTo(Sewa::class)->withDefault();
     }
 
     public function user(): BelongsTo
@@ -35,7 +35,7 @@ class Bayar extends Model
 
     public function ruangstudio(): BelongsTo
     {
-        return $this->belongsTo(RuangStudio::class);
+        return $this->belongsTo(RuangStudio::class)->withDefault();
     }
 
     public function terbilang($x) {
@@ -59,6 +59,6 @@ class Bayar extends Model
           return $this->terbilang($x / 1000000) . " juta" . $this->terbilang($x % 1000000);
     }
     public function getJumlahTerbilang(){
-        return ucwords($this->terbilang($this->total_bayar)). 'Rupiah' ;
+        return ucwords($this->terbilang($this->total_bayar)). ' Rupiah';
     }
 }

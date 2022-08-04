@@ -8,7 +8,7 @@
         opacity: ;
     }
     .content {
-     height: 100%;
+     height: 120%;
    }
     .card {
         margin-top: 1px;
@@ -22,7 +22,7 @@
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header bg-dark">Data Pembayaran</div>
+                <div class="card-header bg-dark">DATA PEMBAYARAN</div>
                 
                 <div class="card-body">
                     {{-- <h4>Total Pendapatan : </h4> --}}
@@ -34,20 +34,7 @@
                             
               
                 </div>
-                {{-- <div class="col-md-4 ml-auto col-sm">
-                    <div class="input-group ">
-                    {!! Form::open(['method' => 'GET']) !!}
-                        <div class="custom-file ">
-                        {!! Form::text('q', request('q'), ['class' => 'form-control', 'placeholder' => 'Cari Nama atau Email']) !!}
-                        </div>
-                        <div class="input-group-append">
-                            <button type="submit" class="btn btn-info" style="width: 100%"><i class="fa fa-search"></i> </button>
-                       
-                        </div>
-                        {!! Form::close() !!}
-                    </div>
-                   
-                </div> --}}
+               <h3>Total Pendapatan : <div class="badge badge-success">Rp. {{ number_format($jumlahPendapatan,0,",",".") }}</div></h3>
             </div>
 
                     {{-- <div class="card-tools">

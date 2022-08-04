@@ -8,7 +8,7 @@
         opacity: ;
     }
     .content {
-    height: 100%;
+    height: 150%;
   }
     .card {
         margin-top: 1px;
@@ -104,6 +104,12 @@
                                         </tr>
                                     </table>
                                     <hr/>
+
+                                    @if ($model->status == "Diterima")
+                                    <div class="bg-success" style="text-align: center">
+                                        <h4>SUDAH DIKONFIRMASI PEMBAYARAN</h4>
+                                    </div>
+                                     @else
                                     <H5>Form Konfirmasi Pembayaran</H5>
                                     {!! Form::model($modelBayar, ['route' => $route, 'method' => $method]) !!}
                                    
@@ -127,10 +133,11 @@
                                     {!! Form::close() !!}
                                     
                                 </div>
+                                @endif
                                 <a href="/sewa" class="btn btn-primary"><i class="fa fa-backward"></i> Kembali</a>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="card text-center">
                                 <div class="card-header bg-danger">
                                     Ruang Studio {{ $model->ruangstudio->namaruangstudio }}

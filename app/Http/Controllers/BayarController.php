@@ -25,9 +25,11 @@ class BayarController extends Controller
         // }else{
         //     $models = Model::orderBy('id', 'desc')->paginate(100);
         // } 
+        $jumlahPendapatan = Model::sum('total_bayar');
         $models = Model::latest()->paginate(15);
         $data['models'] = $models;
         $data['routePrefix'] = $this->routePrefix;
+        $data['jumlahPendapatan'] = $jumlahPendapatan;
         return view($this->viewPrefix . '_index', $data);
     }
 
@@ -53,10 +55,10 @@ class BayarController extends Controller
         $sewaId = $request->sewa_id;
         $totalBayar = $request->total_bayar;
         $booking = Sewa::findOrFail($sewaId);
-        if ($booking->status == "Accepted"){
-            flash("Data Booking Sudah Diterima");
-            return back();
-        }
+        // if ($booking->status == "Accepted"){
+        //     flash("Data Booking Sudah Diterima");
+        //     return back();
+        // }
         $bayar = new Model();
         $bayar->sewa_id = $sewaId;
         $bayar->total_bayar = $request->total_bayar;

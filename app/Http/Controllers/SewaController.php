@@ -48,7 +48,7 @@ class SewaController extends Controller
         $data['method'] = 'POST';
         $data['route'] = $this->routePrefix . '.store';
         $data['namaTombol'] = 'Booking';
-        $data['ruangstudioList'] = \App\RuangStudio::pluck('namaruangstudio', 'id');
+        $data['ruangstudioList'] = \App\RuangStudio::pluck('namaruangstudio', 'id', 'harga');
         return view($this->viewPrefix . '_form', $data);
     }
 
@@ -163,13 +163,14 @@ class SewaController extends Controller
             'selesai_sewa' => 'nullable',
             'tgl_sewa' => 'required|after:yesterday', 
             'status' => 'nullable',
+            'bukti_bayar' => 'nullable|image|mimes:jpg,png,jpeg|max:2000',
         ]);
        
         $requestData['user_id'] = Auth::user()->id;
        
 
         Model::where('id', $id)->update($requestData);
-        flash("Data berhasil diupdate");
+        flash("Data berhasil dikonfirmasi");
         return back();
     }
 

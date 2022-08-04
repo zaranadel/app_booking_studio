@@ -99,16 +99,18 @@
                                 {{-- <td>{{ $item->total_bayar }}</td> --}}
                                 
                                 
-                                <td>
+                                <td style="font-size: 15px">
                                     
                                     @if ($item->status === 'Diterima')
                                     <div class="badge badge-success">{{ $item->status }}</div>
                                     @else
                                     <div class="badge badge-danger">{{ $item->status }}</div>
                                     @endif
+
                                     @if ($item->status === null)
                                     <div class="badge badge-warning">Pending</div> 
                                     @endif
+
                                     {{-- <div class="badge {{ $item->status ==='Diterima' ? 'badge-success' : 'badge-danger' }}">{{ $item->status }}</div></td> --}}
                                     {{-- <b>{{ $item->status ?? 'Pending'}}</b> --}}
                                 </td>
