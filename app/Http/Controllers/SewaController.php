@@ -75,7 +75,7 @@ class SewaController extends Controller
         if ($request->hasFile('bukti_bayar')){
             $requestData['bukti_bayar'] = $request->file('bukti_bayar')->store('public/images');
         }
-
+        
         $requestData['user_id'] = Auth::user()->id;
         $cek = Model::where('ruangstudio_id', $request->ruangstudio_id)
                     ->where('tgl_sewa', $request->tgl_sewa)

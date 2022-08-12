@@ -43,7 +43,12 @@
                 </table>
                 <div class="row">
                     <div class="col-md-9">
-                        Terbilang : <b>{{ $model->getJumlahTerbilang() }}</b>
+                        @if ($model->total_bayar== null)
+                            Terbilang : <b>-</b>
+                        @else
+                        Terbilang : <b>{{ $model->getJumlahTerbilang() }}</b>    
+                        @endif
+                        
                     </div>
                     <div class="col-md-3" style="text-align: center">
                         Jambi, {{ date('d F Y') }}

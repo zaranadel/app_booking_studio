@@ -72,7 +72,15 @@
                                     {{-- <td>{{ $item->ruangstudio->harga }}</td> --}}
                                     <td>{{ $item->sewa->tgl_sewa->translatedFormat('d F Y') }}</td>
                                     {{-- <td>{{ $item->ruangstudio->harga }}</td> --}}
-                                    <td>Rp. {{ number_format($item->total_bayar, 0, ",", ".") }}</td>
+
+                                    
+
+
+                                    <td>Rp. {{ number_format($item->total_bayar, 0, ",", ".") }}
+                                        
+                                      
+                                    
+                                    </td>
                                     <td>{{ $item->status }}</td>
                                     <td>
                                         {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
