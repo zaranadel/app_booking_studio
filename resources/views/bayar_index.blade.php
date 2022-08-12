@@ -34,8 +34,8 @@
                             
               
                 </div>
-               <h3>Total Pendapatan : <div class="badge badge-success">Rp. {{ number_format($jumlahPendapatan,0,",",".") }}</div></h3>
-            </div>
+               <h3 class="mb-3">Total Pendapatan : <div class="badge badge-success">Rp. {{ number_format($jumlahPendapatan,0,",",".") }}</div></h3>
+            
 
                     {{-- <div class="card-tools">
                         <form action="/ruangstudio/search" class="form-inline" method="GET">
@@ -49,7 +49,7 @@
 
                     </div> --}}
 
-                    <table class="table table-light table-striped table-bordered text-center table-hover" style="font-size: 14px" >
+                    <table class="table table-light table-striped table-bordered table-hover" style="font-size: 14px" >
                         <thead class="table bg-dark">
                             <tr>
                                 <th>NO.</th>
@@ -100,7 +100,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                   
+                </div>
                 </div>
             </div>
         </section>
