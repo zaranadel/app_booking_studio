@@ -64,7 +64,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($models as $item)
+                            @forelse ($models as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->sewa_id }}</td>
@@ -97,7 +97,12 @@
                                         </button>
                                     </td>
                                 </tr>
-                            @endforeach
+                                @empty
+                                <tr>
+                                    <td colspan="8" class="text-center">Data Pembayaran Tidak Ada</td>
+                                </tr>
+                            @endforelse
+                            {{-- @endforeach --}}
                         </tbody>
                     </table>
                 </div>

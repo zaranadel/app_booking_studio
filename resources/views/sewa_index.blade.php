@@ -64,7 +64,7 @@
                    
                    
                     <h2 class="text-center">{{ $title }}</h2>
-                    <table class="table table-light table-striped table-bordered table-hover" style="font-size: 11px" id="example1">                        
+                    <table class="table table-light table-striped table-bordered text-center table-hover" style="font-size: 11px" id="example1">                        
                         <thead class="bg-dark" style="text-align: center">
                             <tr>
                                 <th>NO.</th>

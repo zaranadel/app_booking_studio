@@ -26,7 +26,7 @@
 
                 <div class="card-body">
                     @if (auth()->user()->akses == 'admin')
-                    <a href="{{ route($routePrefix .'.create') }}" class="btn btn-info mb-2"><i class="fa fa-plus"></i> Tambah Data Gallery</a>
+                    <a href="{{ route($routePrefix .'.create') }}" class="btn btn-info mb-4"><i class="fa fa-plus"></i> Tambah Data Gallery</a>
                     @endif
                     <table class="table table-striped table-bordered table-hover" style="font-size: 14px">
                         <thead class="thead-dark text-center">
@@ -41,7 +41,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($models as $item)
+                            @forelse ($models as $item)
                                 <tr>
                                     
                                     <td class="text-center"><img src="{{ \Storage::url($item->foto_gallery ?? 'images/no-image.png') }}" width="110"></td>
@@ -65,7 +65,12 @@
  
                                     </td>
                                 </tr>
-                            @endforeach
+                                @empty
+                                <tr>
+                                    <td colspan="8" class="text-center">Ruang Studio Tidak Ada</td>
+                                </tr>
+                            @endforelse
+                            {{-- @endforeach --}}
                         </tbody>
                     </table>
                 </div>

@@ -57,7 +57,7 @@
                                     </tr> --}}
                                     <tr>
                                         <td>Status Konfirmasi</td>
-                                        <td>: {{ $model->status }}</td>
+                                        <td>: {{ $model->status ?? 'Belum Dikonfirmasi'}}</td>
                                     </tr>
 
                                     

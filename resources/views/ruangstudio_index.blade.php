@@ -22,7 +22,7 @@
     <!-- Main content -->
     <section class="content">
             <div class="card">
-                <div class="card-header bg-dark">Ruang Studio</div>
+                <div class="card-header bg-dark">RUANG STUDIO</div>
 
                 <div class="card-body">
                     <div class="container">
@@ -66,7 +66,7 @@
 
                     </div> --}}
 
-                    <table class="table table-light table-striped table-bordered text-center table-hover" style="font-size: 14px">
+                    <table class="table table-light table-striped table-bordered text-center table-hover" style="font-size: 16px">
                         <thead class="table bg-dark">
                             <tr>
                                 <th>NO.</th>
@@ -77,7 +77,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($models as $item)
+                            @forelse ($models as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->namaruangstudio }}</td>
@@ -101,7 +101,12 @@
                                         {!! Form::close() !!}
                                     </td>
                                 </tr>
-                            @endforeach
+                                @empty
+                                <tr>
+                                    <td colspan="8" class="text-center">Ruang Studio Tidak Ada</td>
+                                </tr>
+                            @endforelse
+                            {{-- @endforeach --}}
                         </tbody>
                     </table>
                     <a href="{{ route('sewa.create') }}" class="btn btn-outline-primary mt-3"><i class="fa fa-book"></i> Booking Studio</a>

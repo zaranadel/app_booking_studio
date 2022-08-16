@@ -62,7 +62,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($models as $item)
+                            @forelse ($models as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->name }}</td>                                                                    
@@ -82,7 +82,12 @@
                                         {!! Form::close() !!}
                                     </td>
                                 </tr>
-                            @endforeach
+                                @empty
+                                <tr>
+                                    <td colspan="8" class="text-center">Data User Tidak Ada</td>
+                                </tr>
+                            @endforelse
+                            {{-- @endforeach --}}
                         </tbody>
                     </table>
                     {!! $models->links() !!}

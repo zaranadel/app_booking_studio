@@ -41,7 +41,7 @@
                             </tr>
                         
                
-                            @foreach ($cetakperTanggal as $item)
+                            @forelse ($cetakperTanggal as $item)
                                 <tr align="center">                   
                                     <td>{{ $loop->iteration }}</td>                 
                                     <td>{{ $item->nama }}</td>
@@ -52,7 +52,12 @@
                                     {{-- <td>{{ $item->selesai_sewa }}</td> --}}
                                     <td>{{ $item->status ?? 'Pending' }}</td>    
                                 </tr>
-                            @endforeach
+                                @empty
+                                <tr>
+                                    <td colspan="8" class="text-center">Data Booking Tidak Ada</td>
+                                </tr>
+                            @endforelse
+                            {{-- @endforeach --}}
                      
                     </table>
                     {{-- <a href="{{ route('sewa.create') }}" class="btn btn-primary">Booking Studio</a> --}}
