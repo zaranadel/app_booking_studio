@@ -63,7 +63,7 @@ class SewaController extends Controller
         $requestData = $request->validate([
             'nama' => 'required',
             'telp' => 'required|numeric', 
-            'ruangstudio_id'=>'required',
+            'ruangstudio_id' => 'nullable',
             'total_bayar' => 'nullable|numeric',
             'jam_sewa' => 'required',
             'bank' => 'nullable',
@@ -156,7 +156,7 @@ class SewaController extends Controller
         $requestData = $request->validate([
             'nama' => 'required',
             'telp' => 'required|numeric', 
-            'ruangstudio_id'=>'required',
+            'ruangstudio_id' => 'required',
             'total_bayar' => 'nullable|numeric',
             'jam_sewa' => 'required',
             'bank' => 'nullable',
@@ -181,8 +181,7 @@ class SewaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-       
+    {       
         $model = Model::findOrFail($id);
         $model->delete();
         flash("Data Berhasil Dihapus");

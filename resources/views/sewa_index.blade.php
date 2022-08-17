@@ -118,21 +118,11 @@
                                 @if (auth()->user()->akses == 'admin')
                                 <td class="col-md-3">
                                     {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
-
-                                    
-                                    {{-- <a href="{{ route($routePrefix .'.edit', $item->id) }}" class="btn btn-warning "><i class="fa fa-edit"></i> </a> --}}
-
                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                    
-                                    
 
                                     <a href="{{ route($routePrefix.'.show', $item->id) }}" class="btn btn-light border border-dark"><i class="fas fa-money-bill-wave"></i> </a>
 
-                                    
-                                    
                                     <a href="{{ route($routePrefix .'.edit', $item->id) }}" class="btn btn-success"><i class="fas fa-calendar-check"> Konfirmasi</i> </a>
-                                    
-                                   
                                     
                                     {!! Form::close() !!}
                                 </td>
