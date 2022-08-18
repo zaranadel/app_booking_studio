@@ -53,7 +53,7 @@
                         <thead class="table bg-dark">
                             <tr>
                                 <th>NO.</th>
-                                <th>ID SEWA</th>
+                                {{-- <th>ID SEWA</th> --}}
                                 <th>NAMA BAND</th>
                                 
                                 {{-- <th>HARGA STUDIO</th> --}}
@@ -67,10 +67,19 @@
                             @forelse ($models as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->sewa_id }}</td>
-                                    <td>{{ $item->sewa->nama }}</td>
+                                    {{-- <td>{{ $item->sewa_id }}</td> --}}
+                                    <td>@if ($item->sewa->nama === null)
+                                        <div class="badge badge-danger">Data Sewa Telah Dihapus</div> 
+                                        @endif
+                                        {{ $item->sewa->nama }}</td>
+
+
                                     {{-- <td>{{ $item->ruangstudio->harga }}</td> --}}
-                                    <td>{{ $item->sewa->tgl_sewa->translatedFormat('d F Y') }}</td>
+                                    <td>@if ($item->sewa->tgl_sewa === null)
+                                        <div class="badge badge-danger">Data Sewa Telah Dihapus</div> 
+                                        @else
+                                        {{ $item->sewa->tgl_sewa->translatedFormat('d F Y')}}</td>
+                                        @endif
                                     {{-- <td>{{ $item->ruangstudio->harga }}</td> --}}
 
                                     
@@ -92,9 +101,16 @@
                                        
                                         
                                         {!! Form::close() !!}
+                                        @if ($item->sewa->nama === null)
+                                        {{-- <button class="btn btn-danger">
+                                            <a href="{{ route('kwitansi.show', $item->id) }}" target="blank"><i class="fa fa-print"></i> </a>
+                                        </button> --}}
+                                        @else
                                         <button class="btn btn-light">
                                             <a href="{{ route('kwitansi.show', $item->id) }}" target="blank"><i class="fa fa-print"></i> </a>
                                         </button>
+                                        @endif
+                                       
                                     </td>
                                 </tr>
                                 @empty

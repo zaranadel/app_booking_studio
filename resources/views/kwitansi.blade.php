@@ -17,8 +17,11 @@
                         <td>
                             Nama Band 
                         </td>
-                        <td>
-                        : {{ $model->sewa->nama }}
+                        <td>@if ($model->sewa->nama === null)
+                            <h2>-</h2>
+                            @else
+                            : {{$model->sewa->nama }}
+                            @endif
                         </td>
                        
                     </tr>
@@ -26,7 +29,13 @@
                         <td >
                             Tanggal Main
                         </td>
-                        <td>: {{$model->sewa->tgl_sewa->translatedFormat('d F Y') }}</td>
+                        <td>@if ($model->sewa->tgl_sewa === null)
+                            <h2>-</h2>
+                            @else
+                            : {{$model->sewa->tgl_sewa->translatedFormat('d F Y') }}
+                            @endif
+                            </td>
+                       
                     </tr>
                     <tr>
                         <td >
