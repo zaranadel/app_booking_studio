@@ -55,6 +55,7 @@
                       <label for="akses">Daftar Sebagai</label>
                       {!! Form::select('akses', [
                         'admin' => 'Admin',
+                        'pelanggan' => 'Pelanggan',
                       ], null, ['class' => 'form-control']) !!}
                       <span class="text-danger">{{ $errors->first('akses') }}</span>
                    </div>

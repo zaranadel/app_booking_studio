@@ -67,7 +67,7 @@
                     <table class="table table-light table-striped table-bordered text-center table-hover" style="font-size: 11px" id="example1">                        
                         <thead class="bg-dark" style="text-align: center">
                             <tr>
-                                <th>NO.</th>
+                                {{-- <th>NO.</th> --}}
                                 <th>NAMA BAND</th>
                                 <th>RUANG STUDIO</th>
                                 @if (auth()->user()->akses == 'admin')  
@@ -87,7 +87,7 @@
 
                             @forelse ($models as $item)
                             <tr>                   
-                                <td>{{ $loop->iteration }}</td>                 
+                                {{-- <td>{{ $loop->iteration }}</td>                  --}}
                                 <td>{{ $item->nama }}</td>
                                 <td>{{ $item->ruangstudio->namaruangstudio }}</td>
                                 @if (auth()->user()->akses == 'admin') 

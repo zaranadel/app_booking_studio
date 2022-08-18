@@ -48,7 +48,7 @@ class SewaController extends Controller
         $data['method'] = 'POST';
         $data['route'] = $this->routePrefix . '.store';
         $data['namaTombol'] = 'Booking';
-        $data['ruangstudioList'] = \App\RuangStudio::pluck('namaruangstudio', 'id', 'harga');
+        $data['ruangstudioList'] = \App\RuangStudio::pluck('namaruangstudio', 'id');
         return view($this->viewPrefix . '_form', $data);
     }
 
@@ -75,7 +75,8 @@ class SewaController extends Controller
         if ($request->hasFile('bukti_bayar')){
             $requestData['bukti_bayar'] = $request->file('bukti_bayar')->store('public/images');
         }
-        
+       
+
         $requestData['user_id'] = Auth::user()->id;
         $cek = Model::where('ruangstudio_id', $request->ruangstudio_id)
                     ->where('tgl_sewa', $request->tgl_sewa)
@@ -166,7 +167,7 @@ class SewaController extends Controller
             'bukti_bayar' => 'nullable|image|mimes:jpg,png,jpeg|max:2000',
         ]);
        
-        $requestData['user_id'] = Auth::user()->id;
+        // $requestData['user_id'] = Auth::user()->id;
        
 
         Model::where('id', $id)->update($requestData);

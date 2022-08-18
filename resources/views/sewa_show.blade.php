@@ -122,7 +122,7 @@
                                        <select name="status" class="form-control col-md-12">
                                         <option disabled selected>-- Pilih Status --</option>
                                        <option value="Lunas">Lunas</option>
-                                       <option value="Bayar DP">Bayar DP</option>
+                                       <option value="Belum Lunas">Belum Lunas</option>
                                        <option value="Tidak Bayar">Tidak Bayar</option>
                                      </select>
                                         <span class="text-danger">{{ $errors->first('status') }}</span>
