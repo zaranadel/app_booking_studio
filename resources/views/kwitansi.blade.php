@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('adminlte') }}/dist/css/adminlte.min.css">
     <title> Kwitansi {{ $model->sewa->nama }}</title>
 </head>
-<body style="background-color: rgb(255, 191, 0)">
+<body style="background-color: rgb(231, 231, 229)">
     <h3 class="text-center mb-4">KWITANSI</h3>
     <div class="container">
         <div class="row">

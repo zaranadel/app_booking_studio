@@ -120,10 +120,11 @@
                                         <label for="status">Approve Pembayaran</label>
                                        {{-- {!! Form::select('jam_sewa', [ --}}
                                        <select name="status" class="form-control col-md-12">
-                                        <option disabled selected>-- Pilih Status --</option>
+                                        {{-- <option disabled selected>-- Pilih Status --</option>
                                        <option value="Lunas">Lunas</option>
                                        <option value="Belum Lunas">Belum Lunas</option>
-                                       <option value="Tidak Bayar">Tidak Bayar</option>
+                                       <option value="Tidak Bayar">Tidak Bayar</option> --}}
+                                       <option value="Bayar DP">Bayar DP</option>
                                      </select>
                                         <span class="text-danger">{{ $errors->first('status') }}</span>
                                      </div>

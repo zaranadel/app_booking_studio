@@ -43,6 +43,7 @@
                             <h5> Pastikan waktu booking yang ingin anda pesan tersedia  <i class="fas fa-bullhorn"></i></h5>
                         </div>
                         
+                        
 
                         <div class="col-md-4">
                             {!! Form::open(['route' => 'sewa.index', 'method' => 'GET']) !!}

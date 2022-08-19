@@ -117,7 +117,7 @@
                 <div class="small-box" style="background-color: whitesmoke">
                   <div class="inner">
                     <h5 style="color: blue">Jadwal Buka Traxx Studio Musik</h5>
-                    <h6>Senin - Sabtu</h6>
+                    <h6>Setiap Hari!!</h6>
                     <hr>
                     <h6>Jam Operasional</h6>
                     <p>08.00 AM - 22.00 PM</p>

@@ -64,13 +64,13 @@ class SewaController extends Controller
             'nama' => 'required',
             'telp' => 'required|numeric', 
             'ruangstudio_id' => 'nullable',
-            'total_bayar' => 'nullable|numeric',
+            'total_bayar' => 'required|numeric',
             'jam_sewa' => 'required',
-            'bank' => 'nullable',
+            'bank' => 'required',
             'selesai_sewa' => 'nullable',
             'tgl_sewa' => 'required|after:yesterday', 
             'status' => 'nullable',
-            'bukti_bayar' => 'nullable|image|mimes:jpg,png,jpeg|max:2000',
+            'bukti_bayar' => 'required|image|mimes:jpg,png,jpeg|max:2000',
         ]);
         if ($request->hasFile('bukti_bayar')){
             $requestData['bukti_bayar'] = $request->file('bukti_bayar')->store('public/images');
@@ -125,6 +125,11 @@ class SewaController extends Controller
     
     
     }
+
+    // public function mybooking()
+    // {
+
+    // }
 
   
     
