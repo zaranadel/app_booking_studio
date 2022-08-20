@@ -69,6 +69,7 @@
                         <thead class="bg-dark" style="text-align: center">
                             <tr>
                                 {{-- <th>NO.</th> --}}
+                                {{-- <th>USER ID</th> --}}
                                 <th>NAMA BAND</th>
                                 <th>RUANG STUDIO</th>
                                 @if (auth()->user()->akses == 'admin')  
@@ -82,6 +83,9 @@
                                 @if (auth()->user()->akses == 'admin')                             
                                 <th>AKSI</th>
                                 @endif
+                                @if (auth()->user()->akses == 'pelanggan')
+                                <th>CANCEL BOOKING</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -89,6 +93,8 @@
                             @forelse ($models as $item)
                             <tr>                   
                                 {{-- <td>{{ $loop->iteration }}</td>                  --}}
+                              {!! Form::hidden('user_id', $item->user_id, []) !!}
+                                {{-- <td>{{ $item->user_id }}</td> --}}
                                 <td>{{ $item->nama }}</td>
                                 <td>{{ $item->ruangstudio->namaruangstudio }}</td>
                                 @if (auth()->user()->akses == 'admin') 
@@ -116,6 +122,8 @@
                                     {{-- <b>{{ $item->status ?? 'Pending'}}</b> --}}
                                 </td>
                                 {{-- <td>{{ number_format($item->harga, 0, ",", ".") }}</td> --}}
+                               
+                                
                                 @if (auth()->user()->akses == 'admin')
                                 <td class="col-md-3">
                                     {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Anda Yakin ?")']) !!}
@@ -128,10 +136,23 @@
                                     {!! Form::close() !!}
                                 </td>
                                 @endif
+                                @if (auth()->user()->akses == 'pelanggan')
+                                @if ($item->user_id == auth()->user()->id)
+                                <td>
+                                    {!! Form::open(['route' => [$routePrefix .'.destroy', $item->id], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Jika Cancel Maka Uang DP Akan Hangus. Anda Yakin?")']) !!}
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-ban"></i></button>
+                                    {!! Form::close() !!}
+                                </td>
+                                @else
+                                <td>
+                                    -
+                                </td>
+                                @endif
+                                @endif
                             </tr>
                             @empty
                                 <tr>
-                                    <td colspan="8" class="text-center">Silahkan Pilih Bulan Dan Tahun Untuk Mencari Data Ketersediaan Booking</td>
+                                    <td colspan="9" class="text-center">Silahkan Pilih Bulan Dan Tahun Untuk Mencari Data Ketersediaan Booking</td>
                                 </tr>
                             @endforelse
 
